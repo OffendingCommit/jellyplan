@@ -22,21 +22,20 @@
     "jest/globals": true
   },
   "extends": [
-    "plugin:react/recommended",
     "airbnb",
     "prettier",
-    "plugin:node/recommended",
     "airbnb/hooks",
+    "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:testing-library/react",
-    "plugin:jest/all"
+    "plugin:jest/recommended"
   ],
   "parserOptions": {
     "sourceType": "module"
   },
   "plugins": ["prettier", "jest"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
