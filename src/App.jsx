@@ -25,23 +25,27 @@ function App() {
     DateTime.now().startOf('day')
   );
 
+  const [direction, setDirection] = useState(1);
+
   const [headerDate, setHeaderDate] = useState(null);
 
   useEffect(() => {
-    setPreviousDate(selectedDate.startOf('day'));
-  }, [selectedDate]);
-
-  useEffect(() => {
-    animate(previousDate.toMillis(), selectedDate.toMillis(), {
-      onUpdate: (latest) => {
-        console.log(latest);
-        setHeaderDate(
-          DateTime.fromMillis(latest).toLocaleString(
-            DateTime.DATE_MED_WITH_WEEKDAY
-          )
-        );
-      },
-    });
+    if (previousDate < selectedDate) {
+      setDirection(1);
+    } else {
+      setDirection(-1);
+    }
+    if (previousDate !== selectedDate) {
+      animate(previousDate.toMillis(), selectedDate.toMillis(), {
+        onUpdate: (latest) => {
+          setHeaderDate(
+            DateTime.fromMillis(latest)
+              .startOf('day')
+              .toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY)
+          );
+        },
+      });
+    }
   }, [previousDate, selectedDate]);
 
   return (
@@ -59,7 +63,10 @@ function App() {
           <Calendar
             size="medium"
             date={selectedDate?.toISODate()}
-            onSelect={(d) => setSelectedDate(DateTime.fromISO(d))}
+            onSelect={(d) => {
+              setPreviousDate(selectedDate);
+              setSelectedDate(DateTime.fromISO(d));
+            }}
           />
         </Box>
 
@@ -71,10 +78,10 @@ function App() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}
-                  initial={{ y: -25 }}
-                  animate={{ y: 0 }}
-                  exit={{ y: -25 }}
-                  transition={{ type: 'spring', duration: 1 }}
+                  initial={{ y: 30 * direction, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -30 * direction, opacity: 0 }}
+                  transition={{ type: 'spring' }}
                   key={headerDate}
                 >
                   {headerDate}
