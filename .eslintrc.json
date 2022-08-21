@@ -4,7 +4,8 @@
     "sourceType": "module",
     "allowImportExportEverywhere": false,
     "ecmaFeatures": {
-      "globalReturn": false
+      "globalReturn": false,
+      "jsx": true
     },
     "requireConfigFile": false,
     "babelOptions": {
@@ -66,7 +67,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": ["prettier", "jest"],
+  "plugins": ["react", "prettier", "jest"],
   "rules": {
     "prettier/prettier": "warn",
     "no-unused-vars": "warn",
