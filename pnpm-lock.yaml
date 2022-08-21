@@ -19,6 +19,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-node: ^11.1.0
   eslint-plugin-prettier: ^4.2.1
+  eslint-plugin-react: ^7.30.1
   framer-motion: ^7.2.0
   grommet: ^2.25.1
   grommet-icons: ^4.7.0
@@ -27,6 +28,7 @@ specifiers:
   luxon: ^3.0.1
   polished: ^4.2.2
   prettier: ^2.7.1
+  prop-types: ^15.8.1
   react: ^18.2.0
   react-calendar: ^3.7.0
   react-dom: ^18.2.0
@@ -49,6 +51,7 @@ dependencies:
   grommet-icons: 4.7.0_2qpntmkb2tecmgal3aq2m37jiu
   luxon: 3.0.1
   polished: 4.2.2
+  prop-types: 15.8.1
   react: 18.2.0
   react-calendar: 3.7.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
@@ -68,6 +71,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-node: 11.1.0_eslint@8.22.0
   eslint-plugin-prettier: 4.2.1_i2cojdczqdiurzgttlwdgf764e
+  eslint-plugin-react: 7.30.1_eslint@8.22.0
   husky: 8.0.1
   lint-staged: 13.0.3
   prettier: 2.7.1

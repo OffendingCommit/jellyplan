@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { Box, Grommet, PageHeader, Calendar, Grid, Heading } from 'grommet';
-import { motion, AnimatePresence, animate } from 'framer-motion';
+import { Box, Calendar, Grid, Grommet, PageHeader } from 'grommet';
+import { animate } from 'framer-motion';
+import MealDate from './MealDate';
 
 const theme = {
   global: {
@@ -29,7 +30,19 @@ function App() {
 
   const [headerDate, setHeaderDate] = useState(null);
 
+  const handleSelect = (date) => {
+    setPreviousDate(selectedDate);
+    setSelectedDate(DateTime.fromISO(date));
+  };
+
   useEffect(() => {
+    const getTransitionDurationInSeconds = () => {
+      const diffMonths = Math.abs(previousDate.diff(selectedDate).as('months'));
+      if (diffMonths < 0.5) {
+        return diffMonths;
+      }
+      return 0.5;
+    };
     if (previousDate < selectedDate) {
       setDirection(1);
     } else {
@@ -37,6 +50,7 @@ function App() {
     }
     if (previousDate !== selectedDate) {
       animate(previousDate.toMillis(), selectedDate.toMillis(), {
+        duration: getTransitionDurationInSeconds(),
         onUpdate: (latest) => {
           setHeaderDate(
             DateTime.fromMillis(latest)
@@ -51,44 +65,53 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Grid
-        rows={['xxsmall', 'medium', 'xsmall']}
-        columns={['2/3', '1/3']}
+        fill
+        rows={['auto', 'flex', 'auto']}
+        columns={['flex', 'auto']}
         areas={[
-          ['main', 'sidebar'],
-          ['footer', 'footer'],
+          { name: 'header', start: [0, 0], end: [1, 0] },
+          { name: 'main', start: [0, 1], end: [1, 1] },
+          { name: 'sidebar', start: [1, 1], end: [1, 1] },
         ]}
-        gap="medium"
       >
-        <Box pad="large" gridArea="sidebar">
+        <Box
+          gridArea="header"
+          direction="row"
+          align="center"
+          justify="between"
+          pad={{ horizontal: 'medium', vertical: 'small' }}
+        >
+          <PageHeader title="MealCal" subtitle="A Meal Calendar Generator" />
+        </Box>
+
+        <Box
+          gridArea="main"
+          direction="row"
+          align="center"
+          justify="between"
+          pad={{ horizontal: 'medium', vertical: 'small' }}
+        >
+          {headerDate && (
+            <MealDate
+              date={headerDate}
+              direction={direction}
+              breakfast="Oatmeal"
+              lunch="Smoothie/Sandwich"
+              dinner="Steak"
+            />
+          )}
+        </Box>
+        <Box
+          gridArea="sidebar"
+          align="center"
+          justify="between"
+          pad={{ horizontal: 'small', vertical: 'small' }}
+        >
           <Calendar
             size="medium"
             date={selectedDate?.toISODate()}
-            onSelect={(d) => {
-              setPreviousDate(selectedDate);
-              setSelectedDate(DateTime.fromISO(d));
-            }}
+            onSelect={handleSelect}
           />
-        </Box>
-
-        <Box pad="large" gridArea="main">
-          <PageHeader title="MealCal" subtitle="A Meal Calendar Generator" />
-          <AnimatePresence>
-            {headerDate ? (
-              <Heading margin="none">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ y: 30 * direction, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -30 * direction, opacity: 0 }}
-                  transition={{ type: 'spring' }}
-                  key={headerDate}
-                >
-                  {headerDate}
-                </motion.div>
-              </Heading>
-            ) : null}
-          </AnimatePresence>
         </Box>
       </Grid>
     </Grommet>
