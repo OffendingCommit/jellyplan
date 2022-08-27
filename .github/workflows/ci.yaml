@@ -11,6 +11,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_DEFAULT_OUTPUT: json
+      APP_NAME: mealcal
+      DEPLOY_BRANCH: main
+
     strategy:
       matrix:
         node-version: [16.x]
@@ -49,3 +57,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Deploy
+        run: ./scripts/amplify-deploy.sh $APP_NAME $DEPLOY_BRANCH
