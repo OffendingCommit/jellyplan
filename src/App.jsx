@@ -21,14 +21,12 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(
     DateTime.now().startOf('day')
   );
-
   const [previousDate, setPreviousDate] = useState(
     DateTime.now().startOf('day')
   );
-
   const [direction, setDirection] = useState(1);
-
   const [headerDate, setHeaderDate] = useState(null);
+  const [meals, setMeals] = useState({});
 
   const handleSelect = (date) => {
     setPreviousDate(selectedDate);

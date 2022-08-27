@@ -1,15 +1,9 @@
 import { Box, Heading, Text } from 'grommet';
 import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { PropTypes, forbidExtraProps } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
-export default function MealDate({
-  date,
-  direction,
-  breakfast,
-  lunch,
-  dinner,
-}) {
+function MealDate({ date, direction, breakfast, lunch, dinner }) {
   return (
     <Box direction="column" gap="none">
       <Box direction="column" gap="large">
@@ -80,10 +74,12 @@ export default function MealDate({
   );
 }
 
-MealDate.propTypes = forbidExtraProps({
+MealDate.propTypes = {
   date: PropTypes.string.isRequired,
   direction: PropTypes.number.isRequired,
   breakfast: PropTypes.string.isRequired,
   lunch: PropTypes.string.isRequired,
   dinner: PropTypes.string.isRequired,
-});
+};
+
+export default MealDate;

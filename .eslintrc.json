@@ -81,6 +81,7 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ]
+    ],
+    "react/prefer-exact-props": "off"
   }
 }
