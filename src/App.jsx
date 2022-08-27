@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import { Box, Calendar, Grid, Grommet, PageHeader } from 'grommet';
 import { animate } from 'framer-motion';
+import { DataStore } from 'aws-amplify';
+import { Date } from './models';
 import MealDate from './MealDate';
 
 const theme = {
@@ -26,12 +28,31 @@ function App() {
   );
   const [direction, setDirection] = useState(1);
   const [headerDate, setHeaderDate] = useState(null);
-  const [meals, setMeals] = useState({});
+  const [meal, setMeal] = useState({});
 
   const handleSelect = (date) => {
     setPreviousDate(selectedDate);
     setSelectedDate(DateTime.fromISO(date));
   };
+
+  useEffect(() => {
+    async function getDate() {
+      return DataStore.query(Date, (d) =>
+        d.date('eq', selectedDate.toISODate())
+      )
+        .then((response) => {
+          if (response.length) {
+            const { breakfast, lunch, dinner } = response[0];
+            console.debug('Meal Data Response', { response });
+            setMeal({ breakfast, lunch, dinner });
+          } else {
+            setMeal({});
+          }
+        })
+        .catch(console.error);
+    }
+    getDate();
+  }, [selectedDate]);
 
   useEffect(() => {
     const getTransitionDurationInSeconds = () => {
@@ -41,12 +62,13 @@ function App() {
       }
       return 0.5;
     };
+
     if (previousDate < selectedDate) {
       setDirection(1);
     } else {
       setDirection(-1);
     }
-    if (previousDate !== selectedDate) {
+    if (previousDate !== selectedDate)
       animate(previousDate.toMillis(), selectedDate.toMillis(), {
         duration: getTransitionDurationInSeconds(),
         onUpdate: (latest) => {
@@ -57,7 +79,6 @@ function App() {
           );
         },
       });
-    }
   }, [previousDate, selectedDate]);
 
   return (
@@ -93,9 +114,9 @@ function App() {
             <MealDate
               date={headerDate}
               direction={direction}
-              breakfast="Oatmeal"
-              lunch="Smoothie/Sandwich"
-              dinner="Steak"
+              breakfast={meal?.breakfast}
+              lunch={meal?.lunch}
+              dinner={meal?.dinner}
             />
           )}
         </Box>
