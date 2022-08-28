@@ -32,16 +32,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: configure amplify
-        uses: ambientlight/amplify-cli-action@0.3.0
-        with:
-          amplify_command: configure
-          amplify_env: staging
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-east-1
-
       - uses: pnpm/action-setup@v2.0.1
         name: Install pnpm
         id: pnpm-install
@@ -70,13 +60,3 @@ jobs:
 
       - name: Build
         run: pnpm build
-
-      - name: deploy
-        uses: ambientlight/amplify-cli-action@0.3.0
-        with:
-          amplify_command: publish
-          amplify_env: staging
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-east-1
