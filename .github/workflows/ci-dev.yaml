@@ -18,6 +18,7 @@ jobs:
       AWS_DEFAULT_OUTPUT: json
       APP_ID: ${{ secrets.AWS_AMPLIFY_APP_ID }}
       DEPLOY_BRANCH: main
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     strategy:
       matrix:
