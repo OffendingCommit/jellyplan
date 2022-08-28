@@ -4,3 +4,8 @@ frontend:
     baseDirectory: build
     files:
       - '**/*'
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
