@@ -72,9 +72,5 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=3"
   }
 }
