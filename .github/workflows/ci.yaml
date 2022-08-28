@@ -61,5 +61,8 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Verify Permissions
+        run: chmod +x ./scripts/amplify-deploy.sh
+
       - name: Deploy
         run: ./scripts/amplify-deploy.sh $APP_NAME $DEPLOY_BRANCH
