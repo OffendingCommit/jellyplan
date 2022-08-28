@@ -16,7 +16,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: us-east-1
       AWS_DEFAULT_OUTPUT: json
-      APP_NAME: mealcal
+      APP_ID: ${{ secrets.AWS_AMPLIFY_APP_ID }}
       DEPLOY_BRANCH: main
 
     strategy:
@@ -63,12 +63,12 @@ jobs:
 
       - name: Deploy
         run: |        
-          echo "Deploy app $APP_NAME branch $DEPLOY_BRANCH"
-          JOB_ID=$(aws amplify start-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-type RELEASE | jq -r '.jobSummary.jobId')
+          echo "Deploy app $APP_ID branch $DEPLOY_BRANCH"
+          JOB_ID=$(aws amplify start-job --app-id $APP_ID --branch-name $DEPLOY_BRANCH --job-type RELEASE | jq -r '.jobSummary.jobId')
           echo "Release started"
           echo "Job ID is $JOB_ID"
           
-          while [[ "$(aws amplify get-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')" =~ ^(PENDING|RUNNING)$ ]]; do sleep 1; done
-          JOB_STATUS="$(aws amplify get-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')"
+          while [[ "$(aws amplify get-job --app-id $APP_ID --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')" =~ ^(PENDING|RUNNING)$ ]]; do sleep 1; done
+          JOB_STATUS="$(aws amplify get-job --app-id $APP_ID --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')"
           echo "Job finished"
           echo "Job status is $JOB_STATUS"
