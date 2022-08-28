@@ -3,11 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm i -g pnpm
-        - pnpm install
+        - npx pnpm install
     build:
       commands:
-        - pnpm build
+        - npx pnpm build
   artifacts:
     baseDirectory: build
     files:
