@@ -1,4 +1,4 @@
-import { Box, Heading, Text, TextInput } from 'grommet';
+import { Heading, Text, TextInput } from 'grommet';
 import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { PropTypes } from 'prop-types';

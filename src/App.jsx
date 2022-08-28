@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 import {
   Box,
@@ -76,8 +76,6 @@ async function updateMeals({ id, breakfast, lunch, dinner }) {
 }
 
 function App() {
-  const size = React.useContext(ResponsiveContext);
-
   const [selectedDate, setSelectedDate] = useState(
     DateTime.now().startOf('day')
   );
