@@ -1,3 +1,10 @@
+## [0.1.1-true.2](https://github.com/OffendingCommit/mealcal/compare/v0.1.1-true.1...v0.1.1-true.2) (2022-08-28)
+
+
+### Bug Fixes
+
+* **ci:** prerelease formatting ([2c782c8](https://github.com/OffendingCommit/mealcal/commit/2c782c818a5d3622d989049a00333d51e09dc009))
+
 ## [0.1.1-true.1](https://github.com/OffendingCommit/mealcal/compare/v0.1.0...v0.1.1-true.1) (2022-08-28)
 
 
