@@ -4,6 +4,7 @@
     "config:base"
   ],
   "baseBranches": ["main","beta","alpha","dev"],
+  "automergeType": "branch",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
