@@ -61,8 +61,14 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Verify Permissions
-        run: chmod +x ./scripts/amplify-deploy.sh
-
       - name: Deploy
-        run: ./scripts/amplify-deploy.sh $APP_NAME $DEPLOY_BRANCH
+        run: |        
+          echo "Deploy app $APP_NAME branch $DEPLOY_BRANCH"
+          JOB_ID=$(aws amplify start-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-type RELEASE | jq -r '.jobSummary.jobId')
+          echo "Release started"
+          echo "Job ID is $JOB_ID"
+          
+          while [[ "$(aws amplify get-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')" =~ ^(PENDING|RUNNING)$ ]]; do sleep 1; done
+          JOB_STATUS="$(aws amplify get-job --app-id $APP_NAME --branch-name $DEPLOY_BRANCH --job-id $JOB_ID | jq -r '.job.summary.status')"
+          echo "Job finished"
+          echo "Job status is $JOB_STATUS"
