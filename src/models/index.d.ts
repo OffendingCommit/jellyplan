@@ -1,12 +1,12 @@
-import {
-  ModelInit,
-  MutableModel,
-  PersistentModelConstructor,
-} from '@aws-amplify/datastore';
+import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
+
+
+
+
 
 type DateMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
-};
+}
 
 export declare class Date {
   readonly id: string;
@@ -17,10 +17,5 @@ export declare class Date {
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Date, DateMetaData>);
-  static copyOf(
-    source: Date,
-    mutator: (
-      draft: MutableModel<Date, DateMetaData>
-    ) => MutableModel<Date, DateMetaData> | void
-  ): Date;
+  static copyOf(source: Date, mutator: (draft: MutableModel<Date, DateMetaData>) => MutableModel<Date, DateMetaData> | void): Date;
 }
