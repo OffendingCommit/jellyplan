@@ -1,12 +1,5 @@
 version: 1
 frontend:
-  phases:
-    preBuild:
-      commands:
-        - npx pnpm install
-    build:
-      commands:
-        - npx pnpm build
   artifacts:
     baseDirectory: build
     files:
