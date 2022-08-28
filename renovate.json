@@ -4,7 +4,6 @@
     "config:base"
   ],
   "baseBranches": ["main","dev"],
-  "automergeType": "branch",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -16,7 +15,8 @@
     {
       "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": ["lint", "prettier"],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
       "matchPackagePatterns": ["eslint"],
@@ -29,7 +29,8 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
