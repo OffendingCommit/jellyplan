@@ -29,7 +29,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
