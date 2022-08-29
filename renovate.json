@@ -22,7 +22,7 @@
       "matchDepTypes": ["devDependencies"],
       "matchPackagePatterns": ["lint", "prettier"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
       "labels": ["linting/style"]
     },
     {
