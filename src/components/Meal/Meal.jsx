@@ -30,7 +30,7 @@ function Meal({
       ) : (
         <TextInput
           placeholder={`What's for ${mealType}?`}
-          value={value}
+          value={value || ''}
           onChange={(event) => {
             if (mealDetails !== event.target.value) {
               handleChange(event.target.value);
