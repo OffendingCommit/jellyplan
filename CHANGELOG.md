@@ -1,3 +1,10 @@
+## [1.0.3-dev.2](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.1...v1.0.3-dev.2) (2022-08-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mui/material to v5.10.3 ([a0c9868](https://github.com/OffendingCommit/mealcal/commit/a0c98688d46013094c54c094a335b2b5ae489820))
+
 ## [1.0.3-dev.1](https://github.com/OffendingCommit/mealcal/compare/v1.0.2...v1.0.3-dev.1) (2022-08-30)
 
 
