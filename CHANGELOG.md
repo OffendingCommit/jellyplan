@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/OffendingCommit/mealcal/compare/v1.0.3...v1.0.4) (2022-08-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v7.2.1 ([732283e](https://github.com/OffendingCommit/mealcal/commit/732283e17c095c3f1beb2c22a088cecda7e30dbf))
+
 ## [1.0.3](https://github.com/OffendingCommit/mealcal/compare/v1.0.2...v1.0.3) (2022-08-30)
 
 
