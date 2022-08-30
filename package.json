@@ -78,12 +78,17 @@
     ]
   },
   "lint-staged": {
-    "src/*": "prettier --write"
+    "**/*": "prettier --write --ignore-unknown"
   },
   "release": {
     "branches": [
-      {"name": "main"},
-      {"name": "dev", "prerelease": true}
+      {
+        "name": "main"
+      },
+      {
+        "name": "dev",
+        "prerelease": true
+      }
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",

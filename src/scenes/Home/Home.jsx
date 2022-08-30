@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { DateTime } from "luxon";
-import { Box, Button, Calendar, Grid, PageHeader, ResponsiveContext, Text } from "grommet";
-import { animate } from "framer-motion";
-import { FormSchedule } from "grommet-icons";
-import { DataStore } from "aws-amplify";
-import { Date } from "../../models";
-import MealDate from "../../components/MealDate/MealDate";
-import { getDateService, updateAllMeals } from "../../serviceCalls";
+import React, { useEffect, useState } from 'react';
+import { DateTime } from 'luxon';
+import {
+  Box,
+  Button,
+  Calendar,
+  Grid,
+  PageHeader,
+  ResponsiveContext,
+  Text,
+} from 'grommet';
+import { animate } from 'framer-motion';
+import { FormSchedule } from 'grommet-icons';
+import { DataStore } from 'aws-amplify';
+import { Date } from '../../models';
+import MealDate from '../../components/MealDate/MealDate';
+import { getDateService, updateAllMeals } from '../../serviceCalls';
 
 function Home() {
   const [selectedDate, setSelectedDate] = useState(
@@ -26,25 +34,19 @@ function Home() {
 
   useEffect(() => {
     async function getDate(date) {
-
       return getDateService(date)
-          .then(
-          (response) => {
-            console.debug('Meal Data Response', {
-              response: response[0],
-            });
-            setMeal({ id:response[0].id,
-              breakfast:response[0].breakfast,
-              lunch:response[0].lunch,
-              dinner:response[0].dinner
-            });
-          }
-
-
-
-      )
-        .catch(console.error)
-
+        .then((response) => {
+          console.debug('Meal Data Response', {
+            response: response[0],
+          });
+          setMeal({
+            id: response[0].id,
+            breakfast: response[0].breakfast,
+            lunch: response[0].lunch,
+            dinner: response[0].dinner,
+          });
+        })
+        .catch(console.error);
     }
     getDate(selectedDate, setMeal);
   }, [selectedDate, setMeal]);
