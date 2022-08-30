@@ -2,3 +2,5 @@
 build
 coverage
 .github
+src/models
+amplify
