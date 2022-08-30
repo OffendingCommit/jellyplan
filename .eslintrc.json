@@ -60,14 +60,12 @@
     "plugin:react/jsx-runtime",
     "airbnb",
     "airbnb/hooks",
-    "prettier",
     "plugin:testing-library/react",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
   ],
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "plugins": ["react", "prettier", "jest"],
+  "plugins": ["react", "jest", "prettier"],
   "rules": {
     "prettier/prettier": "warn",
     "no-unused-vars": "warn",

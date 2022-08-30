@@ -11,8 +11,6 @@ import {
 } from 'grommet';
 import { animate } from 'framer-motion';
 import { FormSchedule } from 'grommet-icons';
-import { DataStore } from 'aws-amplify';
-import { Date } from '../../models';
 import MealDate from '../../components/MealDate/MealDate';
 import { getDateService, updateAllMeals } from '../../serviceCalls';
 
