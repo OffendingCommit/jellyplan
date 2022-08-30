@@ -94,7 +94,10 @@ function Home() {
         justify="between"
         pad={{ horizontal: 'large', vertical: 'small' }}
       >
-        <PageHeader title="MealCal" subtitle="A Meal Calendar Generator" />
+        <PageHeader
+          title="JellyPlan: Meals"
+          subtitle="Plan your meals for the future!"
+        />
       </Box>
 
       <Box

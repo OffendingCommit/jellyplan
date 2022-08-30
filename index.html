@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://rsms.me/inter/inter.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Plan your meals in advance!" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>JellyPlan: Meals</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // This is required for AWS Amplify
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
+  </body>
+</html>
