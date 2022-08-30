@@ -1,3 +1,11 @@
+## [1.0.3-dev.1](https://github.com/OffendingCommit/mealcal/compare/v1.0.2...v1.0.3-dev.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* build issues around linting ([26d51a4](https://github.com/OffendingCommit/mealcal/commit/26d51a4e22e7ca978ae185671445f226c131d25d))
+* data persistance ([7699353](https://github.com/OffendingCommit/mealcal/commit/769935335469e36a181d2f4dde7f0e4d24565acd))
+
 ## [1.0.2](https://github.com/OffendingCommit/mealcal/compare/v1.0.1...v1.0.2) (2022-08-29)
 
 ### Bug Fixes
