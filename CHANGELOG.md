@@ -1,3 +1,10 @@
+## [1.0.3-dev.4](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.3...v1.0.3-dev.4) (2022-08-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency luxon to v3.0.3 ([7ae631c](https://github.com/OffendingCommit/mealcal/commit/7ae631c071d18cf82761db2154766e0e3d0f615b))
+
 ## [1.0.3-dev.3](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.2...v1.0.3-dev.3) (2022-08-30)
 
 
