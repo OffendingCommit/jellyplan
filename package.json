@@ -14,7 +14,7 @@
     "@testing-library/user-event": "13.5.0",
     "aws-amplify": "4.3.33",
     "framer-motion": "7.2.1",
-    "grommet": "2.25.1",
+    "grommet": "2.25.2",
     "grommet-icons": "4.7.0",
     "luxon": "3.0.3",
     "polished": "4.2.2",
