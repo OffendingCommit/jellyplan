@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/OffendingCommit/mealcal/compare/v1.0.5...v1.0.6) (2022-08-31)
+
+
+### Bug Fixes
+
+* **deps:** update emotion monorepo to v11.10.4 ([9026e63](https://github.com/OffendingCommit/mealcal/commit/9026e639b3c4ca0b129c4212dca3c32ebc3d80b6))
+
 ## [1.0.5](https://github.com/OffendingCommit/mealcal/compare/v1.0.4...v1.0.5) (2022-08-30)
 
 
