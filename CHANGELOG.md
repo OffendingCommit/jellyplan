@@ -1,3 +1,10 @@
+## [1.0.3-dev.6](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.5...v1.0.3-dev.6) (2022-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency grommet-icons to v4.8.0 ([8b48746](https://github.com/OffendingCommit/mealcal/commit/8b48746f8c11b5a61ad2d6db21fad07558f02e59))
+
 ## [1.0.3-dev.5](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.4...v1.0.3-dev.5) (2022-08-31)
 
 
