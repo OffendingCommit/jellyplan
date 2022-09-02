@@ -1,3 +1,10 @@
+## [1.0.3-dev.8](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.7...v1.0.3-dev.8) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-amplify/datastore to v3.12.9 ([c5a9940](https://github.com/OffendingCommit/mealcal/commit/c5a99407e14e9112fe0d1af245e293b6e53c91ba))
+
 ## [1.0.3-dev.7](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.6...v1.0.3-dev.7) (2022-09-02)
 
 
