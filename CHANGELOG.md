@@ -1,3 +1,10 @@
+## [1.0.3-dev.9](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.8...v1.0.3-dev.9) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency aws-amplify to v4.3.34 ([4f95d96](https://github.com/OffendingCommit/mealcal/commit/4f95d962a65505e57714cd9baa250da2dc493288))
+
 ## [1.0.3-dev.8](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.7...v1.0.3-dev.8) (2022-09-02)
 
 
