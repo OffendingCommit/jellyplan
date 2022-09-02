@@ -1,3 +1,10 @@
+## [1.0.3-dev.7](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.6...v1.0.3-dev.7) (2022-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency grommet to v2.25.3 ([55581b6](https://github.com/OffendingCommit/mealcal/commit/55581b6005754037c6d45c9c771e6075288eca05))
+
 ## [1.0.3-dev.6](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.5...v1.0.3-dev.6) (2022-09-01)
 
 
