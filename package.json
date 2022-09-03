@@ -7,7 +7,6 @@
     "@babel/preset-react": "7.18.6",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
-    "@fontsource/roboto": "4.5.8",
     "@mui/material": "5.10.3",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.3.0",
@@ -16,6 +15,7 @@
     "framer-motion": "7.2.1",
     "grommet": "2.25.3",
     "grommet-icons": "4.8.0",
+    "inter-ui": "^3.19.3",
     "luxon": "3.0.3",
     "polished": "4.2.2",
     "prop-types": "15.8.1",
@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-scripts": "5.0.1",
     "react-text-transition": "3.0.2",
+    "sass": "^1.54.8",
     "styled-components": "5.3.5",
     "web-vitals": "2.1.4"
   },
