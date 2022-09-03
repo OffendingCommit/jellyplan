@@ -10,6 +10,11 @@
       "StackName": "amplify-mealcal-staging-213259",
       "StackId": "arn:aws:cloudformation:us-east-1:547772120192:stack/amplify-mealcal-staging-213259/d2bb5e40-264f-11ed-9c59-12e89c17a93f",
       "AmplifyAppId": "d3n54nicb3nav0"
+    },
+    "categories": {
+      "auth": {
+        "mealcaleb54f3d6": {}
+      }
     }
   }
 }
