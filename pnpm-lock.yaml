@@ -23,7 +23,7 @@ specifiers:
   eslint-plugin-import: ^2.26.0
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
-  eslint-plugin-react: 7.31.4
+  eslint-plugin-react: 7.31.5
   framer-motion: 7.2.1
   grommet: 2.25.3
   grommet-icons: 4.8.0
@@ -74,13 +74,13 @@ devDependencies:
   '@vitejs/plugin-legacy': 2.0.1_terser@5.15.0+vite@3.0.9
   '@vitejs/plugin-react': 2.0.1_vite@3.0.9
   eslint: 8.23.0
-  eslint-config-airbnb: 19.0.4_x7sj655e4gpgoyckkqfvcymz3i
+  eslint-config-airbnb: 19.0.4_jmjhwk47vckpy6fb4rr3mvk7p4
   eslint-config-node: 4.1.0_eslint@8.23.0
   eslint-config-prettier: 8.5.0_eslint@8.23.0
   eslint-plugin-import: 2.26.0_eslint@8.23.0
   eslint-plugin-node: 11.1.0_eslint@8.23.0
   eslint-plugin-prettier: 4.2.1_tgumt6uwl2md3n6uqnggd6wvce
-  eslint-plugin-react: 7.31.4_eslint@8.23.0
+  eslint-plugin-react: 7.31.5_eslint@8.23.0
   husky: 8.0.1
   lint-staged: 13.0.3
   prettier: 2.7.1
@@ -7758,7 +7758,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-config-airbnb/19.0.4_x7sj655e4gpgoyckkqfvcymz3i:
+  /eslint-config-airbnb/19.0.4_jmjhwk47vckpy6fb4rr3mvk7p4:
     resolution: {integrity: sha512-T75QYQVQX57jiNgpF9r1KegMICE94VYwoFQyMGhrvc+lB8YF2E/M/PYDaQe1AJcWaEgqLE+ErXV1Og/+6Vyzew==}
     engines: {node: ^10.12.0 || ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7772,7 +7772,7 @@ packages:
       eslint-config-airbnb-base: 15.0.0_faomjyrlgqmwswvqymymzkxcqi
       eslint-plugin-import: 2.26.0_eslint@8.23.0
       eslint-plugin-jsx-a11y: 6.6.1_eslint@8.23.0
-      eslint-plugin-react: 7.31.4_eslint@8.23.0
+      eslint-plugin-react: 7.31.5_eslint@8.23.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.23.0
       object.assign: 4.1.4
       object.entries: 1.1.5
@@ -7968,8 +7968,8 @@ packages:
       eslint: 8.23.0
     dev: true
 
-  /eslint-plugin-react/7.31.4_eslint@8.23.0:
-    resolution: {integrity: sha512-2ry4HTT+c+hSgpnV2DXj3d5oAmH11KH8HHQwtcfRdq6/+R3nEimvMbwAqK79eb4ZW1/hp8yC5elBusZM6li/Gg==}
+  /eslint-plugin-react/7.31.5_eslint@8.23.0:
+    resolution: {integrity: sha512-y7472VAcqns17rsQUk6tQCnqBi+boYjGdYarX022719+wGd1T4U1fOYJ2T2Trd3Od2q5M92e42zJ2uZOGmWamA==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
