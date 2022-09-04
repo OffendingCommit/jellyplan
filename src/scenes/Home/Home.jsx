@@ -13,8 +13,9 @@ import { animate } from 'framer-motion';
 import { FormSchedule } from 'grommet-icons';
 import MealDate from '../../components/MealDate/MealDate';
 import { getDateService, updateAllMeals } from '../../serviceCalls';
+import { PropTypes } from 'prop-types';
 
-function Home() {
+function Home({ user, signOut }) {
   const [selectedDate, setSelectedDate] = useState(
     DateTime.now().startOf('day')
   );
@@ -95,6 +96,7 @@ function Home() {
         pad={{ horizontal: 'large', vertical: 'small' }}
       >
         <PageHeader title="JellyPlan" subtitle="A Meal Calendar Generator" />
+        {user.userName}
       </Box>
 
       <Box
@@ -166,5 +168,10 @@ function Home() {
     </Grid>
   );
 }
+
+Home.propTypes = {
+  user: PropTypes.object.isRequired,
+  signOut: PropTypes.func.isRequired,
+};
 
 export default Home;

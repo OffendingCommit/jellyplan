@@ -1,6 +1,6 @@
 import { Heading, Text, TextInput } from 'grommet';
 import { motion } from 'framer-motion';
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { PropTypes } from 'prop-types';
 
 function Meal({
@@ -11,7 +11,7 @@ function Meal({
   editMode,
   handleChange,
 }) {
-  const [value, setValue] = React.useState(mealDetails);
+  const [value, setValue] = useState(mealDetails);
   useEffect(() => {
     setValue(mealDetails);
   }, [mealDetails]);
