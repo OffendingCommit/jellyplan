@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/OffendingCommit/jellyplan/compare/v1.0.11...v1.0.12) (2022-09-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to v13.4.0 ([aa4eaf5](https://github.com/OffendingCommit/jellyplan/commit/aa4eaf5008cbec396a882e7f0d40f5e095b8ae03))
+
 ## [1.0.11](https://github.com/OffendingCommit/mealcal/compare/v1.0.10...v1.0.11) (2022-09-02)
 
 
