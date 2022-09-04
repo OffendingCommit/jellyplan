@@ -52,9 +52,12 @@ export default ({ mode }) => {
       },
     },
     resolve: {
-      alias: {
-        './runtimeConfig': './runtimeConfig.browser', // <-- Fix from above
-      },
+      alias: [
+        {
+          find: './runtimeConfig',
+          replacement: './runtimeConfig.browser',
+        },
+      ],
     },
   });
 };
