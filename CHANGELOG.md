@@ -1,3 +1,19 @@
+# [1.1.0-dev.1](https://github.com/OffendingCommit/jellyplan/compare/v1.0.3-dev.9...v1.1.0-dev.1) (2022-09-04)
+
+
+### Bug Fixes
+
+* null value for input ([eb0447e](https://github.com/OffendingCommit/jellyplan/commit/eb0447ee1f8c849ca24119fde51f2f291e1a2a12))
+
+
+### Features
+
+* add changes to match aws-amplify react-ui docs ([2a1fc7e](https://github.com/OffendingCommit/jellyplan/commit/2a1fc7eb7e57f7afcd0611535f63b7f9e78f5d6c))
+* add inter font ([b3730b0](https://github.com/OffendingCommit/jellyplan/commit/b3730b0fdb709e5182304adc7d374952d5438535))
+* add packages to support UI with figma ([439184a](https://github.com/OffendingCommit/jellyplan/commit/439184a95ee8a1e6685c2b86d5c29dfa103e5d4a))
+* setup auth backend ([d3310b9](https://github.com/OffendingCommit/jellyplan/commit/d3310b9d62a0ea0bbec1fe36bc5f0517664eca87))
+* update backend with auth ([4024159](https://github.com/OffendingCommit/jellyplan/commit/40241594b62b797888d91057691e39d2fdd47345))
+
 ## [1.0.3-dev.9](https://github.com/OffendingCommit/mealcal/compare/v1.0.3-dev.8...v1.0.3-dev.9) (2022-09-02)
 
 
