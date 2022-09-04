@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "mealcal",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-mealcal-staging-213259-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/80c20049da2e49f1b0df43de803ee2d90f1626c1"
+}
