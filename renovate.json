@@ -12,22 +12,20 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "description": "Automatically merge minor and patch-level updates",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true,
-      "automergeType": "branch"
-    },
-    {
-      "matchPackageNames": ["eslint"],
-      "enabled": false
-    },
-    {
       "matchPackagePatterns": ["eslint"],
-      "labels": ["linting"]
+      "labels": ["linting"],
+      "enabled": false
     },
     {
       "matchDepTypes": ["optionalDependencies"],
       "addLabels": ["optional"]
+    },
+    {
+      "description": "Automatically merge minor and patch-level updates",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "excludePackagePatterns": ["eslint"],
+      "automerge": true,
+      "automergeType": "branch"
     }
   ]
 }
