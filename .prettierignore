@@ -1,6 +1,8 @@
 # Ignore artifacts:
 build
+dist
 coverage
 .github
 src/models
+publish
 amplify

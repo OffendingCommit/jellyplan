@@ -24,7 +24,7 @@
       "version": "detect"
     }
   },
-  "plugins": ["prettier"],
+  "plugins": ["import", "prettier"],
   "env": {
     "browser": true,
     "node": true

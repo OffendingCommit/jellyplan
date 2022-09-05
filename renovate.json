@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:base", ":rebaseStalePrs"],
   "baseBranches": ["main", "dev"],
+  "assignees": ["jonathan-irvin"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -11,17 +12,18 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
+      "description": "Automatically merge minor and patch-level updates",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true,
       "automergeType": "branch"
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["lint", "prettier"],
-      "automerge": true,
-      "automergeType": "branch",
-      "labels": ["linting/style"]
+      "matchPackageNames": ["eslint"],
+      "enabled": false
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "labels": ["linting"]
     },
     {
       "matchDepTypes": ["optionalDependencies"],

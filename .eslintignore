@@ -1,5 +1,7 @@
 models
 ui-components
-
-
+build
+dist
+amplify
+publish
 src\models
