@@ -1,3 +1,12 @@
+# [1.1.0-dev.2](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2022-09-05)
+
+
+### Bug Fixes
+
+* add proper authentication wiring ([698a43e](https://github.com/OffendingCommit/jellyplan/commit/698a43ef258fa93bff1a0e4dde81d08f91338097))
+* build polyfill issues ([7237865](https://github.com/OffendingCommit/jellyplan/commit/72378655c296b10d6238ee6bd6f1c3c9d427283f))
+* fix build by freezing deps and updating lockfile ([b7011b8](https://github.com/OffendingCommit/jellyplan/commit/b7011b86a25de9fafa783b0334e19c0abb5baa4d))
+
 # [1.1.0-dev.1](https://github.com/OffendingCommit/jellyplan/compare/v1.0.3-dev.9...v1.1.0-dev.1) (2022-09-04)
 
 ### Bug Fixes
