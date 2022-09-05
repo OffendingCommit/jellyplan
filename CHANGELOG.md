@@ -1,3 +1,10 @@
+# [1.1.0-dev.4](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2022-09-05)
+
+
+### Bug Fixes
+
+* update login to modal ([dac4d2f](https://github.com/OffendingCommit/jellyplan/commit/dac4d2f1b1e6a0b619b82237a2f93479db7b406f))
+
 # [1.1.0-dev.3](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2022-09-05)
 
 
