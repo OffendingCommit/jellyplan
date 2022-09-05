@@ -9,12 +9,7 @@ Amplify.configure(awsExports);
 export default function App() {
   return (
     <ThemeProvider>
-      <Authenticator
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
+      <Authenticator variation={'modal'}>
         {({ signOut, user }) => (
           <main>
             <h1>Hello {user.username}</h1>
