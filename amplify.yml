@@ -1,7 +1,7 @@
 version: 1
 frontend:
   artifacts:
-    baseDirectory: build
+    baseDirectory: publish
     files:
       - '**/*'
 backend:
