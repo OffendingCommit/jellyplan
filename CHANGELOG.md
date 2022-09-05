@@ -1,3 +1,10 @@
+# [1.1.0-dev.3](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2022-09-05)
+
+
+### Bug Fixes
+
+* update amplify.yml to read from publish dir ([d48c9b4](https://github.com/OffendingCommit/jellyplan/commit/d48c9b4cc710e5fbbdc148e77267509a8a36909e))
+
 # [1.1.0-dev.2](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2022-09-05)
 
 
