@@ -1,7 +1,0 @@
-type Date @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  date: AWSDate
-  breakfast: String
-  lunch: String
-  dinner: String
-}

@@ -1,6 +1,6 @@
 {
   "api": {
-    "mealcal": {
+    "jellyplan": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -10,7 +10,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "description": "This is an api key"
+              "description": "api key description"
             }
           },
           "additionalAuthenticationProviders": [
@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "mealcaleb54f3d6": {
+    "jellyplanbb2fd504": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

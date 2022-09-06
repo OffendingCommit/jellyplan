@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "jellyplan",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "S3DeploymentBucket": "amplify-mealcal-staging-213259-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/8be3938354a50cb4bd9a63d3856449eceee19d9b"
+}

@@ -1,15 +1,17 @@
 export type AmplifyDependentResourcesAttributes = {
     "api": {
-        "mealcal": {
+        "jellyplan": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
     },
     "auth": {
-        "mealcaleb54f3d6": {
+        "jellyplanbb2fd504": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
+            "HostedUIDomain": "string",
+            "OAuthMetadata": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",

@@ -152,12 +152,12 @@
         }
       }
     },
-    "apimealcal": {
+    "apijellyplan": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
         "TemplateURL": "https://s3.amazonaws.com/amplify-mealcal-staging-213259-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "mealcal",
+          "AppSyncApiName": "jellyplan",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "authRoleName": {
@@ -167,20 +167,20 @@
             "Ref": "UnauthRoleName"
           },
           "S3DeploymentBucket": "amplify-mealcal-staging-213259-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/80c20049da2e49f1b0df43de803ee2d90f1626c1",
+          "S3DeploymentRootKey": "amplify-appsync-files/8be3938354a50cb4bd9a63d3856449eceee19d9b",
           "env": "staging"
         }
       }
     },
-    "authmealcaleb54f3d6": {
+    "authjellyplanbb2fd504": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-mealcal-staging-213259-deployment/amplify-cfn-templates/auth/mealcaleb54f3d6-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-mealcal-staging-213259-deployment/amplify-cfn-templates/auth/jellyplanbb2fd504-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "mealcaleb54f3d6_identitypool_eb54f3d6",
+          "identityPoolName": "jellyplanbb2fd504_identitypool_bb2fd504",
           "allowUnauthenticatedIdentities": false,
-          "resourceNameTruncated": "mealcaeb54f3d6",
-          "userPoolName": "mealcaleb54f3d6_userpool_eb54f3d6",
+          "resourceNameTruncated": "jellypbb2fd504",
+          "userPoolName": "jellyplanbb2fd504_userpool_bb2fd504",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -197,12 +197,17 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "mealcaeb54f3d6_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "jellypbb2fd504_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "eb54f3d6",
-          "resourceName": "mealcaleb54f3d6",
+          "sharedId": "bb2fd504",
+          "resourceName": "jellyplanbb2fd504",
           "authSelections": "identityPoolAndUserPool",
-          "useDefault": "default",
+          "useDefault": "defaultSocial",
+          "hostedUI": true,
+          "hostedUIDomainName": "jellyplanbb2fd504-bb2fd504",
+          "authProvidersUserPool": "",
+          "hostedUIProviderMeta": "[]",
+          "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:5173/\",\"https://dev.jellyplan.app/\",\"https://www.jellyplan.app/\"],\"LogoutURLs\":[\"http://localhost:5173/\",\"https://dev.jellyplan.app/\",\"https://www.jellyplan.app/\"]}",
           "userPoolGroupList": "",
           "serviceName": "Cognito",
           "usernameCaseSensitive": false,
@@ -221,6 +226,7 @@
           },
           "breakCircularDependency": true,
           "dependsOn": "",
+          "hostedUIProviderCreds": "[]",
           "env": "staging"
         }
       }
@@ -229,7 +235,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authmealcaleb54f3d6"
+        "authjellyplanbb2fd504"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -324,7 +330,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authmealcaleb54f3d6",
+            "authjellyplanbb2fd504",
             "Outputs.IdentityPoolId"
           ]
         },
