@@ -1,18 +1,22 @@
-# [1.1.0-dev.3](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2022-09-05)
-
+# [1.1.0-dev.4](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2022-09-05)
 
 ### Bug Fixes
 
-* update amplify.yml to read from publish dir ([d48c9b4](https://github.com/OffendingCommit/jellyplan/commit/d48c9b4cc710e5fbbdc148e77267509a8a36909e))
+- update login to modal ([dac4d2f](https://github.com/OffendingCommit/jellyplan/commit/dac4d2f1b1e6a0b619b82237a2f93479db7b406f))
+
+# [1.1.0-dev.3](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.2...v1.1.0-dev.3) (2022-09-05)
+
+### Bug Fixes
+
+- update amplify.yml to read from publish dir ([d48c9b4](https://github.com/OffendingCommit/jellyplan/commit/d48c9b4cc710e5fbbdc148e77267509a8a36909e))
 
 # [1.1.0-dev.2](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2022-09-05)
 
-
 ### Bug Fixes
 
-* add proper authentication wiring ([698a43e](https://github.com/OffendingCommit/jellyplan/commit/698a43ef258fa93bff1a0e4dde81d08f91338097))
-* build polyfill issues ([7237865](https://github.com/OffendingCommit/jellyplan/commit/72378655c296b10d6238ee6bd6f1c3c9d427283f))
-* fix build by freezing deps and updating lockfile ([b7011b8](https://github.com/OffendingCommit/jellyplan/commit/b7011b86a25de9fafa783b0334e19c0abb5baa4d))
+- add proper authentication wiring ([698a43e](https://github.com/OffendingCommit/jellyplan/commit/698a43ef258fa93bff1a0e4dde81d08f91338097))
+- build polyfill issues ([7237865](https://github.com/OffendingCommit/jellyplan/commit/72378655c296b10d6238ee6bd6f1c3c9d427283f))
+- fix build by freezing deps and updating lockfile ([b7011b8](https://github.com/OffendingCommit/jellyplan/commit/b7011b86a25de9fafa783b0334e19c0abb5baa4d))
 
 # [1.1.0-dev.1](https://github.com/OffendingCommit/jellyplan/compare/v1.0.3-dev.9...v1.1.0-dev.1) (2022-09-04)
 
