@@ -13,7 +13,7 @@ specifiers:
   '@semantic-release/github': 8.0.6
   '@semantic-release/release-notes-generator': 10.0.3
   '@vitejs/plugin-legacy': 2.1.0
-  '@vitejs/plugin-react': 2.0.1
+  '@vitejs/plugin-react': 2.1.0
   assert: 2.0.0
   aws-amplify: 4.3.34
   buffer: 6.0.3
@@ -70,7 +70,7 @@ devDependencies:
   '@semantic-release/github': 8.0.6_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
   '@vitejs/plugin-legacy': 2.1.0_terser@5.15.0+vite@3.0.9
-  '@vitejs/plugin-react': 2.0.1_vite@3.0.9
+  '@vitejs/plugin-react': 2.1.0_vite@3.0.9
   assert: 2.0.0
   buffer: 6.0.3
   crypto-browserify: 3.12.0
@@ -5885,8 +5885,8 @@ packages:
       vite: 3.0.9_terser@5.15.0
     dev: true
 
-  /@vitejs/plugin-react/2.0.1_vite@3.0.9:
-    resolution: {integrity: sha512-uINzNHmjrbunlFtyVkST6lY1ewSfz/XwLufG0PIqvLGnpk2nOIOa/1CACTDNcKi1/RwaCzJLmsXwm1NsUVV/NA==}
+  /@vitejs/plugin-react/2.1.0_vite@3.0.9:
+    resolution: {integrity: sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
