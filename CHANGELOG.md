@@ -1,3 +1,10 @@
+# [1.1.0-dev.5](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2022-09-06)
+
+
+### Features
+
+* update api and auth ([a43d33b](https://github.com/OffendingCommit/jellyplan/commit/a43d33b7b31876c9c1030661b4736dc80ad0df71))
+
 # [1.1.0-dev.4](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2022-09-05)
 
 ### Bug Fixes
