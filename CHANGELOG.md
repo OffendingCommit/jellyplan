@@ -1,3 +1,10 @@
+# [1.1.0-dev.6](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2022-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-amplify/ui-react to v3.5.1 ([751ce5b](https://github.com/OffendingCommit/jellyplan/commit/751ce5b037a1bffcb8d4e5e81407daa274f2cead))
+
 # [1.1.0-dev.5](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2022-09-06)
 
 
