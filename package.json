@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@aws-amplify/datastore": "3.12.9",
-    "@aws-amplify/ui-react": "3.5.0",
+    "@aws-amplify/ui-react": "3.5.1",
     "aws-amplify": "4.3.34",
     "framer-motion": "7.2.1",
     "luxon": "3.0.3",
