@@ -35,7 +35,7 @@ specifiers:
   prettier: 2.7.1
   process: 0.11.10
   react: 18.2.0
-  react-calendar: 3.7.0
+  react-calendar: 3.8.0
   react-dom: 18.2.0
   react-text-transition: 3.0.2
   rollup-plugin-node-builtins: 2.1.2
@@ -55,7 +55,7 @@ dependencies:
   framer-motion: 7.3.2_biqbaboplfbrettd7655fr4n2y
   luxon: 3.0.3
   react: 18.2.0
-  react-calendar: 3.7.0_biqbaboplfbrettd7655fr4n2y
+  react-calendar: 3.8.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   react-text-transition: 3.0.2_net6le36lb6zhspe3ek4yd7vrq
 
@@ -11514,8 +11514,8 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-calendar/3.7.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-zkK95zWLWLC6w3O7p3SHx/FJXEyyD2UMd4jr3CrKD+G73N+G5vEwrXxYQCNivIPoFNBjqoyYYGlkHA+TBDPLCw==}
+  /react-calendar/3.8.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-N0SMjrDJhQUL+HruZ2NFdjm5za0pFMuVv3IoRhFiCrRiChPOBeohkXR+NlujmvfFgAswt4K81bBFaH4TMioB+A==}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
