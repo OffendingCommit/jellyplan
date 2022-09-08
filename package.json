@@ -13,7 +13,7 @@
     "amplify-push": "node amplify\\scripts\\amplify-push.js"
   },
   "dependencies": {
-    "@aws-amplify/datastore": "3.12.9",
+    "@aws-amplify/datastore": "3.12.10",
     "@aws-amplify/ui-react": "3.5.1",
     "aws-amplify": "4.3.34",
     "framer-motion": "7.3.2",
