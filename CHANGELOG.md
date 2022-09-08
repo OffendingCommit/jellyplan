@@ -1,3 +1,10 @@
+# [1.1.0-dev.8](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-calendar to v3.8.0 ([8db7784](https://github.com/OffendingCommit/jellyplan/commit/8db77843d99705f5e20810620b8120eac25572d4))
+
 # [1.1.0-dev.7](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2022-09-08)
 
 
