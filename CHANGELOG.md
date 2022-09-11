@@ -1,3 +1,45 @@
+# [1.1.0-dev.10](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.9...v1.1.0-dev.10) (2022-09-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency aws-amplify to v4.3.35 ([5646924](https://github.com/OffendingCommit/jellyplan/commit/5646924bc1bef17250bbb2ca5aa7ea6d102d36d3))
+
+# [1.1.0-dev.9](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.8...v1.1.0-dev.9) (2022-09-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-amplify/datastore to v3.12.10 ([61b4875](https://github.com/OffendingCommit/jellyplan/commit/61b4875d0252927dff8d43741080b3f97194ab26))
+
+# [1.1.0-dev.8](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.7...v1.1.0-dev.8) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-calendar to v3.8.0 ([8db7784](https://github.com/OffendingCommit/jellyplan/commit/8db77843d99705f5e20810620b8120eac25572d4))
+
+# [1.1.0-dev.7](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.6...v1.1.0-dev.7) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v7.3.2 ([adb6778](https://github.com/OffendingCommit/jellyplan/commit/adb6778ef7d76c19ba7f87b378b17c8abe7f0422))
+
+# [1.1.0-dev.6](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.5...v1.1.0-dev.6) (2022-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-amplify/ui-react to v3.5.1 ([751ce5b](https://github.com/OffendingCommit/jellyplan/commit/751ce5b037a1bffcb8d4e5e81407daa274f2cead))
+
+# [1.1.0-dev.5](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.4...v1.1.0-dev.5) (2022-09-06)
+
+
+### Features
+
+* update api and auth ([a43d33b](https://github.com/OffendingCommit/jellyplan/commit/a43d33b7b31876c9c1030661b4736dc80ad0df71))
+
 # [1.1.0-dev.4](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.3...v1.1.0-dev.4) (2022-09-05)
 
 ### Bug Fixes
