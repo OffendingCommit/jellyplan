@@ -1,3 +1,9 @@
+type DateMeals @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Date: Date! @hasOne
+  mealID: ID! @index(name: "byMeal")
+}
+
 type Recipe @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
@@ -14,35 +20,32 @@ type Preparation @model @auth(rules: [{allow: public}]) {
 type MealComponent @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  tags: [String!]
   meals: [Meal] @manyToMany(relationName: "MealMealComponent")
 }
 
-enum Reaction {
-  NEUTRAL
-  LIKE
-  DISLIKE
-  FAVORITE
+type MealTags @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  meals: [Meal] @manyToMany(relationName: "Tags")
 }
 
 type Meal @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!
-  tags: [String]
   isNew: Boolean
   hasLeftovers: Boolean
-  reaction: Reaction
   isTakeOut: Boolean
   isOpenFreeform: Boolean
   isSpecialOccasion: Boolean
   MealComponents: [MealComponent] @manyToMany(relationName: "MealMealComponent")
-  dates: [Date] @manyToMany(relationName: "DateMeal")
   Recipe: Recipe @hasOne
   Preparation: Preparation @hasOne
+  Tags: [MealTags] @manyToMany(relationName: "Tags")
+  DateMeals: [DateMeals] @hasMany(indexName: "byMeal", fields: ["id"])
 }
 
 type Date @model @auth(rules: [{allow: public}]) {
   id: ID!
-  date: AWSDate
-  Meals: [Meal] @manyToMany(relationName: "DateMeal")
+  date: AWSDate!
 }
+ 

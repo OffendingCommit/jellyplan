@@ -1,4 +1,16 @@
 
+type DateMeals @aws_iam @aws_api_key {
+  id: ID!
+  Date: Date!
+  mealID: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
+  dateMealsDateId: ID!
+}
+
 type Recipe @aws_iam @aws_api_key {
   id: ID!
   name: String!
@@ -25,7 +37,6 @@ type Preparation @aws_iam @aws_api_key {
 type MealComponent @aws_iam @aws_api_key {
   id: ID!
   name: String!
-  tags: [String!]
   meals(filter: ModelMealMealComponentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelMealMealComponentConnection
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
@@ -34,27 +45,30 @@ type MealComponent @aws_iam @aws_api_key {
   _lastChangedAt: AWSTimestamp!
 }
 
-enum Reaction {
-  NEUTRAL
-  LIKE
-  DISLIKE
-  FAVORITE
+type MealTags @aws_iam @aws_api_key {
+  id: ID!
+  name: String!
+  meals(filter: ModelTagsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelTagsConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  _version: Int!
+  _deleted: Boolean
+  _lastChangedAt: AWSTimestamp!
 }
 
 type Meal @aws_iam @aws_api_key {
   id: ID!
   title: String!
-  tags: [String]
   isNew: Boolean
   hasLeftovers: Boolean
-  reaction: Reaction
   isTakeOut: Boolean
   isOpenFreeform: Boolean
   isSpecialOccasion: Boolean
   MealComponents(filter: ModelMealMealComponentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelMealMealComponentConnection
-  dates(filter: ModelDateMealFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDateMealConnection
   Recipe: Recipe
   Preparation: Preparation
+  Tags(filter: ModelTagsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelTagsConnection
+  DateMeals(filter: ModelDateMealsFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDateMealsConnection
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   _version: Int!
@@ -66,8 +80,7 @@ type Meal @aws_iam @aws_api_key {
 
 type Date @aws_iam @aws_api_key {
   id: ID!
-  date: AWSDate
-  Meals(filter: ModelDateMealFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelDateMealConnection
+  date: AWSDate!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   _version: Int!
@@ -88,12 +101,12 @@ type MealMealComponent @aws_iam @aws_api_key {
   _lastChangedAt: AWSTimestamp!
 }
 
-type DateMeal @aws_iam @aws_api_key {
+type Tags @aws_iam @aws_api_key {
   id: ID!
+  mealTagsID: ID!
   mealID: ID!
-  dateID: ID!
+  mealTags: MealTags!
   meal: Meal!
-  date: Date!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   _version: Int!
@@ -251,6 +264,145 @@ enum ModelSortDirection {
   DESC
 }
 
+type ModelDateMealsConnection @aws_api_key @aws_iam {
+  items: [DateMeals]!
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelDateMealsFilterInput {
+  id: ModelIDInput
+  mealID: ModelIDInput
+  and: [ModelDateMealsFilterInput]
+  or: [ModelDateMealsFilterInput]
+  not: ModelDateMealsFilterInput
+  dateMealsDateId: ModelIDInput
+}
+
+type Query {
+  getDateMeals(id: ID!): DateMeals @aws_api_key @aws_iam
+  listDateMeals(filter: ModelDateMealsFilterInput, limit: Int, nextToken: String): ModelDateMealsConnection @aws_api_key @aws_iam
+  syncDateMeals(filter: ModelDateMealsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelDateMealsConnection @aws_api_key @aws_iam
+  getRecipe(id: ID!): Recipe @aws_api_key @aws_iam
+  listRecipes(filter: ModelRecipeFilterInput, limit: Int, nextToken: String): ModelRecipeConnection @aws_api_key @aws_iam
+  syncRecipes(filter: ModelRecipeFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelRecipeConnection @aws_api_key @aws_iam
+  getPreparation(id: ID!): Preparation @aws_api_key @aws_iam
+  listPreparations(filter: ModelPreparationFilterInput, limit: Int, nextToken: String): ModelPreparationConnection @aws_api_key @aws_iam
+  syncPreparations(filter: ModelPreparationFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelPreparationConnection @aws_api_key @aws_iam
+  getMealComponent(id: ID!): MealComponent @aws_api_key @aws_iam
+  listMealComponents(filter: ModelMealComponentFilterInput, limit: Int, nextToken: String): ModelMealComponentConnection @aws_api_key @aws_iam
+  syncMealComponents(filter: ModelMealComponentFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealComponentConnection @aws_api_key @aws_iam
+  getMealTags(id: ID!): MealTags @aws_api_key @aws_iam
+  listMealTags(filter: ModelMealTagsFilterInput, limit: Int, nextToken: String): ModelMealTagsConnection @aws_api_key @aws_iam
+  syncMealTags(filter: ModelMealTagsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealTagsConnection @aws_api_key @aws_iam
+  getMeal(id: ID!): Meal @aws_api_key @aws_iam
+  listMeals(filter: ModelMealFilterInput, limit: Int, nextToken: String): ModelMealConnection @aws_api_key @aws_iam
+  syncMeals(filter: ModelMealFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealConnection @aws_api_key @aws_iam
+  getDate(id: ID!): Date @aws_api_key @aws_iam
+  listDates(filter: ModelDateFilterInput, limit: Int, nextToken: String): ModelDateConnection @aws_api_key @aws_iam
+  syncDates(filter: ModelDateFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelDateConnection @aws_api_key @aws_iam
+  getMealMealComponent(id: ID!): MealMealComponent @aws_api_key @aws_iam
+  listMealMealComponents(filter: ModelMealMealComponentFilterInput, limit: Int, nextToken: String): ModelMealMealComponentConnection @aws_api_key @aws_iam
+  syncMealMealComponents(filter: ModelMealMealComponentFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealMealComponentConnection @aws_api_key @aws_iam
+  getTags(id: ID!): Tags @aws_api_key @aws_iam
+  listTags(filter: ModelTagsFilterInput, limit: Int, nextToken: String): ModelTagsConnection @aws_api_key @aws_iam
+  syncTags(filter: ModelTagsFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelTagsConnection @aws_api_key @aws_iam
+}
+
+input ModelDateMealsConditionInput {
+  mealID: ModelIDInput
+  and: [ModelDateMealsConditionInput]
+  or: [ModelDateMealsConditionInput]
+  not: ModelDateMealsConditionInput
+  dateMealsDateId: ModelIDInput
+}
+
+input CreateDateMealsInput {
+  id: ID
+  mealID: ID!
+  _version: Int
+  dateMealsDateId: ID!
+}
+
+input UpdateDateMealsInput {
+  id: ID!
+  mealID: ID
+  _version: Int
+  dateMealsDateId: ID!
+}
+
+input DeleteDateMealsInput {
+  id: ID!
+  _version: Int
+}
+
+type Mutation {
+  createDateMeals(input: CreateDateMealsInput!, condition: ModelDateMealsConditionInput): DateMeals @aws_api_key @aws_iam
+  updateDateMeals(input: UpdateDateMealsInput!, condition: ModelDateMealsConditionInput): DateMeals @aws_api_key @aws_iam
+  deleteDateMeals(input: DeleteDateMealsInput!, condition: ModelDateMealsConditionInput): DateMeals @aws_api_key @aws_iam
+  createRecipe(input: CreateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
+  updateRecipe(input: UpdateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
+  deleteRecipe(input: DeleteRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
+  createPreparation(input: CreatePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
+  updatePreparation(input: UpdatePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
+  deletePreparation(input: DeletePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
+  createMealComponent(input: CreateMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
+  updateMealComponent(input: UpdateMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
+  deleteMealComponent(input: DeleteMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
+  createMealTags(input: CreateMealTagsInput!, condition: ModelMealTagsConditionInput): MealTags @aws_api_key @aws_iam
+  updateMealTags(input: UpdateMealTagsInput!, condition: ModelMealTagsConditionInput): MealTags @aws_api_key @aws_iam
+  deleteMealTags(input: DeleteMealTagsInput!, condition: ModelMealTagsConditionInput): MealTags @aws_api_key @aws_iam
+  createMeal(input: CreateMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
+  updateMeal(input: UpdateMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
+  deleteMeal(input: DeleteMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
+  createDate(input: CreateDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
+  updateDate(input: UpdateDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
+  deleteDate(input: DeleteDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
+  createMealMealComponent(input: CreateMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
+  updateMealMealComponent(input: UpdateMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
+  deleteMealMealComponent(input: DeleteMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
+  createTags(input: CreateTagsInput!, condition: ModelTagsConditionInput): Tags @aws_api_key @aws_iam
+  updateTags(input: UpdateTagsInput!, condition: ModelTagsConditionInput): Tags @aws_api_key @aws_iam
+  deleteTags(input: DeleteTagsInput!, condition: ModelTagsConditionInput): Tags @aws_api_key @aws_iam
+}
+
+input ModelSubscriptionDateMealsFilterInput {
+  id: ModelSubscriptionIDInput
+  mealID: ModelSubscriptionIDInput
+  and: [ModelSubscriptionDateMealsFilterInput]
+  or: [ModelSubscriptionDateMealsFilterInput]
+}
+
+type Subscription {
+  onCreateDateMeals: DateMeals @aws_subscribe(mutations: ["createDateMeals"]) @aws_api_key @aws_iam
+  onUpdateDateMeals: DateMeals @aws_subscribe(mutations: ["updateDateMeals"]) @aws_api_key @aws_iam
+  onDeleteDateMeals: DateMeals @aws_subscribe(mutations: ["deleteDateMeals"]) @aws_api_key @aws_iam
+  onCreateRecipe: Recipe @aws_subscribe(mutations: ["createRecipe"]) @aws_api_key @aws_iam
+  onUpdateRecipe: Recipe @aws_subscribe(mutations: ["updateRecipe"]) @aws_api_key @aws_iam
+  onDeleteRecipe: Recipe @aws_subscribe(mutations: ["deleteRecipe"]) @aws_api_key @aws_iam
+  onCreatePreparation: Preparation @aws_subscribe(mutations: ["createPreparation"]) @aws_api_key @aws_iam
+  onUpdatePreparation: Preparation @aws_subscribe(mutations: ["updatePreparation"]) @aws_api_key @aws_iam
+  onDeletePreparation: Preparation @aws_subscribe(mutations: ["deletePreparation"]) @aws_api_key @aws_iam
+  onCreateMealComponent: MealComponent @aws_subscribe(mutations: ["createMealComponent"]) @aws_api_key @aws_iam
+  onUpdateMealComponent: MealComponent @aws_subscribe(mutations: ["updateMealComponent"]) @aws_api_key @aws_iam
+  onDeleteMealComponent: MealComponent @aws_subscribe(mutations: ["deleteMealComponent"]) @aws_api_key @aws_iam
+  onCreateMealTags: MealTags @aws_subscribe(mutations: ["createMealTags"]) @aws_api_key @aws_iam
+  onUpdateMealTags: MealTags @aws_subscribe(mutations: ["updateMealTags"]) @aws_api_key @aws_iam
+  onDeleteMealTags: MealTags @aws_subscribe(mutations: ["deleteMealTags"]) @aws_api_key @aws_iam
+  onCreateMeal: Meal @aws_subscribe(mutations: ["createMeal"]) @aws_api_key @aws_iam
+  onUpdateMeal: Meal @aws_subscribe(mutations: ["updateMeal"]) @aws_api_key @aws_iam
+  onDeleteMeal: Meal @aws_subscribe(mutations: ["deleteMeal"]) @aws_api_key @aws_iam
+  onCreateDate: Date @aws_subscribe(mutations: ["createDate"]) @aws_api_key @aws_iam
+  onUpdateDate: Date @aws_subscribe(mutations: ["updateDate"]) @aws_api_key @aws_iam
+  onDeleteDate: Date @aws_subscribe(mutations: ["deleteDate"]) @aws_api_key @aws_iam
+  onCreateMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["createMealMealComponent"]) @aws_api_key @aws_iam
+  onUpdateMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["updateMealMealComponent"]) @aws_api_key @aws_iam
+  onDeleteMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["deleteMealMealComponent"]) @aws_api_key @aws_iam
+  onCreateTags: Tags @aws_subscribe(mutations: ["createTags"]) @aws_api_key @aws_iam
+  onUpdateTags: Tags @aws_subscribe(mutations: ["updateTags"]) @aws_api_key @aws_iam
+  onDeleteTags: Tags @aws_subscribe(mutations: ["deleteTags"]) @aws_api_key @aws_iam
+}
+
 type ModelRecipeConnection @aws_api_key @aws_iam {
   items: [Recipe]!
   nextToken: String
@@ -265,30 +417,6 @@ input ModelRecipeFilterInput {
   and: [ModelRecipeFilterInput]
   or: [ModelRecipeFilterInput]
   not: ModelRecipeFilterInput
-}
-
-type Query {
-  getRecipe(id: ID!): Recipe @aws_api_key @aws_iam
-  listRecipes(filter: ModelRecipeFilterInput, limit: Int, nextToken: String): ModelRecipeConnection @aws_api_key @aws_iam
-  syncRecipes(filter: ModelRecipeFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelRecipeConnection @aws_api_key @aws_iam
-  getPreparation(id: ID!): Preparation @aws_api_key @aws_iam
-  listPreparations(filter: ModelPreparationFilterInput, limit: Int, nextToken: String): ModelPreparationConnection @aws_api_key @aws_iam
-  syncPreparations(filter: ModelPreparationFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelPreparationConnection @aws_api_key @aws_iam
-  getMealComponent(id: ID!): MealComponent @aws_api_key @aws_iam
-  listMealComponents(filter: ModelMealComponentFilterInput, limit: Int, nextToken: String): ModelMealComponentConnection @aws_api_key @aws_iam
-  syncMealComponents(filter: ModelMealComponentFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealComponentConnection @aws_api_key @aws_iam
-  getMeal(id: ID!): Meal @aws_api_key @aws_iam
-  listMeals(filter: ModelMealFilterInput, limit: Int, nextToken: String): ModelMealConnection @aws_api_key @aws_iam
-  syncMeals(filter: ModelMealFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealConnection @aws_api_key @aws_iam
-  getDate(id: ID!): Date @aws_api_key @aws_iam
-  listDates(filter: ModelDateFilterInput, limit: Int, nextToken: String): ModelDateConnection @aws_api_key @aws_iam
-  syncDates(filter: ModelDateFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelDateConnection @aws_api_key @aws_iam
-  getMealMealComponent(id: ID!): MealMealComponent @aws_api_key @aws_iam
-  listMealMealComponents(filter: ModelMealMealComponentFilterInput, limit: Int, nextToken: String): ModelMealMealComponentConnection @aws_api_key @aws_iam
-  syncMealMealComponents(filter: ModelMealMealComponentFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelMealMealComponentConnection @aws_api_key @aws_iam
-  getDateMeal(id: ID!): DateMeal @aws_api_key @aws_iam
-  listDateMeals(filter: ModelDateMealFilterInput, limit: Int, nextToken: String): ModelDateMealConnection @aws_api_key @aws_iam
-  syncDateMeals(filter: ModelDateMealFilterInput, limit: Int, nextToken: String, lastSync: AWSTimestamp): ModelDateMealConnection @aws_api_key @aws_iam
 }
 
 input ModelRecipeConditionInput {
@@ -321,30 +449,6 @@ input DeleteRecipeInput {
   _version: Int
 }
 
-type Mutation {
-  createRecipe(input: CreateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
-  updateRecipe(input: UpdateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
-  deleteRecipe(input: DeleteRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_api_key @aws_iam
-  createPreparation(input: CreatePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
-  updatePreparation(input: UpdatePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
-  deletePreparation(input: DeletePreparationInput!, condition: ModelPreparationConditionInput): Preparation @aws_api_key @aws_iam
-  createMealComponent(input: CreateMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
-  updateMealComponent(input: UpdateMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
-  deleteMealComponent(input: DeleteMealComponentInput!, condition: ModelMealComponentConditionInput): MealComponent @aws_api_key @aws_iam
-  createMeal(input: CreateMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
-  updateMeal(input: UpdateMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
-  deleteMeal(input: DeleteMealInput!, condition: ModelMealConditionInput): Meal @aws_api_key @aws_iam
-  createDate(input: CreateDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
-  updateDate(input: UpdateDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
-  deleteDate(input: DeleteDateInput!, condition: ModelDateConditionInput): Date @aws_api_key @aws_iam
-  createMealMealComponent(input: CreateMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
-  updateMealMealComponent(input: UpdateMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
-  deleteMealMealComponent(input: DeleteMealMealComponentInput!, condition: ModelMealMealComponentConditionInput): MealMealComponent @aws_api_key @aws_iam
-  createDateMeal(input: CreateDateMealInput!, condition: ModelDateMealConditionInput): DateMeal @aws_api_key @aws_iam
-  updateDateMeal(input: UpdateDateMealInput!, condition: ModelDateMealConditionInput): DateMeal @aws_api_key @aws_iam
-  deleteDateMeal(input: DeleteDateMealInput!, condition: ModelDateMealConditionInput): DateMeal @aws_api_key @aws_iam
-}
-
 input ModelSubscriptionRecipeFilterInput {
   id: ModelSubscriptionIDInput
   name: ModelSubscriptionStringInput
@@ -352,30 +456,6 @@ input ModelSubscriptionRecipeFilterInput {
   instructions: ModelSubscriptionStringInput
   and: [ModelSubscriptionRecipeFilterInput]
   or: [ModelSubscriptionRecipeFilterInput]
-}
-
-type Subscription {
-  onCreateRecipe: Recipe @aws_subscribe(mutations: ["createRecipe"]) @aws_api_key @aws_iam
-  onUpdateRecipe: Recipe @aws_subscribe(mutations: ["updateRecipe"]) @aws_api_key @aws_iam
-  onDeleteRecipe: Recipe @aws_subscribe(mutations: ["deleteRecipe"]) @aws_api_key @aws_iam
-  onCreatePreparation: Preparation @aws_subscribe(mutations: ["createPreparation"]) @aws_api_key @aws_iam
-  onUpdatePreparation: Preparation @aws_subscribe(mutations: ["updatePreparation"]) @aws_api_key @aws_iam
-  onDeletePreparation: Preparation @aws_subscribe(mutations: ["deletePreparation"]) @aws_api_key @aws_iam
-  onCreateMealComponent: MealComponent @aws_subscribe(mutations: ["createMealComponent"]) @aws_api_key @aws_iam
-  onUpdateMealComponent: MealComponent @aws_subscribe(mutations: ["updateMealComponent"]) @aws_api_key @aws_iam
-  onDeleteMealComponent: MealComponent @aws_subscribe(mutations: ["deleteMealComponent"]) @aws_api_key @aws_iam
-  onCreateMeal: Meal @aws_subscribe(mutations: ["createMeal"]) @aws_api_key @aws_iam
-  onUpdateMeal: Meal @aws_subscribe(mutations: ["updateMeal"]) @aws_api_key @aws_iam
-  onDeleteMeal: Meal @aws_subscribe(mutations: ["deleteMeal"]) @aws_api_key @aws_iam
-  onCreateDate: Date @aws_subscribe(mutations: ["createDate"]) @aws_api_key @aws_iam
-  onUpdateDate: Date @aws_subscribe(mutations: ["updateDate"]) @aws_api_key @aws_iam
-  onDeleteDate: Date @aws_subscribe(mutations: ["deleteDate"]) @aws_api_key @aws_iam
-  onCreateMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["createMealMealComponent"]) @aws_api_key @aws_iam
-  onUpdateMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["updateMealMealComponent"]) @aws_api_key @aws_iam
-  onDeleteMealMealComponent: MealMealComponent @aws_subscribe(mutations: ["deleteMealMealComponent"]) @aws_api_key @aws_iam
-  onCreateDateMeal: DateMeal @aws_subscribe(mutations: ["createDateMeal"]) @aws_api_key @aws_iam
-  onUpdateDateMeal: DateMeal @aws_subscribe(mutations: ["updateDateMeal"]) @aws_api_key @aws_iam
-  onDeleteDateMeal: DateMeal @aws_subscribe(mutations: ["deleteDateMeal"]) @aws_api_key @aws_iam
 }
 
 type ModelPreparationConnection @aws_api_key @aws_iam {
@@ -437,7 +517,6 @@ type ModelMealComponentConnection @aws_api_key @aws_iam {
 input ModelMealComponentFilterInput {
   id: ModelIDInput
   name: ModelStringInput
-  tags: ModelStringInput
   and: [ModelMealComponentFilterInput]
   or: [ModelMealComponentFilterInput]
   not: ModelMealComponentFilterInput
@@ -445,7 +524,6 @@ input ModelMealComponentFilterInput {
 
 input ModelMealComponentConditionInput {
   name: ModelStringInput
-  tags: ModelStringInput
   and: [ModelMealComponentConditionInput]
   or: [ModelMealComponentConditionInput]
   not: ModelMealComponentConditionInput
@@ -454,14 +532,12 @@ input ModelMealComponentConditionInput {
 input CreateMealComponentInput {
   id: ID
   name: String!
-  tags: [String!]
   _version: Int
 }
 
 input UpdateMealComponentInput {
   id: ID!
   name: String
-  tags: [String!]
   _version: Int
 }
 
@@ -473,9 +549,53 @@ input DeleteMealComponentInput {
 input ModelSubscriptionMealComponentFilterInput {
   id: ModelSubscriptionIDInput
   name: ModelSubscriptionStringInput
-  tags: ModelSubscriptionStringInput
   and: [ModelSubscriptionMealComponentFilterInput]
   or: [ModelSubscriptionMealComponentFilterInput]
+}
+
+type ModelMealTagsConnection @aws_api_key @aws_iam {
+  items: [MealTags]!
+  nextToken: String
+  startedAt: AWSTimestamp
+}
+
+input ModelMealTagsFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  and: [ModelMealTagsFilterInput]
+  or: [ModelMealTagsFilterInput]
+  not: ModelMealTagsFilterInput
+}
+
+input ModelMealTagsConditionInput {
+  name: ModelStringInput
+  and: [ModelMealTagsConditionInput]
+  or: [ModelMealTagsConditionInput]
+  not: ModelMealTagsConditionInput
+}
+
+input CreateMealTagsInput {
+  id: ID
+  name: String!
+  _version: Int
+}
+
+input UpdateMealTagsInput {
+  id: ID!
+  name: String
+  _version: Int
+}
+
+input DeleteMealTagsInput {
+  id: ID!
+  _version: Int
+}
+
+input ModelSubscriptionMealTagsFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  and: [ModelSubscriptionMealTagsFilterInput]
+  or: [ModelSubscriptionMealTagsFilterInput]
 }
 
 type ModelMealConnection @aws_api_key @aws_iam {
@@ -484,18 +604,11 @@ type ModelMealConnection @aws_api_key @aws_iam {
   startedAt: AWSTimestamp
 }
 
-input ModelReactionInput {
-  eq: Reaction
-  ne: Reaction
-}
-
 input ModelMealFilterInput {
   id: ModelIDInput
   title: ModelStringInput
-  tags: ModelStringInput
   isNew: ModelBooleanInput
   hasLeftovers: ModelBooleanInput
-  reaction: ModelReactionInput
   isTakeOut: ModelBooleanInput
   isOpenFreeform: ModelBooleanInput
   isSpecialOccasion: ModelBooleanInput
@@ -508,10 +621,8 @@ input ModelMealFilterInput {
 
 input ModelMealConditionInput {
   title: ModelStringInput
-  tags: ModelStringInput
   isNew: ModelBooleanInput
   hasLeftovers: ModelBooleanInput
-  reaction: ModelReactionInput
   isTakeOut: ModelBooleanInput
   isOpenFreeform: ModelBooleanInput
   isSpecialOccasion: ModelBooleanInput
@@ -525,10 +636,8 @@ input ModelMealConditionInput {
 input CreateMealInput {
   id: ID
   title: String!
-  tags: [String]
   isNew: Boolean
   hasLeftovers: Boolean
-  reaction: Reaction
   isTakeOut: Boolean
   isOpenFreeform: Boolean
   isSpecialOccasion: Boolean
@@ -540,10 +649,8 @@ input CreateMealInput {
 input UpdateMealInput {
   id: ID!
   title: String
-  tags: [String]
   isNew: Boolean
   hasLeftovers: Boolean
-  reaction: Reaction
   isTakeOut: Boolean
   isOpenFreeform: Boolean
   isSpecialOccasion: Boolean
@@ -560,10 +667,8 @@ input DeleteMealInput {
 input ModelSubscriptionMealFilterInput {
   id: ModelSubscriptionIDInput
   title: ModelSubscriptionStringInput
-  tags: ModelSubscriptionStringInput
   isNew: ModelSubscriptionBooleanInput
   hasLeftovers: ModelSubscriptionBooleanInput
-  reaction: ModelSubscriptionStringInput
   isTakeOut: ModelSubscriptionBooleanInput
   isOpenFreeform: ModelSubscriptionBooleanInput
   isSpecialOccasion: ModelSubscriptionBooleanInput
@@ -594,7 +699,7 @@ input ModelDateConditionInput {
 
 input CreateDateInput {
   id: ID
-  date: AWSDate
+  date: AWSDate!
   _version: Int
 }
 
@@ -666,53 +771,53 @@ input ModelSubscriptionMealMealComponentFilterInput {
   or: [ModelSubscriptionMealMealComponentFilterInput]
 }
 
-type ModelDateMealConnection @aws_iam @aws_api_key {
-  items: [DateMeal]!
+type ModelTagsConnection @aws_iam @aws_api_key {
+  items: [Tags]!
   nextToken: String
   startedAt: AWSTimestamp
 }
 
-input ModelDateMealFilterInput {
+input ModelTagsFilterInput {
   id: ModelIDInput
+  mealTagsID: ModelIDInput
   mealID: ModelIDInput
-  dateID: ModelIDInput
-  and: [ModelDateMealFilterInput]
-  or: [ModelDateMealFilterInput]
-  not: ModelDateMealFilterInput
+  and: [ModelTagsFilterInput]
+  or: [ModelTagsFilterInput]
+  not: ModelTagsFilterInput
 }
 
-input ModelDateMealConditionInput {
+input ModelTagsConditionInput {
+  mealTagsID: ModelIDInput
   mealID: ModelIDInput
-  dateID: ModelIDInput
-  and: [ModelDateMealConditionInput]
-  or: [ModelDateMealConditionInput]
-  not: ModelDateMealConditionInput
+  and: [ModelTagsConditionInput]
+  or: [ModelTagsConditionInput]
+  not: ModelTagsConditionInput
 }
 
-input CreateDateMealInput {
+input CreateTagsInput {
   id: ID
+  mealTagsID: ID!
   mealID: ID!
-  dateID: ID!
   _version: Int
 }
 
-input UpdateDateMealInput {
+input UpdateTagsInput {
   id: ID!
+  mealTagsID: ID
   mealID: ID
-  dateID: ID
   _version: Int
 }
 
-input DeleteDateMealInput {
+input DeleteTagsInput {
   id: ID!
   _version: Int
 }
 
-input ModelSubscriptionDateMealFilterInput {
+input ModelSubscriptionTagsFilterInput {
   id: ModelSubscriptionIDInput
+  mealTagsID: ModelSubscriptionIDInput
   mealID: ModelSubscriptionIDInput
-  dateID: ModelSubscriptionIDInput
-  and: [ModelSubscriptionDateMealFilterInput]
-  or: [ModelSubscriptionDateMealFilterInput]
+  and: [ModelSubscriptionTagsFilterInput]
+  or: [ModelSubscriptionTagsFilterInput]
 }
 

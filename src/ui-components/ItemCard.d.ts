@@ -5,10 +5,13 @@
  **************************************************************************/
 
 import React from 'react';
+import { Meal } from '../models';
 import { EscapeHatchProps } from '@aws-amplify/ui-react/internal';
 import { FlexProps } from '@aws-amplify/ui-react';
 export declare type ItemCardProps = React.PropsWithChildren<
   Partial<FlexProps> & {
+    meal?: Meal;
+  } & {
     overrides?: EscapeHatchProps | undefined | null;
   }
 >;

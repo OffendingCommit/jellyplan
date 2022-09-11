@@ -2,22 +2,18 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
-const Reaction = {
-  "NEUTRAL": "NEUTRAL",
-  "LIKE": "LIKE",
-  "DISLIKE": "DISLIKE",
-  "FAVORITE": "FAVORITE"
-};
 
-const { Recipe, Preparation, MealComponent, Meal, Date, MealMealComponent, DateMeal } = initSchema(schema);
+
+const { DateMeals, Date, Recipe, Preparation, MealComponent, Meal, MealTags, MealMealComponent, Tags } = initSchema(schema);
 
 export {
+  DateMeals,
+  Date,
   Recipe,
   Preparation,
   MealComponent,
   Meal,
-  Date,
+  MealTags,
   MealMealComponent,
-  DateMeal,
-  Reaction
+  Tags
 };

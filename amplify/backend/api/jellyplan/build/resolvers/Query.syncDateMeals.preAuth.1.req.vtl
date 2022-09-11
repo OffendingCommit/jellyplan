@@ -11,10 +11,6 @@ $util.qr($QueryMap.put('mealID' , 'byMeal'))
 $util.qr($PkMap.put('mealID' , 'byMeal'))
 ## [End] Set query expression for @key **
 ## [Start] Set query expression for @key **
-$util.qr($QueryMap.put('dateID' , 'byDate'))
-$util.qr($PkMap.put('dateID' , 'byDate'))
-## [End] Set query expression for @key **
-## [Start] Set query expression for @key **
 #set( $filterArgsMap = $ctx.args.filter.get("and") )
 #if( !$util.isNullOrEmpty($filterArgsMap) && ($util.isNull($ctx.args.lastSync) || $ctx.args.lastSync == 0) )
   #set( $json = $filterArgsMap )

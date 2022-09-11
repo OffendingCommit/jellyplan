@@ -1,13 +1,16 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
-export enum Reaction {
-  NEUTRAL = "NEUTRAL",
-  LIKE = "LIKE",
-  DISLIKE = "DISLIKE",
-  FAVORITE = "FAVORITE"
+
+
+
+
+type DateMealsMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-
+type DateMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
 
 type RecipeMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
@@ -25,7 +28,7 @@ type MealMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type DateMetaData = {
+type MealTagsMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
@@ -33,8 +36,28 @@ type MealMealComponentMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type DateMealMetaData = {
+type TagsMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class DateMeals {
+  readonly id: string;
+  readonly Date: Date;
+  readonly mealID: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly dateMealsDateId: string;
+  constructor(init: ModelInit<DateMeals, DateMealsMetaData>);
+  static copyOf(source: DateMeals, mutator: (draft: MutableModel<DateMeals, DateMealsMetaData>) => MutableModel<DateMeals, DateMealsMetaData> | void): DateMeals;
+}
+
+export declare class Date {
+  readonly id: string;
+  readonly date: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Date, DateMetaData>);
+  static copyOf(source: Date, mutator: (draft: MutableModel<Date, DateMetaData>) => MutableModel<Date, DateMetaData> | void): Date;
 }
 
 export declare class Recipe {
@@ -61,7 +84,6 @@ export declare class Preparation {
 export declare class MealComponent {
   readonly id: string;
   readonly name: string;
-  readonly tags?: string[] | null;
   readonly meals?: (MealMealComponent | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
@@ -72,17 +94,16 @@ export declare class MealComponent {
 export declare class Meal {
   readonly id: string;
   readonly title: string;
-  readonly tags?: (string | null)[] | null;
   readonly isNew?: boolean | null;
   readonly hasLeftovers?: boolean | null;
-  readonly reaction?: Reaction | keyof typeof Reaction | null;
   readonly isTakeOut?: boolean | null;
   readonly isOpenFreeform?: boolean | null;
   readonly isSpecialOccasion?: boolean | null;
   readonly MealComponents?: (MealMealComponent | null)[] | null;
-  readonly dates?: (DateMeal | null)[] | null;
   readonly Recipe?: Recipe | null;
   readonly Preparation?: Preparation | null;
+  readonly Tags?: (Tags | null)[] | null;
+  readonly DateMeals?: (DateMeals | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly mealRecipeId?: string | null;
@@ -91,14 +112,14 @@ export declare class Meal {
   static copyOf(source: Meal, mutator: (draft: MutableModel<Meal, MealMetaData>) => MutableModel<Meal, MealMetaData> | void): Meal;
 }
 
-export declare class Date {
+export declare class MealTags {
   readonly id: string;
-  readonly date?: string | null;
-  readonly Meals?: (DateMeal | null)[] | null;
+  readonly name: string;
+  readonly meals?: (Tags | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Date, DateMetaData>);
-  static copyOf(source: Date, mutator: (draft: MutableModel<Date, DateMetaData>) => MutableModel<Date, DateMetaData> | void): Date;
+  constructor(init: ModelInit<MealTags, MealTagsMetaData>);
+  static copyOf(source: MealTags, mutator: (draft: MutableModel<MealTags, MealTagsMetaData>) => MutableModel<MealTags, MealTagsMetaData> | void): MealTags;
 }
 
 export declare class MealMealComponent {
@@ -111,12 +132,12 @@ export declare class MealMealComponent {
   static copyOf(source: MealMealComponent, mutator: (draft: MutableModel<MealMealComponent, MealMealComponentMetaData>) => MutableModel<MealMealComponent, MealMealComponentMetaData> | void): MealMealComponent;
 }
 
-export declare class DateMeal {
+export declare class Tags {
   readonly id: string;
   readonly meal: Meal;
-  readonly date: Date;
+  readonly mealTags: MealTags;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<DateMeal, DateMealMetaData>);
-  static copyOf(source: DateMeal, mutator: (draft: MutableModel<DateMeal, DateMealMetaData>) => MutableModel<DateMeal, DateMealMetaData> | void): DateMeal;
+  constructor(init: ModelInit<Tags, TagsMetaData>);
+  static copyOf(source: Tags, mutator: (draft: MutableModel<Tags, TagsMetaData>) => MutableModel<Tags, TagsMetaData> | void): Tags;
 }

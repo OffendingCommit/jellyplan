@@ -1,5 +1,153 @@
 export const schema = {
     "models": {
+        "DateMeals": {
+            "name": "DateMeals",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Date": {
+                    "name": "Date",
+                    "isArray": false,
+                    "type": {
+                        "model": "Date"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": "id",
+                        "targetName": "dateMealsDateId"
+                    }
+                },
+                "mealID": {
+                    "name": "mealID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "dateMealsDateId": {
+                    "name": "dateMealsDateId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "DateMeals",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byMeal",
+                        "fields": [
+                            "mealID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Date": {
+            "name": "Date",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Dates",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Recipe": {
             "name": "Recipe",
             "fields": {
@@ -156,14 +304,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "tags": {
-                    "name": "tags",
-                    "isArray": true,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
                 "meals": {
                     "name": "meals",
                     "isArray": true,
@@ -237,14 +377,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "tags": {
-                    "name": "tags",
-                    "isArray": true,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true
-                },
                 "isNew": {
                     "name": "isNew",
                     "isArray": false,
@@ -256,15 +388,6 @@ export const schema = {
                     "name": "hasLeftovers",
                     "isArray": false,
                     "type": "Boolean",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "reaction": {
-                    "name": "reaction",
-                    "isArray": false,
-                    "type": {
-                        "enum": "Reaction"
-                    },
                     "isRequired": false,
                     "attributes": []
                 },
@@ -303,20 +426,6 @@ export const schema = {
                         "associatedWith": "meal"
                     }
                 },
-                "dates": {
-                    "name": "dates",
-                    "isArray": true,
-                    "type": {
-                        "model": "DateMeal"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "meal"
-                    }
-                },
                 "Recipe": {
                     "name": "Recipe",
                     "isArray": false,
@@ -343,6 +452,34 @@ export const schema = {
                         "connectionType": "HAS_ONE",
                         "associatedWith": "id",
                         "targetName": "mealPreparationId"
+                    }
+                },
+                "Tags": {
+                    "name": "Tags",
+                    "isArray": true,
+                    "type": {
+                        "model": "Tags"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "meal"
+                    }
+                },
+                "DateMeals": {
+                    "name": "DateMeals",
+                    "isArray": true,
+                    "type": {
+                        "model": "DateMeals"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "mealID"
                     }
                 },
                 "createdAt": {
@@ -401,8 +538,8 @@ export const schema = {
                 }
             ]
         },
-        "Date": {
-            "name": "Date",
+        "MealTags": {
+            "name": "MealTags",
             "fields": {
                 "id": {
                     "name": "id",
@@ -411,25 +548,25 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "date": {
-                    "name": "date",
+                "name": {
+                    "name": "name",
                     "isArray": false,
-                    "type": "AWSDate",
-                    "isRequired": false,
+                    "type": "String",
+                    "isRequired": true,
                     "attributes": []
                 },
-                "Meals": {
-                    "name": "Meals",
+                "meals": {
+                    "name": "meals",
                     "isArray": true,
                     "type": {
-                        "model": "DateMeal"
+                        "model": "Tags"
                     },
                     "isRequired": false,
                     "attributes": [],
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": "date"
+                        "associatedWith": "mealTags"
                     }
                 },
                 "createdAt": {
@@ -450,7 +587,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Dates",
+            "pluralName": "MealTags",
             "attributes": [
                 {
                     "type": "model",
@@ -554,8 +691,8 @@ export const schema = {
                 }
             ]
         },
-        "DateMeal": {
-            "name": "DateMeal",
+        "Tags": {
+            "name": "Tags",
             "fields": {
                 "id": {
                     "name": "id",
@@ -577,17 +714,17 @@ export const schema = {
                         "targetName": "mealID"
                     }
                 },
-                "date": {
-                    "name": "date",
+                "mealTags": {
+                    "name": "mealTags",
                     "isArray": false,
                     "type": {
-                        "model": "Date"
+                        "model": "MealTags"
                     },
                     "isRequired": true,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
-                        "targetName": "dateID"
+                        "targetName": "mealTagsID"
                     }
                 },
                 "createdAt": {
@@ -608,7 +745,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "DateMeals",
+            "pluralName": "Tags",
             "attributes": [
                 {
                     "type": "model",
@@ -626,26 +763,16 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byDate",
+                        "name": "byMealTags",
                         "fields": [
-                            "dateID"
+                            "mealTagsID"
                         ]
                     }
                 }
             ]
         }
     },
-    "enums": {
-        "Reaction": {
-            "name": "Reaction",
-            "values": [
-                "NEUTRAL",
-                "LIKE",
-                "DISLIKE",
-                "FAVORITE"
-            ]
-        }
-    },
+    "enums": {},
     "nonModels": {},
-    "version": "a77d5384575256f2a5c56b50b783b06b"
+    "version": "21c9ef4470797cf1dfe64722bf3b06d2"
 };

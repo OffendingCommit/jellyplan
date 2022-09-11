@@ -49,10 +49,10 @@
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -61,19 +61,19 @@
     "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
       "Type": "String"
     },
-    "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+    "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
       "Type": "String"
     }
   },
@@ -116,7 +116,7 @@
     }
   },
   "Resources": {
-    "DateMealTable": {
+    "MealTagsTable": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
         "KeySchema": [
@@ -129,14 +129,6 @@
           {
             "AttributeName": "id",
             "AttributeType": "S"
-          },
-          {
-            "AttributeName": "mealID",
-            "AttributeType": "S"
-          },
-          {
-            "AttributeName": "dateID",
-            "AttributeType": "S"
           }
         ],
         "BillingMode": {
@@ -148,64 +140,6 @@
             }
           ]
         },
-        "GlobalSecondaryIndexes": [
-          {
-            "IndexName": "byMeal",
-            "KeySchema": [
-              {
-                "AttributeName": "mealID",
-                "KeyType": "HASH"
-              }
-            ],
-            "Projection": {
-              "ProjectionType": "ALL"
-            },
-            "ProvisionedThroughput": {
-              "Fn::If": [
-                "ShouldUsePayPerRequestBilling",
-                {
-                  "Ref": "AWS::NoValue"
-                },
-                {
-                  "ReadCapacityUnits": {
-                    "Ref": "DynamoDBModelTableReadIOPS"
-                  },
-                  "WriteCapacityUnits": {
-                    "Ref": "DynamoDBModelTableWriteIOPS"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "IndexName": "byDate",
-            "KeySchema": [
-              {
-                "AttributeName": "dateID",
-                "KeyType": "HASH"
-              }
-            ],
-            "Projection": {
-              "ProjectionType": "ALL"
-            },
-            "ProvisionedThroughput": {
-              "Fn::If": [
-                "ShouldUsePayPerRequestBilling",
-                {
-                  "Ref": "AWS::NoValue"
-                },
-                {
-                  "ReadCapacityUnits": {
-                    "Ref": "DynamoDBModelTableReadIOPS"
-                  },
-                  "WriteCapacityUnits": {
-                    "Ref": "DynamoDBModelTableWriteIOPS"
-                  }
-                }
-              ]
-            }
-          }
-        ],
         "PointInTimeRecoverySpecification": {
           "Fn::If": [
             "ShouldUsePointInTimeRecovery",
@@ -249,7 +183,7 @@
           "Fn::Join": [
             "",
             [
-              "DateMeal-",
+              "MealTags-",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
@@ -268,7 +202,7 @@
       "UpdateReplacePolicy": "Delete",
       "DeletionPolicy": "Delete"
     },
-    "DateMealIAMRoleD9DA169D": {
+    "MealTagsIAMRole9CF6B5AF": {
       "Type": "AWS::IAM::Role",
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -287,7 +221,7 @@
           "Fn::Join": [
             "",
             [
-              "DateMealIAMRolee0f8e4-",
+              "MealTagsIAMRolef0b8d9-",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
@@ -300,7 +234,7 @@
         }
       }
     },
-    "DateMealIAMRoleDefaultPolicy334FB836": {
+    "MealTagsIAMRoleDefaultPolicy986CE7E9": {
       "Type": "AWS::IAM::Policy",
       "Properties": {
         "PolicyDocument": {
@@ -323,33 +257,22 @@
               "Resource": [
                 {
                   "Fn::GetAtt": [
-                    "DateMealTable",
+                    "MealTagsTable",
                     "Arn"
                   ]
                 },
                 {
-                  "Fn::Join": [
-                    "",
-                    [
-                      {
-                        "Fn::GetAtt": [
-                          "DateMealTable",
-                          "Arn"
-                        ]
-                      },
-                      "/index/*"
-                    ]
-                  ]
+                  "Ref": "AWS::NoValue"
                 }
               ]
             }
           ],
           "Version": "2012-10-17"
         },
-        "PolicyName": "DateMealIAMRoleDefaultPolicy334FB836",
+        "PolicyName": "MealTagsIAMRoleDefaultPolicy986CE7E9",
         "Roles": [
           {
-            "Ref": "DateMealIAMRoleD9DA169D"
+            "Ref": "MealTagsIAMRole9CF6B5AF"
           }
         ]
       }
@@ -380,7 +303,7 @@
                         "Fn::Join": [
                           "",
                           [
-                            "DateMeal-",
+                            "MealTags-",
                             {
                               "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
                             },
@@ -402,7 +325,7 @@
                         "Fn::Join": [
                           "",
                           [
-                            "DateMeal-",
+                            "MealTags-",
                             {
                               "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
                             },
@@ -468,18 +391,18 @@
         "PolicyName": "DynamoDBAccess71ABE5AE",
         "Roles": [
           {
-            "Ref": "DateMealIAMRoleD9DA169D"
+            "Ref": "MealTagsIAMRole9CF6B5AF"
           }
         ]
       }
     },
-    "DateMealDataSource": {
+    "MealTagsDataSource": {
       "Type": "AWS::AppSync::DataSource",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "Name": "DateMealTable",
+        "Name": "MealTagsTable",
         "Type": "AMAZON_DYNAMODB",
         "DynamoDBConfig": {
           "AwsRegion": {
@@ -505,22 +428,22 @@
             "DeltaSyncTableTTL": "30"
           },
           "TableName": {
-            "Ref": "DateMealTable"
+            "Ref": "MealTagsTable"
           },
           "Versioned": true
         },
         "ServiceRoleArn": {
           "Fn::GetAtt": [
-            "DateMealIAMRoleD9DA169D",
+            "MealTagsIAMRole9CF6B5AF",
             "Arn"
           ]
         }
       },
       "DependsOn": [
-        "DateMealIAMRoleD9DA169D"
+        "MealTagsIAMRole9CF6B5AF"
       ]
     },
-    "QueryGetDateMealDataResolverFnQueryGetDateMealDataResolverFnAppSyncFunction37F01FE1": {
+    "QueryGetMealTagsDataResolverFnQueryGetMealTagsDataResolverFnAppSyncFunctionF346F37D": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -528,12 +451,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "QueryGetDateMealDataResolverFn",
+        "Name": "QueryGetMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -546,7 +469,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.getDateMeal.req.vtl"
+              "/resolvers/Query.getMealTags.req.vtl"
             ]
           ]
         },
@@ -562,7 +485,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.getDateMeal.res.vtl"
+              "/resolvers/Query.getMealTags.res.vtl"
             ]
           ]
         },
@@ -572,29 +495,29 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "GetDateMealResolver": {
+    "GetMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "getDateMeal",
+        "FieldName": "getMealTags",
         "TypeName": "Query",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "QueryGetDateMealDataResolverFnQueryGetDateMealDataResolverFnAppSyncFunction37F01FE1",
+                "QueryGetMealTagsDataResolverFnQueryGetMealTagsDataResolverFnAppSyncFunctionF346F37D",
                 "FunctionId"
               ]
             }
@@ -604,13 +527,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -635,7 +558,7 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "QueryListDateMealsDataResolverFnQueryListDateMealsDataResolverFnAppSyncFunction937C3A66": {
+    "QueryListMealTagsDataResolverFnQueryListMealTagsDataResolverFnAppSyncFunction0F15B119": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -643,12 +566,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "QueryListDateMealsDataResolverFn",
+        "Name": "QueryListMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -661,7 +584,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.listDateMeals.req.vtl"
+              "/resolvers/Query.listMealTags.req.vtl"
             ]
           ]
         },
@@ -677,7 +600,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.listDateMeals.res.vtl"
+              "/resolvers/Query.listMealTags.res.vtl"
             ]
           ]
         },
@@ -687,29 +610,29 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "ListDateMealResolver": {
+    "ListMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "listDateMeals",
+        "FieldName": "listMealTags",
         "TypeName": "Query",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "QueryListDateMealsDataResolverFnQueryListDateMealsDataResolverFnAppSyncFunction937C3A66",
+                "QueryListMealTagsDataResolverFnQueryListMealTagsDataResolverFnAppSyncFunction0F15B119",
                 "FunctionId"
               ]
             }
@@ -719,13 +642,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listDateMeals\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -750,7 +673,7 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "QuerysyncDateMealspreAuth0FunctionQuerysyncDateMealspreAuth0FunctionAppSyncFunctionA37F24AB": {
+    "QuerySyncMealTagsDataResolverFnQuerySyncMealTagsDataResolverFnAppSyncFunction8FDBD38B": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -758,12 +681,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "QuerysyncDateMealspreAuth0Function",
+        "Name": "QuerySyncMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -776,43 +699,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.syncDateMeals.preAuth.1.req.vtl"
-            ]
-          ]
-        },
-        "ResponseMappingTemplate": "$util.toJson({})"
-      },
-      "DependsOn": [
-        "DateMealDataSource"
-      ]
-    },
-    "QuerySyncDateMealsDataResolverFnQuerySyncDateMealsDataResolverFnAppSyncFunction759675E6": {
-      "Type": "AWS::AppSync::FunctionConfiguration",
-      "Properties": {
-        "ApiId": {
-          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
-        },
-        "DataSourceName": {
-          "Fn::GetAtt": [
-            "DateMealDataSource",
-            "Name"
-          ]
-        },
-        "FunctionVersion": "2018-05-29",
-        "Name": "QuerySyncDateMealsDataResolverFn",
-        "RequestMappingTemplateS3Location": {
-          "Fn::Join": [
-            "",
-            [
-              "s3://",
-              {
-                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
-              },
-              "/",
-              {
-                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
-              },
-              "/resolvers/Query.syncDateMeals.req.vtl"
+              "/resolvers/Query.syncMealTags.req.vtl"
             ]
           ]
         },
@@ -828,7 +715,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Query.syncDateMeals.res.vtl"
+              "/resolvers/Query.syncMealTags.res.vtl"
             ]
           ]
         },
@@ -838,35 +725,29 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "SyncDateMealResolver": {
+    "SyncMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "syncDateMeals",
+        "FieldName": "syncMealTags",
         "TypeName": "Query",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Fn::GetAtt": [
-                "QuerysyncDateMealspreAuth0FunctionQuerysyncDateMealspreAuth0FunctionAppSyncFunctionA37F24AB",
-                "FunctionId"
-              ]
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
-            },
-            {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "QuerySyncDateMealsDataResolverFnQuerySyncDateMealsDataResolverFnAppSyncFunction759675E6",
+                "QuerySyncMealTagsDataResolverFnQuerySyncMealTagsDataResolverFnAppSyncFunction8FDBD38B",
                 "FunctionId"
               ]
             }
@@ -876,13 +757,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"syncDateMeals\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"syncMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -907,7 +788,7 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "MutationCreateDateMealDataResolverFnMutationCreateDateMealDataResolverFnAppSyncFunction280CC385": {
+    "MutationCreateMealTagsDataResolverFnMutationCreateMealTagsDataResolverFnAppSyncFunctionC0EAE09C": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -915,12 +796,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "MutationCreateDateMealDataResolverFn",
+        "Name": "MutationCreateMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -933,7 +814,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.createDateMeal.req.vtl"
+              "/resolvers/Mutation.createMealTags.req.vtl"
             ]
           ]
         },
@@ -949,7 +830,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.createDateMeal.res.vtl"
+              "/resolvers/Mutation.createMealTags.res.vtl"
             ]
           ]
         },
@@ -959,32 +840,32 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "CreateDateMealResolver": {
+    "CreateMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "createDateMeal",
+        "FieldName": "createMealTags",
         "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "MutationCreateDateMealDataResolverFnMutationCreateDateMealDataResolverFnAppSyncFunction280CC385",
+                "MutationCreateMealTagsDataResolverFnMutationCreateMealTagsDataResolverFnAppSyncFunctionC0EAE09C",
                 "FunctionId"
               ]
             }
@@ -994,13 +875,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -1025,7 +906,7 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "MutationupdateDateMealauth0FunctionMutationupdateDateMealauth0FunctionAppSyncFunction82BA3753": {
+    "MutationupdateMealTagsauth0FunctionMutationupdateMealTagsauth0FunctionAppSyncFunctionAD4BC56E": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -1033,12 +914,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "MutationupdateDateMealauth0Function",
+        "Name": "MutationupdateMealTagsauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1051,7 +932,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.updateDateMeal.auth.1.req.vtl"
+              "/resolvers/Mutation.updateMealTags.auth.1.req.vtl"
             ]
           ]
         },
@@ -1067,16 +948,16 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.updateDateMeal.auth.1.res.vtl"
+              "/resolvers/Mutation.updateMealTags.auth.1.res.vtl"
             ]
           ]
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "MutationUpdateDateMealDataResolverFnMutationUpdateDateMealDataResolverFnAppSyncFunction195B02BA": {
+    "MutationUpdateMealTagsDataResolverFnMutationUpdateMealTagsDataResolverFnAppSyncFunction1F45A602": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -1084,12 +965,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "MutationUpdateDateMealDataResolverFn",
+        "Name": "MutationUpdateMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1102,7 +983,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.updateDateMeal.req.vtl"
+              "/resolvers/Mutation.updateMealTags.req.vtl"
             ]
           ]
         },
@@ -1118,7 +999,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.updateDateMeal.res.vtl"
+              "/resolvers/Mutation.updateMealTags.res.vtl"
             ]
           ]
         },
@@ -1128,35 +1009,35 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "UpdateDateMealResolver": {
+    "UpdateMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "updateDateMeal",
+        "FieldName": "updateMealTags",
         "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "MutationupdateDateMealauth0FunctionMutationupdateDateMealauth0FunctionAppSyncFunction82BA3753",
+                "MutationupdateMealTagsauth0FunctionMutationupdateMealTagsauth0FunctionAppSyncFunctionAD4BC56E",
                 "FunctionId"
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "MutationUpdateDateMealDataResolverFnMutationUpdateDateMealDataResolverFnAppSyncFunction195B02BA",
+                "MutationUpdateMealTagsDataResolverFnMutationUpdateMealTagsDataResolverFnAppSyncFunction1F45A602",
                 "FunctionId"
               ]
             }
@@ -1166,13 +1047,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -1197,7 +1078,7 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "MutationdeleteDateMealauth0FunctionMutationdeleteDateMealauth0FunctionAppSyncFunction1437C335": {
+    "MutationdeleteMealTagsauth0FunctionMutationdeleteMealTagsauth0FunctionAppSyncFunction89F45B0D": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -1205,12 +1086,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "MutationdeleteDateMealauth0Function",
+        "Name": "MutationdeleteMealTagsauth0Function",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1223,7 +1104,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.deleteDateMeal.auth.1.req.vtl"
+              "/resolvers/Mutation.deleteMealTags.auth.1.req.vtl"
             ]
           ]
         },
@@ -1239,16 +1120,16 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.deleteDateMeal.auth.1.res.vtl"
+              "/resolvers/Mutation.deleteMealTags.auth.1.res.vtl"
             ]
           ]
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "MutationDeleteDateMealDataResolverFnMutationDeleteDateMealDataResolverFnAppSyncFunction56DEA18F": {
+    "MutationDeleteMealTagsDataResolverFnMutationDeleteMealTagsDataResolverFnAppSyncFunction0F1B0D46": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
         "ApiId": {
@@ -1256,12 +1137,12 @@
         },
         "DataSourceName": {
           "Fn::GetAtt": [
-            "DateMealDataSource",
+            "MealTagsDataSource",
             "Name"
           ]
         },
         "FunctionVersion": "2018-05-29",
-        "Name": "MutationDeleteDateMealDataResolverFn",
+        "Name": "MutationDeleteMealTagsDataResolverFn",
         "RequestMappingTemplateS3Location": {
           "Fn::Join": [
             "",
@@ -1274,7 +1155,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.deleteDateMeal.req.vtl"
+              "/resolvers/Mutation.deleteMealTags.req.vtl"
             ]
           ]
         },
@@ -1290,7 +1171,7 @@
               {
                 "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
               },
-              "/resolvers/Mutation.deleteDateMeal.res.vtl"
+              "/resolvers/Mutation.deleteMealTags.res.vtl"
             ]
           ]
         },
@@ -1300,32 +1181,32 @@
         }
       },
       "DependsOn": [
-        "DateMealDataSource"
+        "MealTagsDataSource"
       ]
     },
-    "DeleteDateMealResolver": {
+    "DeleteMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "deleteDateMeal",
+        "FieldName": "deleteMealTags",
         "TypeName": "Mutation",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
               "Fn::GetAtt": [
-                "MutationdeleteDateMealauth0FunctionMutationdeleteDateMealauth0FunctionAppSyncFunction1437C335",
+                "MutationdeleteMealTagsauth0FunctionMutationdeleteMealTagsauth0FunctionAppSyncFunction89F45B0D",
                 "FunctionId"
               ]
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
               "Fn::GetAtt": [
-                "MutationDeleteDateMealDataResolverFnMutationDeleteDateMealDataResolverFnAppSyncFunction56DEA18F",
+                "MutationDeleteMealTagsDataResolverFnMutationDeleteMealTagsDataResolverFnAppSyncFunction0F1B0D46",
                 "FunctionId"
               ]
             }
@@ -1335,13 +1216,13 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
               "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
               {
-                "Ref": "DateMealTable"
+                "Ref": "MealTagsTable"
               },
               "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
               {
@@ -1366,25 +1247,25 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "SubscriptiononCreateDateMealResolver": {
+    "SubscriptiononCreateMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "onCreateDateMeal",
+        "FieldName": "onCreateMealTags",
         "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             }
           ]
         },
@@ -1392,7 +1273,7 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
@@ -1419,25 +1300,25 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "SubscriptiononUpdateDateMealResolver": {
+    "SubscriptiononUpdateMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "onUpdateDateMeal",
+        "FieldName": "onUpdateMealTags",
         "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             }
           ]
         },
@@ -1445,7 +1326,7 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
@@ -1472,25 +1353,25 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
       }
     },
-    "SubscriptiononDeleteDateMealResolver": {
+    "SubscriptiononDeleteMealTagsResolver": {
       "Type": "AWS::AppSync::Resolver",
       "Properties": {
         "ApiId": {
           "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
         },
-        "FieldName": "onDeleteDateMeal",
+        "FieldName": "onDeleteMealTags",
         "TypeName": "Subscription",
         "Kind": "PIPELINE",
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             },
             {
-              "Ref": "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "Ref": "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             }
           ]
         },
@@ -1498,7 +1379,7 @@
           "Fn::Join": [
             "",
             [
-              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteDateMeal\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteMealTags\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
@@ -1527,11 +1408,11 @@
     }
   },
   "Outputs": {
-    "GetAttDateMealTableStreamArn": {
+    "GetAttMealTagsTableStreamArn": {
       "Description": "Your DynamoDB table StreamArn.",
       "Value": {
         "Fn::GetAtt": [
-          "DateMealTable",
+          "MealTagsTable",
           "StreamArn"
         ]
       },
@@ -1543,16 +1424,16 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "GetAtt:DateMealTable:StreamArn"
+              "GetAtt:MealTagsTable:StreamArn"
             ]
           ]
         }
       }
     },
-    "GetAttDateMealTableName": {
+    "GetAttMealTagsTableName": {
       "Description": "Your DynamoDB table name.",
       "Value": {
-        "Ref": "DateMealTable"
+        "Ref": "MealTagsTable"
       },
       "Export": {
         "Name": {
@@ -1562,17 +1443,17 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "GetAtt:DateMealTable:Name"
+              "GetAtt:MealTagsTable:Name"
             ]
           ]
         }
       }
     },
-    "GetAttDateMealDataSourceName": {
+    "GetAttMealTagsDataSourceName": {
       "Description": "Your model DataSource name.",
       "Value": {
         "Fn::GetAtt": [
-          "DateMealDataSource",
+          "MealTagsDataSource",
           "Name"
         ]
       },
@@ -1584,23 +1465,23 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "GetAtt:DateMealDataSource:Name"
+              "GetAtt:MealTagsDataSource:Name"
             ]
           ]
         }
       }
     },
-    "transformerrootstackDateMealDateMealDataSource43A0A3B5Name": {
+    "transformerrootstackMealTagsMealTagsDataSourceF496AB55Name": {
       "Value": {
         "Fn::GetAtt": [
-          "DateMealDataSource",
+          "MealTagsDataSource",
           "Name"
         ]
       }
     },
-    "transformerrootstackDateMealDateMealTableD19FE907Ref": {
+    "transformerrootstackMealTagsMealTagsTableB09B7717Ref": {
       "Value": {
-        "Ref": "DateMealTable"
+        "Ref": "MealTagsTable"
       }
     }
   }

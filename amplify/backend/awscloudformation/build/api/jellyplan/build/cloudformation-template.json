@@ -123,7 +123,7 @@
           ]
         },
         "Description": "api key description",
-        "Expires": 1665022191
+        "Expires": 1665522092
       }
     },
     "GraphQLAPINONEDS95A13CF0": {
@@ -309,6 +309,82 @@
         ]
       }
     },
+    "DateMeals": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "AWS::URLSuffix"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentBucket"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentRootKey"
+              },
+              "/stacks/DateMeals.json"
+            ]
+          ]
+        },
+        "Parameters": {
+          "DynamoDBModelTableReadIOPS": {
+            "Ref": "DynamoDBModelTableReadIOPS"
+          },
+          "DynamoDBModelTableWriteIOPS": {
+            "Ref": "DynamoDBModelTableWriteIOPS"
+          },
+          "DynamoDBBillingMode": {
+            "Ref": "DynamoDBBillingMode"
+          },
+          "DynamoDBEnablePointInTimeRecovery": {
+            "Ref": "DynamoDBEnablePointInTimeRecovery"
+          },
+          "DynamoDBEnableServerSideEncryption": {
+            "Ref": "DynamoDBEnableServerSideEncryption"
+          },
+          "referencetotransformerrootstackenv10C5A902Ref": {
+            "Ref": "env"
+          },
+          "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+            "Fn::GetAtt": [
+              "GraphQLAPI",
+              "ApiId"
+            ]
+          },
+          "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+            "Fn::GetAtt": [
+              "GraphQLAPINONEDS95A13CF0",
+              "Name"
+            ]
+          },
+          "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+            "Ref": "S3DeploymentBucket"
+          },
+          "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+            "Ref": "S3DeploymentRootKey"
+          },
+          "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
+            "Ref": "authRoleName"
+          },
+          "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
+            "Ref": "unauthRoleName"
+          }
+        }
+      },
+      "DependsOn": [
+        "GraphQLAPITransformerSchema3CB2AE18"
+      ]
+    },
     "Recipe": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -361,23 +437,59 @@
               "ApiId"
             ]
           },
-          "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
-            "Fn::GetAtt": [
-              "GraphQLAPINONEDS95A13CF0",
-              "Name"
-            ]
-          },
           "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
             "Ref": "S3DeploymentBucket"
           },
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
+            ]
+          },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
             "Ref": "authRoleName"
           },
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
+            ]
           }
         }
       },
@@ -443,16 +555,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -461,34 +573,34 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -555,16 +667,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -573,34 +685,146 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
+            ]
+          }
+        }
+      },
+      "DependsOn": [
+        "GraphQLAPITransformerSchema3CB2AE18"
+      ]
+    },
+    "MealTags": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "AWS::URLSuffix"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentBucket"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentRootKey"
+              },
+              "/stacks/MealTags.json"
+            ]
+          ]
+        },
+        "Parameters": {
+          "DynamoDBModelTableReadIOPS": {
+            "Ref": "DynamoDBModelTableReadIOPS"
+          },
+          "DynamoDBModelTableWriteIOPS": {
+            "Ref": "DynamoDBModelTableWriteIOPS"
+          },
+          "DynamoDBBillingMode": {
+            "Ref": "DynamoDBBillingMode"
+          },
+          "DynamoDBEnablePointInTimeRecovery": {
+            "Ref": "DynamoDBEnablePointInTimeRecovery"
+          },
+          "DynamoDBEnableServerSideEncryption": {
+            "Ref": "DynamoDBEnableServerSideEncryption"
+          },
+          "referencetotransformerrootstackenv10C5A902Ref": {
+            "Ref": "env"
+          },
+          "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+            "Fn::GetAtt": [
+              "GraphQLAPI",
+              "ApiId"
+            ]
+          },
+          "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+            "Ref": "S3DeploymentBucket"
+          },
+          "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+            "Ref": "S3DeploymentRootKey"
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
+            "Ref": "authRoleName"
+          },
+          "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
+            "Ref": "unauthRoleName"
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -667,16 +891,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -685,34 +909,34 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -779,16 +1003,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -797,34 +1021,34 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -891,16 +1115,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -909,34 +1133,34 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -945,7 +1169,7 @@
         "GraphQLAPITransformerSchema3CB2AE18"
       ]
     },
-    "DateMeal": {
+    "Tags": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
         "TemplateURL": {
@@ -968,7 +1192,7 @@
               {
                 "Ref": "S3DeploymentRootKey"
               },
-              "/stacks/DateMeal.json"
+              "/stacks/Tags.json"
             ]
           ]
         },
@@ -1003,16 +1227,16 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipeauth0FunctionQuerygetRecipeauth0FunctionAppSyncFunction95A08886FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealsauth0FunctionQuerygetDateMealsauth0FunctionAppSyncFunctionF18335C7FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeQuerygetRecipepostAuth0FunctionQuerygetRecipepostAuth0FunctionAppSyncFunction4BF4965EFunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsQuerygetDateMealspostAuth0FunctionQuerygetDateMealspostAuth0FunctionAppSyncFunctionE6BE2DAEFunctionId"
             ]
           },
           "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
@@ -1021,34 +1245,34 @@
           "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
             "Ref": "unauthRoleName"
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeinit0FunctionMutationcreateRecipeinit0FunctionAppSyncFunctionD566F419FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsinit0FunctionMutationcreateDateMealsinit0FunctionAppSyncFunction826F21A1FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationcreateRecipeauth0FunctionMutationcreateRecipeauth0FunctionAppSyncFunction6577A338FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationcreateDateMealsauth0FunctionMutationcreateDateMealsauth0FunctionAppSyncFunction716744B5FunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeMutationupdateRecipeinit0FunctionMutationupdateRecipeinit0FunctionAppSyncFunction0513ED03FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsMutationupdateDateMealsinit0FunctionMutationupdateDateMealsinit0FunctionAppSyncFunctionA547221BFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptiononCreateRecipeauth0FunctionSubscriptiononCreateRecipeauth0FunctionAppSyncFunctionE0BA1F72FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptiononCreateDateMealsauth0FunctionSubscriptiononCreateDateMealsauth0FunctionAppSyncFunction7DF23B6DFunctionId"
             ]
           },
-          "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId": {
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId": {
             "Fn::GetAtt": [
-              "Recipe",
-              "Outputs.transformerrootstackRecipeSubscriptionOnCreateRecipeDataResolverFnSubscriptionOnCreateRecipeDataResolverFnAppSyncFunction3446CEF2FunctionId"
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsSubscriptionOnCreateDateMealsDataResolverFnSubscriptionOnCreateDateMealsDataResolverFnAppSyncFunctionB3431825FunctionId"
             ]
           }
         }
@@ -1103,6 +1327,36 @@
           "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
             "Ref": "S3DeploymentRootKey"
           },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsDateMealsDataSourceFA4A04FFName": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsDateMealsDataSourceFA4A04FFName"
+            ]
+          },
+          "referencetotransformerrootstackDateMealsNestedStackDateMealsNestedStackResourceEB81BC7AOutputstransformerrootstackDateMealsDateMealsTable92FFB7C6Ref": {
+            "Fn::GetAtt": [
+              "DateMeals",
+              "Outputs.transformerrootstackDateMealsDateMealsTable92FFB7C6Ref"
+            ]
+          },
+          "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
+            "Ref": "authRoleName"
+          },
+          "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
+            "Ref": "unauthRoleName"
+          },
+          "referencetotransformerrootstackDateNestedStackDateNestedStackResource55247423OutputstransformerrootstackDateDateDataSourceEE7D5AEDName": {
+            "Fn::GetAtt": [
+              "Date",
+              "Outputs.transformerrootstackDateDateDataSourceEE7D5AEDName"
+            ]
+          },
+          "referencetotransformerrootstackDateNestedStackDateNestedStackResource55247423OutputstransformerrootstackDateDateTable8D4FF27BRef": {
+            "Fn::GetAtt": [
+              "Date",
+              "Outputs.transformerrootstackDateDateTable8D4FF27BRef"
+            ]
+          },
           "referencetotransformerrootstackRecipeNestedStackRecipeNestedStackResourceDF25A9CBOutputstransformerrootstackRecipeRecipeDataSource51EF6ADAName": {
             "Fn::GetAtt": [
               "Recipe",
@@ -1114,12 +1368,6 @@
               "Recipe",
               "Outputs.transformerrootstackRecipeRecipeTable236993B7Ref"
             ]
-          },
-          "referencetotransformerrootstackauthRoleNameFB872D50Ref": {
-            "Ref": "authRoleName"
-          },
-          "referencetotransformerrootstackunauthRoleName49F3C1FERef": {
-            "Ref": "unauthRoleName"
           },
           "referencetotransformerrootstackPreparationNestedStackPreparationNestedStackResourceFD09167DOutputstransformerrootstackPreparationPreparationDataSource6C02A1FFName": {
             "Fn::GetAtt": [
@@ -1157,16 +1405,16 @@
               "Outputs.transformerrootstackMealMealTable45329E25Ref"
             ]
           },
-          "referencetotransformerrootstackDateNestedStackDateNestedStackResource55247423OutputstransformerrootstackDateDateDataSourceEE7D5AEDName": {
+          "referencetotransformerrootstackMealTagsNestedStackMealTagsNestedStackResource3F602C81OutputstransformerrootstackMealTagsMealTagsDataSourceF496AB55Name": {
             "Fn::GetAtt": [
-              "Date",
-              "Outputs.transformerrootstackDateDateDataSourceEE7D5AEDName"
+              "MealTags",
+              "Outputs.transformerrootstackMealTagsMealTagsDataSourceF496AB55Name"
             ]
           },
-          "referencetotransformerrootstackDateNestedStackDateNestedStackResource55247423OutputstransformerrootstackDateDateTable8D4FF27BRef": {
+          "referencetotransformerrootstackMealTagsNestedStackMealTagsNestedStackResource3F602C81OutputstransformerrootstackMealTagsMealTagsTableB09B7717Ref": {
             "Fn::GetAtt": [
-              "Date",
-              "Outputs.transformerrootstackDateDateTable8D4FF27BRef"
+              "MealTags",
+              "Outputs.transformerrootstackMealTagsMealTagsTableB09B7717Ref"
             ]
           },
           "referencetotransformerrootstackMealMealComponentNestedStackMealMealComponentNestedStackResource06806A13OutputstransformerrootstackMealMealComponentMealMealComponentDataSource7643C96EName": {
@@ -1181,29 +1429,31 @@
               "Outputs.transformerrootstackMealMealComponentMealMealComponentTableB44E3A43Ref"
             ]
           },
-          "referencetotransformerrootstackDateMealNestedStackDateMealNestedStackResource12C2164BOutputstransformerrootstackDateMealDateMealDataSource43A0A3B5Name": {
+          "referencetotransformerrootstackTagsNestedStackTagsNestedStackResource007CEB82OutputstransformerrootstackTagsTagsDataSourceF71A7B9CName": {
             "Fn::GetAtt": [
-              "DateMeal",
-              "Outputs.transformerrootstackDateMealDateMealDataSource43A0A3B5Name"
+              "Tags",
+              "Outputs.transformerrootstackTagsTagsDataSourceF71A7B9CName"
             ]
           },
-          "referencetotransformerrootstackDateMealNestedStackDateMealNestedStackResource12C2164BOutputstransformerrootstackDateMealDateMealTableD19FE907Ref": {
+          "referencetotransformerrootstackTagsNestedStackTagsNestedStackResource007CEB82OutputstransformerrootstackTagsTagsTableE89D20E3Ref": {
             "Fn::GetAtt": [
-              "DateMeal",
-              "Outputs.transformerrootstackDateMealDateMealTableD19FE907Ref"
+              "Tags",
+              "Outputs.transformerrootstackTagsTagsTableE89D20E3Ref"
             ]
           }
         }
       },
       "DependsOn": [
         "Date",
-        "DateMeal",
+        "DateMeals",
         "GraphQLAPITransformerSchema3CB2AE18",
         "Meal",
         "MealComponent",
         "MealMealComponent",
+        "MealTags",
         "Preparation",
-        "Recipe"
+        "Recipe",
+        "Tags"
       ]
     },
     "CustomResourcesjson": {
@@ -1249,13 +1499,15 @@
       "DependsOn": [
         "GraphQLAPI",
         "GraphQLAPITransformerSchema3CB2AE18",
+        "DateMeals",
         "Recipe",
         "Preparation",
         "MealComponent",
+        "MealTags",
         "Meal",
         "Date",
         "MealMealComponent",
-        "DateMeal",
+        "Tags",
         "ConnectionStack"
       ]
     }
@@ -1327,6 +1579,5 @@
         }
       }
     }
-  },
-  "Description": "{\"createdOn\":\"Linux\",\"createdBy\":\"AmplifyAdmin\",\"createdWith\":\"10.0.0-rc.be3b74aea.0\",\"stackType\":\"api-AppSync\",\"metadata\":{}}"
+  }
 }
