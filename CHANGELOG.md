@@ -1,3 +1,10 @@
+# [1.1.0-dev.11](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.10...v1.1.0-dev.11) (2022-09-11)
+
+
+### Bug Fixes
+
+* adjust backend model for better component design ([469be41](https://github.com/OffendingCommit/jellyplan/commit/469be41d43a3482a00bec101ee5fd383c95350dc))
+
 # [1.1.0-dev.10](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.9...v1.1.0-dev.10) (2022-09-09)
 
 
