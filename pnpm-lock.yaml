@@ -12,7 +12,7 @@ specifiers:
   '@emotion/react': 11.10.4
   '@emotion/styled': 11.10.4
   '@fontsource/roboto': 4.5.8
-  '@mui/material': 5.10.4
+  '@mui/material': 5.10.5
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/commit-analyzer': 9.0.2
   '@semantic-release/git': 10.0.1
@@ -56,7 +56,7 @@ dependencies:
   '@emotion/react': 11.10.4_obstn65pa6zrrg27pp7sudypiq
   '@emotion/styled': 11.10.4_gf6rtlrx4fkq57ivmjgebia744
   '@fontsource/roboto': 4.5.8
-  '@mui/material': 5.10.4_6xnkn2aqnlmdvuspwqrjexfduy
+  '@mui/material': 5.10.5_6xnkn2aqnlmdvuspwqrjexfduy
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0_wl4iynrlixafokvgqnhzlvigei
@@ -4975,8 +4975,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@mui/base/5.0.0-alpha.96_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-GZf2YguepLFMWGG8vQNLRl7FlXPDeyxQBYgrkHxwNJYeRw55rrGrJxHzL1iCbk71VZ2IIAIs5IAxNpyHK9iqPQ==}
+  /@mui/base/5.0.0-alpha.97_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-gvo0hOg/tBzfJ3eDQOGAPBJJU+qTWd0e5zBEMFIkT1ekJqXx14JtIHvheOFU17y9iDciYE256Q8g+tj6a1dcBA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
@@ -4998,12 +4998,12 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/core-downloads-tracker/5.10.4:
-    resolution: {integrity: sha512-VGekVa9dleJ+ii47+gXvKUV5a11T0nsjXN8bk5NqiJRQWRCAhbTHgsfZuctNcMeLW9FSf2gu6U0k2U6rhABKcA==}
+  /@mui/core-downloads-tracker/5.10.5:
+    resolution: {integrity: sha512-sZYg85rQdlgDYU3V4WcT2Dl+k+y2wYqN04aUvVkFksRR0j81sj6KmfXx4842HJQcq5rjzcTvh4N+yv66XR/9fA==}
     dev: false
 
-  /@mui/material/5.10.4_6xnkn2aqnlmdvuspwqrjexfduy:
-    resolution: {integrity: sha512-uwupjunU3p8XxZU4f2zF1GYlwB9GDxW1H05BMDPSh0u+37yLxuQDMMxwQQPUo9jSA5Y22/eR4Y71ScxKU89QHg==}
+  /@mui/material/5.10.5_6xnkn2aqnlmdvuspwqrjexfduy:
+    resolution: {integrity: sha512-VFMadvfA6jqx5DCk2xoBl4bAGyzgmmubJIuB7fUWUZBwYIYL5Ea9SsoFpt5kawA6O2feuj69alDN2fhxPw1MeQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@emotion/react': ^11.5.0
@@ -5022,9 +5022,9 @@ packages:
       '@babel/runtime': 7.19.0
       '@emotion/react': 11.10.4_obstn65pa6zrrg27pp7sudypiq
       '@emotion/styled': 11.10.4_gf6rtlrx4fkq57ivmjgebia744
-      '@mui/base': 5.0.0-alpha.96_biqbaboplfbrettd7655fr4n2y
-      '@mui/core-downloads-tracker': 5.10.4
-      '@mui/system': 5.10.4_hfzxdiydbrbhhfpkwuv3jhvwmq
+      '@mui/base': 5.0.0-alpha.97_biqbaboplfbrettd7655fr4n2y
+      '@mui/core-downloads-tracker': 5.10.5
+      '@mui/system': 5.10.5_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@mui/types': 7.2.0
       '@mui/utils': 5.10.3_react@18.2.0
       '@types/react-transition-group': 4.4.5
@@ -5053,8 +5053,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@mui/styled-engine/5.10.4_hfzxdiydbrbhhfpkwuv3jhvwmq:
-    resolution: {integrity: sha512-y29qlonPj4wndTjbePk9O6uWp/FBRNXjiMwI64oiYQ+v3E0EkLnADfDn49GAqOJAfN/r7nHbVZBlvLNIcMbgDg==}
+  /@mui/styled-engine/5.10.5_hfzxdiydbrbhhfpkwuv3jhvwmq:
+    resolution: {integrity: sha512-6U6tTdf+H1OsjgcFoY12gYPR+qqZ1WHGGIahK5V7JhMkMUgH7ozyiNi8s1LzmwrUlAz1hAAhuO5nBYXku3wWvw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@emotion/react': ^11.4.1
@@ -5075,8 +5075,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@mui/system/5.10.4_hfzxdiydbrbhhfpkwuv3jhvwmq:
-    resolution: {integrity: sha512-fE7LtYStPHPfq7EJXEVLQGvz23pS5YwSI7A4mWEFyyW21hHUh0c1opZXb7caHJsUTiBoC22W7R8GGfbVdSOnZA==}
+  /@mui/system/5.10.5_hfzxdiydbrbhhfpkwuv3jhvwmq:
+    resolution: {integrity: sha512-GUPiDVZTKp9yH3FVeLSIw3Bqsyl7qLxtAK1ZiZmC8e+zdH7bcnZZXvWK3vPIbx35ZyhQpvAOWQFpiF9TjdA77w==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@emotion/react': ^11.5.0
@@ -5095,7 +5095,7 @@ packages:
       '@emotion/react': 11.10.4_obstn65pa6zrrg27pp7sudypiq
       '@emotion/styled': 11.10.4_gf6rtlrx4fkq57ivmjgebia744
       '@mui/private-theming': 5.10.3_react@18.2.0
-      '@mui/styled-engine': 5.10.4_hfzxdiydbrbhhfpkwuv3jhvwmq
+      '@mui/styled-engine': 5.10.5_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@mui/types': 7.2.0
       '@mui/utils': 5.10.3_react@18.2.0
       clsx: 1.2.1
