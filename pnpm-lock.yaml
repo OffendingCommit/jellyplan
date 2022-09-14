@@ -26,7 +26,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.31.8
-  framer-motion: 7.3.4
+  framer-motion: 7.3.5
   https-browserify: 1.0.0
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -54,7 +54,7 @@ dependencies:
   '@aws-amplify/datastore': 3.12.10_react-native@0.70.0
   '@aws-amplify/ui-react': 3.5.1_lqhfeese2hh7yjn5kkwrr6nopu
   aws-amplify: 4.3.35_react-native@0.70.0
-  framer-motion: 7.3.4_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.3.5_biqbaboplfbrettd7655fr4n2y
   luxon: 3.0.3
   react: 18.2.0
   react-calendar: 3.8.0_biqbaboplfbrettd7655fr4n2y
@@ -8483,8 +8483,8 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /framer-motion/7.3.4_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-TE0qQtrJ0laUb6Gzt+RBbHy7MmS5TrUshhjwWTpZP/MIBQ8HWrgJ6GpNCu6GOYayNVcgbvAWO33tRVEAcw/52w==}
+  /framer-motion/7.3.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-JrLLVCi59LMI3+ZvSSbxf/Z7SOIdYRZrgdkUvJkzyT2RXu34HtGy26n41jNrcD5K85boqlZhGTbfqnAIfMHRLQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
