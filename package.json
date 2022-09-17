@@ -61,7 +61,7 @@
     "stream-http": "3.2.0",
     "terser": "5.15.0",
     "url": "0.11.0",
-    "vite": "3.1.1",
+    "vite": "3.1.2",
     "vite-plugin-eslint": "1.8.1"
   },
   "lint-staged": {
