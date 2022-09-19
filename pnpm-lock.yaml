@@ -47,7 +47,7 @@ specifiers:
   stream-http: 3.2.0
   terser: 5.15.0
   url: 0.11.0
-  vite: 3.1.2
+  vite: 3.1.3
   vite-plugin-eslint: 1.8.1
 
 dependencies:
@@ -73,8 +73,8 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/github': 8.0.6_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
-  '@vitejs/plugin-legacy': 2.2.0_terser@5.15.0+vite@3.1.2
-  '@vitejs/plugin-react': 2.1.0_vite@3.1.2
+  '@vitejs/plugin-legacy': 2.2.0_terser@5.15.0+vite@3.1.3
+  '@vitejs/plugin-react': 2.1.0_vite@3.1.3
   assert: 2.0.0
   buffer: 6.0.3
   crypto-browserify: 3.12.0
@@ -99,8 +99,8 @@ devDependencies:
   stream-http: 3.2.0
   terser: 5.15.0
   url: 0.11.0
-  vite: 3.1.2_terser@5.15.0
-  vite-plugin-eslint: 1.8.1_eslint@8.23.1+vite@3.1.2
+  vite: 3.1.3_terser@5.15.0
+  vite-plugin-eslint: 1.8.1_eslint@8.23.1+vite@3.1.3
 
 packages:
 
@@ -5857,7 +5857,7 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: false
 
-  /@vitejs/plugin-legacy/2.2.0_terser@5.15.0+vite@3.1.2:
+  /@vitejs/plugin-legacy/2.2.0_terser@5.15.0+vite@3.1.3:
     resolution: {integrity: sha512-xkSXZl2LNk0KKyo5CJknNW84mSlmHIClFzsBuFXkX3yBt+Lr8UO/n4QOg2X7+jvurgBRies9FRn3ZvMem+TmIg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -5870,10 +5870,10 @@ packages:
       regenerator-runtime: 0.13.9
       systemjs: 6.12.6
       terser: 5.15.0
-      vite: 3.1.2_terser@5.15.0
+      vite: 3.1.3_terser@5.15.0
     dev: true
 
-  /@vitejs/plugin-react/2.1.0_vite@3.1.2:
+  /@vitejs/plugin-react/2.1.0_vite@3.1.3:
     resolution: {integrity: sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -5886,7 +5886,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.19.0
       magic-string: 0.26.3
       react-refresh: 0.14.0
-      vite: 3.1.2_terser@5.15.0
+      vite: 3.1.3_terser@5.15.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13499,7 +13499,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite-plugin-eslint/1.8.1_eslint@8.23.1+vite@3.1.2:
+  /vite-plugin-eslint/1.8.1_eslint@8.23.1+vite@3.1.3:
     resolution: {integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==}
     peerDependencies:
       eslint: '>=7'
@@ -13509,11 +13509,11 @@ packages:
       '@types/eslint': 8.4.6
       eslint: 8.23.1
       rollup: 2.79.0
-      vite: 3.1.2_terser@5.15.0
+      vite: 3.1.3_terser@5.15.0
     dev: true
 
-  /vite/3.1.2_terser@5.15.0:
-    resolution: {integrity: sha512-wTDKPkiVbeT+drTPdkuvjVIC/2vKKUc1w3qNOuwgpyvPCZF6fvdxB5v5WEcCsqaYea0zrwA4+XialJKCHM3oVQ==}
+  /vite/3.1.3_terser@5.15.0:
+    resolution: {integrity: sha512-/3XWiktaopByM5bd8dqvHxRt5EEgRikevnnrpND0gRfNkrMrPaGGexhtLCzv15RcCMtV2CLw+BPas8YFeSG0KA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
