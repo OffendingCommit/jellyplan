@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/OffendingCommit/jellyplan/compare/v1.0.20...v1.0.21) (2022-09-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-calendar to v3.9.0 ([eab099f](https://github.com/OffendingCommit/jellyplan/commit/eab099fd21c071051affc8b378b91cad331c3600))
+
 ## [1.0.20](https://github.com/OffendingCommit/jellyplan/compare/v1.0.19...v1.0.20) (2022-09-14)
 
 
