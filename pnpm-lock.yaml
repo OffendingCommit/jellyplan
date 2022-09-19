@@ -12,7 +12,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/github': 8.0.6
   '@semantic-release/release-notes-generator': 10.0.3
-  '@vitejs/plugin-legacy': 2.1.0
+  '@vitejs/plugin-legacy': 2.2.0
   '@vitejs/plugin-react': 2.1.0
   assert: 2.0.0
   aws-amplify: 4.3.35
@@ -73,7 +73,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/github': 8.0.6_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
-  '@vitejs/plugin-legacy': 2.1.0_terser@5.15.0+vite@3.1.2
+  '@vitejs/plugin-legacy': 2.2.0_terser@5.15.0+vite@3.1.2
   '@vitejs/plugin-react': 2.1.0_vite@3.1.2
   assert: 2.0.0
   buffer: 6.0.3
@@ -5857,8 +5857,8 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: false
 
-  /@vitejs/plugin-legacy/2.1.0_terser@5.15.0+vite@3.1.2:
-    resolution: {integrity: sha512-en3h0L7okBonSYKJx81bU8AVFPjSCiUSz8xUDAW8J0CxskfxSt/VJKbZO6G9yCVgZLywGoO8PNAfOQWVLUWZ2A==}
+  /@vitejs/plugin-legacy/2.2.0_terser@5.15.0+vite@3.1.2:
+    resolution: {integrity: sha512-xkSXZl2LNk0KKyo5CJknNW84mSlmHIClFzsBuFXkX3yBt+Lr8UO/n4QOg2X7+jvurgBRies9FRn3ZvMem+TmIg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       terser: ^5.4.0
