@@ -1,3 +1,10 @@
+# [1.1.0-dev.16](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.15...v1.1.0-dev.16) (2022-09-25)
+
+
+### Features
+
+* cleanup login flow ([1d30019](https://github.com/OffendingCommit/jellyplan/commit/1d3001979f9520e2d0054195144f8c7f0afe914d))
+
 # [1.1.0-dev.15](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.14...v1.1.0-dev.15) (2022-09-20)
 
 ### Bug Fixes
