@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/OffendingCommit/jellyplan/compare/v1.0.26...v1.0.27) (2022-10-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency styled-components to v5.3.6 ([f1f7ee5](https://github.com/OffendingCommit/jellyplan/commit/f1f7ee5f1cdadbfb77ad0ae023ac966db631d2b9))
+
 ## [1.0.26](https://github.com/OffendingCommit/jellyplan/compare/v1.0.25...v1.0.26) (2022-10-04)
 
 
