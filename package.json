@@ -13,7 +13,7 @@
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "13.5.0",
     "aws-amplify": "4.3.37",
-    "framer-motion": "7.3.5",
+    "framer-motion": "7.5.2",
     "grommet": "2.25.3",
     "grommet-icons": "4.8.0",
     "luxon": "3.0.4",
