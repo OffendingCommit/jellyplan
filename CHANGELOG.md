@@ -1,3 +1,10 @@
+# [1.1.0-dev.20](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.19...v1.1.0-dev.20) (2022-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency aws-amplify to v4.3.37 ([783708a](https://github.com/OffendingCommit/jellyplan/commit/783708ac655e8d2d9b88736435b135d27f889041))
+
 # [1.1.0-dev.19](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.18...v1.1.0-dev.19) (2022-10-05)
 
 
