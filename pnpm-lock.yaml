@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@aws-amplify/datastore': 3.12.12
-  '@aws-amplify/ui-react': 3.5.6
+  '@aws-amplify/ui-react': 3.5.7
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@emotion/react': ^11.10.4
@@ -56,7 +56,7 @@ specifiers:
 
 dependencies:
   '@aws-amplify/datastore': 3.12.12_react-native@0.70.2
-  '@aws-amplify/ui-react': 3.5.6_lh4rriv3gja52rhsm63xvlfvg4
+  '@aws-amplify/ui-react': 3.5.7_lh4rriv3gja52rhsm63xvlfvg4
   '@emotion/react': 11.10.4_b6k74wvxdvqypha4emuv7fd2ke
   '@emotion/styled': 11.10.4_hn2242ymjfeigbcxwpi42fjy6u
   '@mui/icons-material': 5.10.6_t3e56bfurmhwc5lfjedqqhppmi
@@ -342,8 +342,8 @@ packages:
       - aws-amplify
     dev: false
 
-  /@aws-amplify/ui-react/3.5.6_lh4rriv3gja52rhsm63xvlfvg4:
-    resolution: {integrity: sha512-2JTKUtuXptMiPcokiwyxX6+UgxfMGnp5GfJtHPItdUkASsexs2T8LJj+kDhxgWLpJsKkz9SRxE4aXDexFiCULQ==}
+  /@aws-amplify/ui-react/3.5.7_lh4rriv3gja52rhsm63xvlfvg4:
+    resolution: {integrity: sha512-ctNjnauml0xv3DB0+7on7kcm6Mj8JvwbcHfV20voIsNAU5ofU2yWuKrq7zN5PM7CrEpYUrhvwWc+1Qq2Xj9YHg==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
@@ -1986,7 +1986,7 @@ packages:
       '@aws-sdk/types': 3.6.1
       react-native-get-random-values: 1.8.0_react-native@0.70.2
       tslib: 1.14.1
-      uuid: 3.3.2
+      uuid: 3.4.0
     transitivePeerDependencies:
       - react-native
     dev: false
