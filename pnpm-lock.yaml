@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@aws-amplify/datastore': 3.14.0
-  '@aws-amplify/ui-react': 3.5.8
+  '@aws-amplify/ui-react': 3.5.9
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@emotion/react': ^11.10.4
@@ -56,7 +56,7 @@ specifiers:
 
 dependencies:
   '@aws-amplify/datastore': 3.14.0_react-native@0.70.2
-  '@aws-amplify/ui-react': 3.5.8_kjubheomqsbtza5s4t3qlczzzy
+  '@aws-amplify/ui-react': 3.5.9_kjubheomqsbtza5s4t3qlczzzy
   '@emotion/react': 11.10.4_b6k74wvxdvqypha4emuv7fd2ke
   '@emotion/styled': 11.10.4_hn2242ymjfeigbcxwpi42fjy6u
   '@mui/icons-material': 5.10.6_t3e56bfurmhwc5lfjedqqhppmi
@@ -312,8 +312,8 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@aws-amplify/ui-react-core/1.0.2_iyybuj5eyfxpt6qd23hjvhkhea:
-    resolution: {integrity: sha512-PQRGaqdjKBlkGDizefwNE+KNQd/71VbGb4Ev8gGjo2shALvTW+aTCOw9MYC2vDWGCZvCTpwm+SCF0KucJxSLIQ==}
+  /@aws-amplify/ui-react-core/1.0.3_iyybuj5eyfxpt6qd23hjvhkhea:
+    resolution: {integrity: sha512-obOfG3Us09E+nf3UvhCCOjO8TV6cmbwRzVn7THqSP1km2HmHlY6FwRwa/mH5y6nUk6Yr7vnv5jiplr+EepjpYw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
@@ -343,8 +343,8 @@ packages:
       - aws-amplify
     dev: false
 
-  /@aws-amplify/ui-react/3.5.8_kjubheomqsbtza5s4t3qlczzzy:
-    resolution: {integrity: sha512-hXLOrBXxKE88pOHKzrq3yUB3cX1qsJjqNBZHw35znTjpwdVgKafCtV5fFpn+k/bfYcClkuSc0ah6Sosm3i1xvg==}
+  /@aws-amplify/ui-react/3.5.9_kjubheomqsbtza5s4t3qlczzzy:
+    resolution: {integrity: sha512-w1mETYndL214cn5QE5pVV01ADlC9sBRf4fO2IvcExCaerLWTelAS4m/X857EjcaMzZczi3zBUrcAsnpNSXknXw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
@@ -354,7 +354,7 @@ packages:
         optional: true
     dependencies:
       '@aws-amplify/ui': 4.0.0_aws-amplify@4.3.39
-      '@aws-amplify/ui-react-core': 1.0.2_iyybuj5eyfxpt6qd23hjvhkhea
+      '@aws-amplify/ui-react-core': 1.0.3_iyybuj5eyfxpt6qd23hjvhkhea
       '@aws-amplify/ui-react-v1': /@aws-amplify/ui-react/1.2.9_iyybuj5eyfxpt6qd23hjvhkhea
       '@radix-ui/react-accordion': 0.1.6_react@18.2.0
       '@radix-ui/react-dropdown-menu': 0.1.6_biqbaboplfbrettd7655fr4n2y
