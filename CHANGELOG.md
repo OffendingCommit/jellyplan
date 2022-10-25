@@ -1,3 +1,10 @@
+## [1.0.40](https://github.com/OffendingCommit/jellyplan/compare/v1.0.39...v1.0.40) (2022-10-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mui/material to v5.10.11 ([a0024c9](https://github.com/OffendingCommit/jellyplan/commit/a0024c95346893684130e94ec9519b0217b5573b))
+
 ## [1.0.39](https://github.com/OffendingCommit/jellyplan/compare/v1.0.38...v1.0.39) (2022-10-18)
 
 
