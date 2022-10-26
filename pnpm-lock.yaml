@@ -16,7 +16,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/github': 8.0.6
   '@semantic-release/release-notes-generator': 10.0.3
-  '@vitejs/plugin-legacy': 2.2.0
+  '@vitejs/plugin-legacy': 2.3.0
   '@vitejs/plugin-react': 2.1.0
   assert: 2.0.0
   aws-amplify: 4.3.41
@@ -81,7 +81,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/github': 8.0.6_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
-  '@vitejs/plugin-legacy': 2.2.0_terser@5.15.1+vite@3.1.8
+  '@vitejs/plugin-legacy': 2.3.0_terser@5.15.1+vite@3.1.8
   '@vitejs/plugin-react': 2.1.0_vite@3.1.8
   assert: 2.0.0
   buffer: 6.0.3
@@ -3616,17 +3616,17 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       core-js-pure: 3.25.5
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.10
     dev: true
 
   /@babel/runtime/7.19.0:
     resolution: {integrity: sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.10
 
-  /@babel/standalone/7.19.3:
-    resolution: {integrity: sha512-zSdDx28L6f27Y59OMrl8mBbtyB/cpIGlHm7wVOHlcmUTpD10AiUILkekZATkkpsuTagTWezdJmUaeY8P2SONUA==}
+  /@babel/standalone/7.19.6:
+    resolution: {integrity: sha512-SUOBMtHlxGpXf14X85c1vtHyxYgIODBUdclntETSEGkgI274MNPBUkOVWpvFmRhMuLokK3CL07qJoK2e5CIToA==}
     engines: {node: '>=6.9.0'}
     dev: true
 
@@ -5789,17 +5789,17 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: false
 
-  /@vitejs/plugin-legacy/2.2.0_terser@5.15.1+vite@3.1.8:
-    resolution: {integrity: sha512-xkSXZl2LNk0KKyo5CJknNW84mSlmHIClFzsBuFXkX3yBt+Lr8UO/n4QOg2X7+jvurgBRies9FRn3ZvMem+TmIg==}
+  /@vitejs/plugin-legacy/2.3.0_terser@5.15.1+vite@3.1.8:
+    resolution: {integrity: sha512-Bh62i0gzQvvT8AeAAb78nOnqSYXypkRmQmOTImdPZ39meHR9e2une3AIFmVo4s1SDmcmJ6qj18Sa/lRc/14KaA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       terser: ^5.4.0
       vite: ^3.0.0
     dependencies:
-      '@babel/standalone': 7.19.3
-      core-js: 3.25.5
-      magic-string: 0.26.6
-      regenerator-runtime: 0.13.9
+      '@babel/standalone': 7.19.6
+      core-js: 3.26.0
+      magic-string: 0.26.7
+      regenerator-runtime: 0.13.10
       systemjs: 6.13.0
       terser: 5.15.1
       vite: 3.1.8_terser@5.15.1
@@ -7010,8 +7010,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js/3.25.5:
-    resolution: {integrity: sha512-nbm6eZSjm+ZuBQxCUPQKQCoUEfFOXjUZ8dTTyikyKaWrTYmAVbykQfwsKE5dBK88u3QCkCrzsx/PPlKfhsvgpw==}
+  /core-js/3.26.0:
+    resolution: {integrity: sha512-+DkDrhoR4Y0PxDz6rurahuB+I45OsEUv8E1maPTB6OuHRohMMcznBq9TMpdpDMm/hUPob/mJJS3PqgbHpMTQgw==}
     requiresBuild: true
     dev: true
 
@@ -9958,6 +9958,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /magic-string/0.26.7:
+    resolution: {integrity: sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==}
+    engines: {node: '>=12'}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
@@ -11603,7 +11610,7 @@ packages:
       react-native-gradle-plugin: 0.70.3
       react-refresh: 0.4.3
       react-shallow-renderer: 16.15.0_react@18.2.0
-      regenerator-runtime: 0.13.9
+      regenerator-runtime: 0.13.10
       scheduler: 0.22.0
       stacktrace-parser: 0.1.10
       use-sync-external-store: 1.2.0_react@18.2.0
@@ -11921,8 +11928,8 @@ packages:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
     dev: false
 
-  /regenerator-runtime/0.13.9:
-    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+  /regenerator-runtime/0.13.10:
+    resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
 
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
