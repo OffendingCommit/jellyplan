@@ -1,3 +1,10 @@
+## [1.0.44](https://github.com/OffendingCommit/jellyplan/compare/v1.0.43...v1.0.44) (2022-10-27)
+
+
+### Bug Fixes
+
+* **deps:** update emotion monorepo to v11.10.5 ([abe0419](https://github.com/OffendingCommit/jellyplan/commit/abe041932f4b62cf9fc43b459b806565d92bd899))
+
 ## [1.0.43](https://github.com/OffendingCommit/jellyplan/compare/v1.0.42...v1.0.43) (2022-10-26)
 
 
