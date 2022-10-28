@@ -1,3 +1,10 @@
+# [1.1.0-dev.35](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.34...v1.1.0-dev.35) (2022-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency framer-motion to v7.6.2 ([9c570bf](https://github.com/OffendingCommit/jellyplan/commit/9c570bfc6d41baecd559c20f99f2b3edaf882e1d))
+
 # [1.1.0-dev.34](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.33...v1.1.0-dev.34) (2022-10-28)
 
 
