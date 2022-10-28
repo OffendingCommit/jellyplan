@@ -1,3 +1,10 @@
+# [1.1.0-dev.33](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.32...v1.1.0-dev.33) (2022-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @aws-amplify/datastore to v3.14.3 ([518f8b3](https://github.com/OffendingCommit/jellyplan/commit/518f8b36a7b3250e1447f8216e0ce3ab26ee86e1))
+
 # [1.1.0-dev.32](https://github.com/OffendingCommit/jellyplan/compare/v1.1.0-dev.31...v1.1.0-dev.32) (2022-10-27)
 
 
