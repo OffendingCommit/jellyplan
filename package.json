@@ -19,7 +19,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
-    "aws-amplify": "4.3.41",
+    "aws-amplify": "4.3.42",
     "framer-motion": "7.6.1",
     "luxon": "3.0.4",
     "react": "18.2.0",
