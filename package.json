@@ -21,7 +21,7 @@
     "@mui/material": "^5.10.6",
     "aws-amplify": "4.3.42",
     "framer-motion": "7.6.2",
-    "luxon": "3.0.4",
+    "luxon": "3.1.0",
     "react": "18.2.0",
     "react-calendar": "3.9.0",
     "react-dom": "18.2.0",
