@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@aws-amplify/datastore': 3.14.3
-  '@aws-amplify/ui-react': 3.5.10
+  '@aws-amplify/ui-react': 3.5.11
   '@commitlint/cli': 17.2.0
   '@commitlint/config-conventional': 17.2.0
   '@emotion/react': ^11.10.4
@@ -56,7 +56,7 @@ specifiers:
 
 dependencies:
   '@aws-amplify/datastore': 3.14.3_react-native@0.70.2
-  '@aws-amplify/ui-react': 3.5.10_rkxf7krpazohn2kad3ufdjw7ha
+  '@aws-amplify/ui-react': 3.5.11_rkxf7krpazohn2kad3ufdjw7ha
   '@emotion/react': 11.10.4_otspjrsspon4ofp37rshhlhp2y
   '@emotion/styled': 11.10.4_i4e6mfcjoix6njdtum5ppdbv2e
   '@mui/icons-material': 5.10.6_t3e56bfurmhwc5lfjedqqhppmi
@@ -343,8 +343,8 @@ packages:
       - aws-amplify
     dev: false
 
-  /@aws-amplify/ui-react/3.5.10_rkxf7krpazohn2kad3ufdjw7ha:
-    resolution: {integrity: sha512-pi7RrLzh5amPHpEoJaY7e6C72vuDat+HFZFqj0soFK221rHlxymItro3ZTYbQkZi1bf0BPZAIcDtC06ipJ6mbA==}
+  /@aws-amplify/ui-react/3.5.11_rkxf7krpazohn2kad3ufdjw7ha:
+    resolution: {integrity: sha512-LjbXP5DAv72DY/yGmJXGX77NsjrC6ITh4nYub0/yJnaMRE26Hnw5lvEBFy+LBW18929NaiqzfuUQPpG9CUUOVw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
@@ -366,7 +366,7 @@ packages:
       lodash: 4.17.21
       mapbox-gl: 1.13.1
       maplibre-gl: 2.1.9
-      maplibre-gl-js-amplify: 2.0.4_lp52zo5b4r6ft3aqfnv3fnkhqe
+      maplibre-gl-js-amplify: 2.1.0_lp52zo5b4r6ft3aqfnv3fnkhqe
       qrcode: 1.5.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -10077,11 +10077,11 @@ packages:
       '@turf/length': 6.5.0
     dev: false
 
-  /maplibre-gl-js-amplify/2.0.4_lp52zo5b4r6ft3aqfnv3fnkhqe:
-    resolution: {integrity: sha512-HI7ficmAJz/VKQWFl2rxyYU/ghK3rP0/IyBKZzQ9Wn7b5k8yVx4kwdrxlaQGAiiH9LVqibS5mwdIVojLlGICWw==}
+  /maplibre-gl-js-amplify/2.1.0_lp52zo5b4r6ft3aqfnv3fnkhqe:
+    resolution: {integrity: sha512-iE2z3KOrNPOQ8oqzomquDLN8t6DyCD219ygFYXLhO1buYVXTIh47LR3YKDkB1mPshMpENTqLWku5hxI6fb/Omg==}
     peerDependencies:
-      '@aws-amplify/core': ^4.5.1
-      '@aws-amplify/geo': ^1.3.0
+      '@aws-amplify/core': ^4.7.8
+      '@aws-amplify/geo': ^1.3.20
       maplibre-gl: ^2.1.9
     dependencies:
       '@aws-amplify/core': 4.7.11_react-native@0.70.2
