@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.31.10
-  framer-motion: 7.6.2
+  framer-motion: 7.6.3
   https-browserify: 1.0.0
   husky: 8.0.1
   lint-staged: 13.0.3
@@ -62,7 +62,7 @@ dependencies:
   '@mui/icons-material': 5.10.6_t3e56bfurmhwc5lfjedqqhppmi
   '@mui/material': 5.10.8_6xnkn2aqnlmdvuspwqrjexfduy
   aws-amplify: 4.3.42_react-native@0.70.2
-  framer-motion: 7.6.2_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.6.3_biqbaboplfbrettd7655fr4n2y
   luxon: 3.1.0
   react: 18.2.0
   react-calendar: 3.9.0_biqbaboplfbrettd7655fr4n2y
@@ -8490,8 +8490,8 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /framer-motion/7.6.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-YRr+KaC+1MlLx7iArVyjZRpc0QXI7H0XIOJrdol+dF1+WLQJwS2sP04KGq808BG+byD36UAmAt4YqObE5YFLtw==}
+  /framer-motion/7.6.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-98YezJpKI2z5PKcao59xmxWyU/ZD78LVK6dfhSeal/5cD/KQ/FloAZ0j00qzp0V6F+Me5rwnSgwiO3i+2G4RXg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
