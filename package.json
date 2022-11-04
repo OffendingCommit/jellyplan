@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/datastore": "3.14.3",
+    "@aws-amplify/datastore": "3.14.4",
     "@babel/preset-react": "7.18.6",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
