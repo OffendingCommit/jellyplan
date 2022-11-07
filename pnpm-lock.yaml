@@ -16,7 +16,7 @@ specifiers:
   '@semantic-release/git': 10.0.1
   '@semantic-release/github': 8.0.6
   '@semantic-release/release-notes-generator': 10.0.3
-  '@vitejs/plugin-legacy': 2.3.0
+  '@vitejs/plugin-legacy': 2.3.1
   '@vitejs/plugin-react': 2.2.0
   assert: 2.0.0
   aws-amplify: 4.3.43
@@ -81,7 +81,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@19.0.5
   '@semantic-release/github': 8.0.6_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
-  '@vitejs/plugin-legacy': 2.3.0_terser@5.15.1+vite@3.2.2
+  '@vitejs/plugin-legacy': 2.3.1_terser@5.15.1+vite@3.2.2
   '@vitejs/plugin-react': 2.2.0_vite@3.2.2
   assert: 2.0.0
   buffer: 6.0.3
@@ -3638,8 +3638,8 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.10
 
-  /@babel/standalone/7.19.6:
-    resolution: {integrity: sha512-SUOBMtHlxGpXf14X85c1vtHyxYgIODBUdclntETSEGkgI274MNPBUkOVWpvFmRhMuLokK3CL07qJoK2e5CIToA==}
+  /@babel/standalone/7.20.2:
+    resolution: {integrity: sha512-oQX2oyEZCKzOaLImmg3NMm+1DFDm1pIkAme3xCvi170oYCzr5GazANyzFrsV4+9jup6b5uXlgIghXWGGUUEzSQ==}
     engines: {node: '>=6.9.0'}
     dev: true
 
@@ -5829,14 +5829,14 @@ packages:
       '@types/yargs-parser': 21.0.0
     dev: false
 
-  /@vitejs/plugin-legacy/2.3.0_terser@5.15.1+vite@3.2.2:
-    resolution: {integrity: sha512-Bh62i0gzQvvT8AeAAb78nOnqSYXypkRmQmOTImdPZ39meHR9e2une3AIFmVo4s1SDmcmJ6qj18Sa/lRc/14KaA==}
+  /@vitejs/plugin-legacy/2.3.1_terser@5.15.1+vite@3.2.2:
+    resolution: {integrity: sha512-J5KaGBlSt2tEYPVjM/C8dA6DkRzkFkbPe+Xb4IX5G+XOV5OGbVAfkMjKywdrkO3gGynO8S98i71Lmsff4cWkCQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       terser: ^5.4.0
       vite: ^3.0.0
     dependencies:
-      '@babel/standalone': 7.19.6
+      '@babel/standalone': 7.20.2
       core-js: 3.26.0
       magic-string: 0.26.7
       regenerator-runtime: 0.13.10
