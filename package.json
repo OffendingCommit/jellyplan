@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@aws-amplify/datastore": "3.14.4",
-    "@aws-amplify/ui-react": "3.5.11",
+    "@aws-amplify/ui-react": "3.6.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",

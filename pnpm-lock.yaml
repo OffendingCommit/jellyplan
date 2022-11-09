@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@aws-amplify/datastore': 3.14.4
-  '@aws-amplify/ui-react': 3.5.11
+  '@aws-amplify/ui-react': 3.6.0
   '@commitlint/cli': 17.2.0
   '@commitlint/config-conventional': 17.2.0
   '@emotion/react': ^11.10.4
@@ -56,7 +56,7 @@ specifiers:
 
 dependencies:
   '@aws-amplify/datastore': 3.14.4_react-native@0.70.2
-  '@aws-amplify/ui-react': 3.5.11_3f42ffenghevrhh3hsl2r5e7su
+  '@aws-amplify/ui-react': 3.6.0_3f42ffenghevrhh3hsl2r5e7su
   '@emotion/react': 11.10.4_otspjrsspon4ofp37rshhlhp2y
   '@emotion/styled': 11.10.4_i4e6mfcjoix6njdtum5ppdbv2e
   '@mui/icons-material': 5.10.6_t3e56bfurmhwc5lfjedqqhppmi
@@ -312,14 +312,14 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@aws-amplify/ui-react-core/1.0.4_27ju2vmttnbjp4aogaqznhyzz4:
-    resolution: {integrity: sha512-tqusfFo9TJF4+VstTwlAxAY1nEmZTOgsW6bTWs4uA/0Qx/4pzDVR9One5KfAxpszgjXaVn1WPYEsRP8eguldaQ==}
+  /@aws-amplify/ui-react-core/1.0.5_27ju2vmttnbjp4aogaqznhyzz4:
+    resolution: {integrity: sha512-Sa5WEarsAkclse1DYW0tYIpG5rKu5iHz40AUjuaDrH4Rj8L910obGuSMJ8z/u4WpFBmqYXsywqTHawUONVixuw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
       react-dom: '>= 16.8.0'
     dependencies:
-      '@aws-amplify/ui': 4.0.1_6lut2wsvkzo33asrg7yyqfluwa
+      '@aws-amplify/ui': 4.1.0_6lut2wsvkzo33asrg7yyqfluwa
       '@xstate/react': 3.0.1_react@18.2.0+xstate@4.33.6
       aws-amplify: 4.3.43_react-native@0.70.2
       react: 18.2.0
@@ -343,8 +343,8 @@ packages:
       - aws-amplify
     dev: false
 
-  /@aws-amplify/ui-react/3.5.11_3f42ffenghevrhh3hsl2r5e7su:
-    resolution: {integrity: sha512-LjbXP5DAv72DY/yGmJXGX77NsjrC6ITh4nYub0/yJnaMRE26Hnw5lvEBFy+LBW18929NaiqzfuUQPpG9CUUOVw==}
+  /@aws-amplify/ui-react/3.6.0_3f42ffenghevrhh3hsl2r5e7su:
+    resolution: {integrity: sha512-Qu5y3wjiTvoDBrN8WJCQd0GUfP5mZSPNkbBaqwJYoGFKHTnp20urPd1/TROPq/+Nsir8mt56mQSst7jgC2Uh5g==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       react: '>= 16.8.0'
@@ -353,8 +353,8 @@ packages:
       aws-amplify:
         optional: true
     dependencies:
-      '@aws-amplify/ui': 4.0.1_aws-amplify@4.3.43
-      '@aws-amplify/ui-react-core': 1.0.4_27ju2vmttnbjp4aogaqznhyzz4
+      '@aws-amplify/ui': 4.1.0_aws-amplify@4.3.43
+      '@aws-amplify/ui-react-core': 1.0.5_27ju2vmttnbjp4aogaqznhyzz4
       '@aws-amplify/ui-react-v1': /@aws-amplify/ui-react/1.2.9_27ju2vmttnbjp4aogaqznhyzz4
       '@radix-ui/react-accordion': 0.1.6_react@18.2.0
       '@radix-ui/react-dropdown-menu': 0.1.6_biqbaboplfbrettd7655fr4n2y
@@ -385,8 +385,8 @@ packages:
     resolution: {integrity: sha512-tT7onRv+OCznFhUE2mKPpbGHHV+oODZk4VDX3lYNIfJ7LXv1hVtllQbPNJF5beNBRw9r6uotlXpeJrkph6v07A==}
     dev: false
 
-  /@aws-amplify/ui/4.0.1_6lut2wsvkzo33asrg7yyqfluwa:
-    resolution: {integrity: sha512-J8zWlnItedwDD7DjwUMBZBKUo8jpOdrqbWwqJGrHfZsjI5swrwCzU/LCFVpsUgYrJh5tpSUyr48eX0gEgkAXoA==}
+  /@aws-amplify/ui/4.1.0_6lut2wsvkzo33asrg7yyqfluwa:
+    resolution: {integrity: sha512-BZC/lgMABnghqXJ6rTwsTriDZndWuZ4Z27P+LdEtieVSa4DZ4lQNJKDZ1hLCjoHv1MOXin4UCHSAvwjiMNnfJw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       xstate: ^4.33.6
@@ -401,8 +401,8 @@ packages:
       xstate: 4.33.6
     dev: false
 
-  /@aws-amplify/ui/4.0.1_aws-amplify@4.3.43:
-    resolution: {integrity: sha512-J8zWlnItedwDD7DjwUMBZBKUo8jpOdrqbWwqJGrHfZsjI5swrwCzU/LCFVpsUgYrJh5tpSUyr48eX0gEgkAXoA==}
+  /@aws-amplify/ui/4.1.0_aws-amplify@4.3.43:
+    resolution: {integrity: sha512-BZC/lgMABnghqXJ6rTwsTriDZndWuZ4Z27P+LdEtieVSa4DZ4lQNJKDZ1hLCjoHv1MOXin4UCHSAvwjiMNnfJw==}
     peerDependencies:
       aws-amplify: 3.x.x || 4.x.x
       xstate: ^4.33.6
