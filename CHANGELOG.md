@@ -1,3 +1,10 @@
+## [1.0.61](https://github.com/OffendingCommit/jellyplan/compare/v1.0.60...v1.0.61) (2022-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency grommet to v2.28.0 ([bb81ffb](https://github.com/OffendingCommit/jellyplan/commit/bb81ffba74a4e76710f386b71fb9813ce6bdcc8f))
+
 ## [1.0.60](https://github.com/OffendingCommit/jellyplan/compare/v1.0.59...v1.0.60) (2022-11-22)
 
 
