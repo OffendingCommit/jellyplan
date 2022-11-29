@@ -1,3 +1,10 @@
+## [1.0.66](https://github.com/OffendingCommit/jellyplan/compare/v1.0.65...v1.0.66) (2022-11-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency luxon to v3.1.1 ([62a0f8d](https://github.com/OffendingCommit/jellyplan/commit/62a0f8d4f4696ea5c4df6e2b8741c2855d60e019))
+
 ## [1.0.65](https://github.com/OffendingCommit/jellyplan/compare/v1.0.64...v1.0.65) (2022-11-28)
 
 
