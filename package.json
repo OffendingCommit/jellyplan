@@ -20,7 +20,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
     "aws-amplify": "4.3.43",
-    "framer-motion": "7.6.15",
+    "framer-motion": "7.6.17",
     "luxon": "3.1.1",
     "react": "18.2.0",
     "react-calendar": "3.9.0",
