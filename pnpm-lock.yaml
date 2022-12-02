@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.31.11
-  framer-motion: 7.6.17
+  framer-motion: 7.6.18
   https-browserify: 1.0.0
   husky: 8.0.2
   lint-staged: 13.0.4
@@ -62,7 +62,7 @@ dependencies:
   '@mui/icons-material': 5.10.15_zeahtim7wlzrboprpuzhirxsnq
   '@mui/material': 5.10.15_5rzy53przelm5jchjmb5vr6dxy
   aws-amplify: 4.3.43_react-native@0.70.6
-  framer-motion: 7.6.17_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.6.18_biqbaboplfbrettd7655fr4n2y
   luxon: 3.1.1
   react: 18.2.0
   react-calendar: 3.9.0_biqbaboplfbrettd7655fr4n2y
@@ -8458,8 +8458,8 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /framer-motion/7.6.17_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-NmGBjKMCWlTDT156zR8G+jcpiM8OXbvmlgf1CPsVNk5x2RqJ9tieBKMNr6/OjJhirwyOp9s8bt8TsfrrCBIsEw==}
+  /framer-motion/7.6.18_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-+njLqmMZBqf+GpIMRkuC7s9A9KrvOfMXm+B/yscKG+/SKAA+qdQFl/3ACU2tAhN7UFau1HuB/vBa/jrWBKVvDg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -8467,7 +8467,6 @@ packages:
       '@motionone/dom': 10.13.1
       framesync: 6.1.2
       hey-listen: 1.0.8
-      popmotion: 11.0.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       style-value-types: 5.1.2
@@ -11310,15 +11309,6 @@ packages:
 
   /pointer-events-polyfill/0.4.4-pre:
     resolution: {integrity: sha512-t7iitVY5jW9mGOFZEHphJOzB8eMhoYaE6I5HqsUX14rjsPa9F6OlMOCj3EpqDzNb/8XtMk2BxMpOyePPyuefHw==}
-    dev: false
-
-  /popmotion/11.0.5:
-    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
-    dependencies:
-      framesync: 6.1.2
-      hey-listen: 1.0.8
-      style-value-types: 5.1.2
-      tslib: 2.4.0
     dev: false
 
   /posix-character-classes/0.1.1:
