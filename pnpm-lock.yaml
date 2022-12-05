@@ -29,7 +29,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.31.11
-  framer-motion: 7.6.18
+  framer-motion: 7.6.19
   grommet: 2.28.0
   grommet-icons: 4.8.0
   husky: 8.0.2
@@ -61,7 +61,7 @@ dependencies:
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
   aws-amplify: 4.3.43_react-native@0.70.6
-  framer-motion: 7.6.18_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.6.19_biqbaboplfbrettd7655fr4n2y
   grommet: 2.28.0_2zpt4ilzykmne4yndyzrqd4gdm
   grommet-icons: 4.8.0_2zpt4ilzykmne4yndyzrqd4gdm
   luxon: 3.1.1
@@ -9640,8 +9640,8 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /framer-motion/7.6.18_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-+njLqmMZBqf+GpIMRkuC7s9A9KrvOfMXm+B/yscKG+/SKAA+qdQFl/3ACU2tAhN7UFau1HuB/vBa/jrWBKVvDg==}
+  /framer-motion/7.6.19_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-U+ogwGwNw6Y+pdq6GZB5xvnvLDlq3FTmcKaG5MCUjXuqRLrjKbKTqN4iwZISv3ajwUfgNHM6+tu31LRbYfF9YQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
