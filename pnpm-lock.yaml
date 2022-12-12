@@ -39,7 +39,7 @@ specifiers:
   prettier: 2.8.1
   process: 0.11.10
   react: 18.2.0
-  react-calendar: 3.9.0
+  react-calendar: 4.0.0
   react-dom: 18.2.0
   react-router: ^6.3.0
   react-router-dom: '6'
@@ -65,7 +65,7 @@ dependencies:
   framer-motion: 7.6.19_biqbaboplfbrettd7655fr4n2y
   luxon: 3.1.1
   react: 18.2.0
-  react-calendar: 3.9.0_biqbaboplfbrettd7655fr4n2y
+  react-calendar: 4.0.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.4.5_react@18.2.0
   react-router-dom: 6.4.5_biqbaboplfbrettd7655fr4n2y
@@ -1765,7 +1765,7 @@ packages:
       '@aws-sdk/types': 3.6.1
       react-native-get-random-values: 1.8.0_react-native@0.70.6
       tslib: 1.14.1
-      uuid: 3.3.2
+      uuid: 3.4.0
     transitivePeerDependencies:
       - react-native
     dev: false
@@ -10408,10 +10408,6 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /merge-class-names/1.4.2:
-    resolution: {integrity: sha512-bOl98VzwCGi25Gcn3xKxnR5p/WrhWFQB59MS/aGENcmUc6iSm96yrFDF0XSNurX9qN4LbJm0R9kfvsQ17i8zCw==}
-    dev: false
-
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
 
@@ -11727,15 +11723,15 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-calendar/3.9.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-g6RJCEaPovHTiV2bMhBUfm0a1YoMj4bOUpL8hQSLmR1Glhc7lgRLtZBd4mcC4jkoGsb+hv9uA/QH4pZcm5l9lQ==}
+  /react-calendar/4.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-y9Q5Oo3Mq869KExbOCP3aJ3hEnRZKZ0TqUa9QU1wJGgDZFrW1qTaWp5v52oZpmxTTrpAMTUcUGaC0QJcO1f8Nw==}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@wojtekmaj/date-utils': 1.0.3
+      clsx: 1.2.1
       get-user-locale: 1.5.1
-      merge-class-names: 1.4.2
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
