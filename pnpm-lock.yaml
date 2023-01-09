@@ -42,7 +42,7 @@ specifiers:
   prop-types: 15.8.1
   prop-types-exact: 1.2.0
   react: 18.2.0
-  react-calendar: 3.9.0
+  react-calendar: 4.0.0
   react-dom: 18.2.0
   react-scripts: 5.0.1
   react-text-transition: 3.0.2
@@ -69,7 +69,7 @@ dependencies:
   prop-types: 15.8.1
   prop-types-exact: 1.2.0
   react: 18.2.0
-  react-calendar: 3.9.0_biqbaboplfbrettd7655fr4n2y
+  react-calendar: 4.0.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   react-scripts: 5.0.1_3mby7qawiiphrq7wbhurptcgdu
   react-text-transition: 3.0.2_qidajadjtlaylha4g4eobfhkta
@@ -12098,10 +12098,6 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /merge-class-names/1.4.2:
-    resolution: {integrity: sha512-bOl98VzwCGi25Gcn3xKxnR5p/WrhWFQB59MS/aGENcmUc6iSm96yrFDF0XSNurX9qN4LbJm0R9kfvsQ17i8zCw==}
-    dev: false
-
   /merge-descriptors/1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
     dev: false
@@ -14292,15 +14288,15 @@ packages:
       whatwg-fetch: 3.6.2
     dev: false
 
-  /react-calendar/3.9.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-g6RJCEaPovHTiV2bMhBUfm0a1YoMj4bOUpL8hQSLmR1Glhc7lgRLtZBd4mcC4jkoGsb+hv9uA/QH4pZcm5l9lQ==}
+  /react-calendar/4.0.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-y9Q5Oo3Mq869KExbOCP3aJ3hEnRZKZ0TqUa9QU1wJGgDZFrW1qTaWp5v52oZpmxTTrpAMTUcUGaC0QJcO1f8Nw==}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@wojtekmaj/date-utils': 1.0.3
+      clsx: 1.2.1
       get-user-locale: 1.5.1
-      merge-class-names: 1.4.2
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
