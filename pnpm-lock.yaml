@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@aws-amplify/datastore': 3.14.6
+  '@aws-amplify/datastore': 3.14.7
   '@babel/cli': 7.21.0
   '@babel/core': 7.21.3
   '@babel/eslint-parser': 7.21.3
@@ -51,7 +51,7 @@ specifiers:
   web-vitals: 2.1.4
 
 dependencies:
-  '@aws-amplify/datastore': 3.14.6_react-native@0.70.6
+  '@aws-amplify/datastore': 3.14.7_react-native@0.70.6
   '@babel/preset-react': 7.18.6_@babel+core@7.21.3
   '@emotion/react': 11.10.5_ogvc6ewgr3qq5z6tmbtquhqyui
   '@emotion/styled': 11.10.5_7lew7sy4mjndmrshdbuj6ixkgm
@@ -160,10 +160,37 @@ packages:
       - react-native
     dev: false
 
+  /@aws-amplify/api-graphql/2.3.28_react-native@0.70.6:
+    resolution: {integrity: sha512-n/8dwUx2i9sojcAnK1vITamx/FODGPmDM08lTfZNwpTVJ1aXB/bcA9GitF7gWa4jstVACDgQAKmTAr7j2d0tGw==}
+    dependencies:
+      '@aws-amplify/api-rest': 2.0.64_react-native@0.70.6
+      '@aws-amplify/auth': 4.6.17_react-native@0.70.6
+      '@aws-amplify/cache': 4.0.66_react-native@0.70.6
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
+      '@aws-amplify/pubsub': 4.5.14_react-native@0.70.6
+      graphql: 15.8.0
+      uuid: 3.4.0
+      zen-observable-ts: 0.8.19
+    transitivePeerDependencies:
+      - debug
+      - encoding
+      - react-native
+    dev: false
+
   /@aws-amplify/api-rest/2.0.63_react-native@0.70.6:
     resolution: {integrity: sha512-HBl7Fr32bkqhcKXsatc8eZOHgqLbzLDrYgB0aIgxliCbHLknpFi1oppnEMBf75a2CNx6qXywhGh0ULBjTdFq1w==}
     dependencies:
       '@aws-amplify/core': 4.7.14_react-native@0.70.6
+      axios: 0.26.0
+    transitivePeerDependencies:
+      - debug
+      - react-native
+    dev: false
+
+  /@aws-amplify/api-rest/2.0.64_react-native@0.70.6:
+    resolution: {integrity: sha512-hS+ImRnkyjGJj5gTet+Gd979Vnsp1lKTmiUngt3MXY/0b6CeUgMAACxnIQ628J00frvguUcgmOlZ502jeHsiKQ==}
+    dependencies:
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
       axios: 0.26.0
     transitivePeerDependencies:
       - debug
@@ -175,6 +202,17 @@ packages:
     dependencies:
       '@aws-amplify/api-graphql': 2.3.27_react-native@0.70.6
       '@aws-amplify/api-rest': 2.0.63_react-native@0.70.6
+    transitivePeerDependencies:
+      - debug
+      - encoding
+      - react-native
+    dev: false
+
+  /@aws-amplify/api/4.0.64_react-native@0.70.6:
+    resolution: {integrity: sha512-nhg7Z+TQcEnLR5ZotxvKnJgqNwDtUYVBcNuktsHgUVszkKT/Oj2vC28xv8RufdljIofrXFsBDeERviwSpVXiFA==}
+    dependencies:
+      '@aws-amplify/api-graphql': 2.3.28_react-native@0.70.6
+      '@aws-amplify/api-rest': 2.0.64_react-native@0.70.6
     transitivePeerDependencies:
       - debug
       - encoding
@@ -193,6 +231,18 @@ packages:
       - react-native
     dev: false
 
+  /@aws-amplify/auth/4.6.17_react-native@0.70.6:
+    resolution: {integrity: sha512-KIWHP6qODphwtzyJ6jmcSQewH0a8dOOsQ35OtAALwmPNEaftGmoUjm8wMHAtyH3EwWv1iknhPwMVzmGylr+l1A==}
+    dependencies:
+      '@aws-amplify/cache': 4.0.66_react-native@0.70.6
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
+      amazon-cognito-identity-js: 5.2.14
+      crypto-js: 4.1.1
+    transitivePeerDependencies:
+      - encoding
+      - react-native
+    dev: false
+
   /@aws-amplify/cache/4.0.65_react-native@0.70.6:
     resolution: {integrity: sha512-C80LcnqJavjUWkH2mLtjRqTM2znX2IxU56mYUwmPWugMPJ8klvJlru9HA+rcMg+yqp2fNsRaiMtqrzx2oFNX6A==}
     dependencies:
@@ -201,8 +251,31 @@ packages:
       - react-native
     dev: false
 
+  /@aws-amplify/cache/4.0.66_react-native@0.70.6:
+    resolution: {integrity: sha512-dG5TSx1VbUMnIchqwoT+Pa5W+PdPTZVcXfg/4bjpv0HJ0s3LUeYMI93cpQGg0DlegKNvwV5Ib+B7UqXlWp/JEQ==}
+    dependencies:
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
+    transitivePeerDependencies:
+      - react-native
+    dev: false
+
   /@aws-amplify/core/4.7.14_react-native@0.70.6:
     resolution: {integrity: sha512-hrjeDLlx7a0zlaiDRzOagP7zsAye8k9krmjV1o49Db2NRqVmFzIiFg8SZ+xX+5xk4TI7rwxnCQ4zFJAHsrcSmw==}
+    dependencies:
+      '@aws-crypto/sha256-js': 1.0.0-alpha.0
+      '@aws-sdk/client-cloudwatch-logs': 3.6.1_react-native@0.70.6
+      '@aws-sdk/client-cognito-identity': 3.6.1_react-native@0.70.6
+      '@aws-sdk/credential-provider-cognito-identity': 3.6.1_react-native@0.70.6
+      '@aws-sdk/types': 3.6.1
+      '@aws-sdk/util-hex-encoding': 3.6.1
+      universal-cookie: 4.0.4
+      zen-observable-ts: 0.8.19
+    transitivePeerDependencies:
+      - react-native
+    dev: false
+
+  /@aws-amplify/core/4.7.15_react-native@0.70.6:
+    resolution: {integrity: sha512-upRxT6MN90pQZnJw2VwGdA7vHO6tGY1c3qLrXkq+x5XT45KrfGjbSSHmYBo7PkjWQYAUMGuX4KYwmPBuI58svg==}
     dependencies:
       '@aws-crypto/sha256-js': 1.0.0-alpha.0
       '@aws-sdk/client-cloudwatch-logs': 3.6.1_react-native@0.70.6
@@ -223,6 +296,26 @@ packages:
       '@aws-amplify/auth': 4.6.16_react-native@0.70.6
       '@aws-amplify/core': 4.7.14_react-native@0.70.6
       '@aws-amplify/pubsub': 4.5.13_react-native@0.70.6
+      amazon-cognito-identity-js: 5.2.14
+      idb: 5.0.6
+      immer: 9.0.6
+      ulid: 2.3.0
+      uuid: 3.3.2
+      zen-observable-ts: 0.8.19
+      zen-push: 0.2.1
+    transitivePeerDependencies:
+      - debug
+      - encoding
+      - react-native
+    dev: false
+
+  /@aws-amplify/datastore/3.14.7_react-native@0.70.6:
+    resolution: {integrity: sha512-nzZHK0LXOsvmZzeBHL8VL/nrTm9dmBYdOWZOf7zSrbZBVaLEMim2l2os3DUx0+1u44XPr166QSF8OXLpl+56+w==}
+    dependencies:
+      '@aws-amplify/api': 4.0.64_react-native@0.70.6
+      '@aws-amplify/auth': 4.6.17_react-native@0.70.6
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
+      '@aws-amplify/pubsub': 4.5.14_react-native@0.70.6
       amazon-cognito-identity-js: 5.2.14
       idb: 5.0.6
       immer: 9.0.6
@@ -286,6 +379,21 @@ packages:
       '@aws-amplify/auth': 4.6.16_react-native@0.70.6
       '@aws-amplify/cache': 4.0.65_react-native@0.70.6
       '@aws-amplify/core': 4.7.14_react-native@0.70.6
+      graphql: 15.8.0
+      paho-mqtt: 1.1.0
+      uuid: 3.4.0
+      zen-observable-ts: 0.8.19
+    transitivePeerDependencies:
+      - encoding
+      - react-native
+    dev: false
+
+  /@aws-amplify/pubsub/4.5.14_react-native@0.70.6:
+    resolution: {integrity: sha512-WGR26nOMW2+DQE1DuWE4W9Ehx1RxmNmQN6Mq27DnKicLL0nMgyKT7OGBAHmQzVtsvMzFgUo/KcMBL3GltZ0M5g==}
+    dependencies:
+      '@aws-amplify/auth': 4.6.17_react-native@0.70.6
+      '@aws-amplify/cache': 4.0.66_react-native@0.70.6
+      '@aws-amplify/core': 4.7.15_react-native@0.70.6
       graphql: 15.8.0
       paho-mqtt: 1.1.0
       uuid: 3.4.0
