@@ -29,7 +29,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.32.2
-  framer-motion: 7.6.19
+  framer-motion: 7.10.3
   grommet: 2.28.0
   grommet-icons: 4.8.0
   husky: 8.0.3
@@ -61,7 +61,7 @@ dependencies:
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
   aws-amplify: 4.3.46_react-native@0.70.6
-  framer-motion: 7.6.19_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
   grommet: 2.28.0_emdwivvopq42w3topovo6qazhe
   grommet-icons: 4.8.0_emdwivvopq42w3topovo6qazhe
   luxon: 3.2.1
@@ -4559,8 +4559,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@motionone/dom/10.13.1:
-    resolution: {integrity: sha512-zjfX+AGMIt/fIqd/SL1Lj93S6AiJsEA3oc5M9VkUr+Gz+juRmYN1vfvZd6MvEkSqEjwPQgcjN7rGZHrDB9APfQ==}
+  /@motionone/dom/10.15.5:
+    resolution: {integrity: sha512-Xc5avlgyh3xukU9tydh9+8mB8+2zAq+WlLsC3eEIp7Ax7DnXgY7Bj/iv0a4X2R9z9ZFZiaXK3BO0xMYHKbAAdA==}
     dependencies:
       '@motionone/animation': 10.15.1
       '@motionone/generators': 10.15.1
@@ -9678,27 +9678,19 @@ packages:
       map-cache: 0.2.2
     dev: false
 
-  /framer-motion/7.6.19_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-U+ogwGwNw6Y+pdq6GZB5xvnvLDlq3FTmcKaG5MCUjXuqRLrjKbKTqN4iwZISv3ajwUfgNHM6+tu31LRbYfF9YQ==}
+  /framer-motion/7.10.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-k2ccYeZNSpPg//HTaqrU+4pRq9f9ZpaaN7rr0+Rx5zA4wZLbk547wtDzge2db1sB+1mnJ6r59P4xb+aEIi/W+w==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@motionone/dom': 10.13.1
-      framesync: 6.1.2
+      '@motionone/dom': 10.15.5
       hey-listen: 1.0.8
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      style-value-types: 5.1.2
       tslib: 2.4.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
-    dev: false
-
-  /framesync/6.1.2:
-    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
-    dependencies:
-      tslib: 2.4.0
     dev: false
 
   /fresh/0.5.2:
@@ -15972,13 +15964,6 @@ packages:
       webpack: ^5.0.0
     dependencies:
       webpack: 5.75.0
-    dev: false
-
-  /style-value-types/5.1.2:
-    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
-    dependencies:
-      hey-listen: 1.0.8
-      tslib: 2.4.0
     dev: false
 
   /styled-components/5.3.9_7i5myeigehqah43i5u7wbekgba:
