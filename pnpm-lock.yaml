@@ -36,7 +36,7 @@ specifiers:
   ini: 1.3.8
   inquirer: 6.5.2
   lint-staged: 13.2.0
-  luxon: 3.2.1
+  luxon: 3.3.0
   polished: 4.2.2
   prettier: 2.8.4
   prop-types: 15.8.1
@@ -64,7 +64,7 @@ dependencies:
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
   grommet: 2.30.0_emdwivvopq42w3topovo6qazhe
   grommet-icons: 4.10.0_emdwivvopq42w3topovo6qazhe
-  luxon: 3.2.1
+  luxon: 3.3.0
   polished: 4.2.2
   prop-types: 15.8.1
   prop-types-exact: 1.2.0
@@ -12034,8 +12034,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /luxon/3.2.1:
-    resolution: {integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==}
+  /luxon/3.3.0:
+    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
     engines: {node: '>=12'}
     dev: false
 
