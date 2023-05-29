@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.32.2
   framer-motion: 7.10.3
-  grommet: 2.30.0
+  grommet: 2.32.1
   grommet-icons: 4.10.0
   husky: 8.0.3
   ini: 1.3.8
@@ -62,7 +62,7 @@ dependencies:
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
   aws-amplify: 4.3.46_react-native@0.70.6
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
-  grommet: 2.30.0_ynlbwjpw7oqthgrnao7bjjcd2y
+  grommet: 2.32.1_ynlbwjpw7oqthgrnao7bjjcd2y
   grommet-icons: 4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y
   luxon: 3.3.0
   polished: 4.2.2
@@ -10250,9 +10250,9 @@ packages:
       styled-components: 5.3.11_7i5myeigehqah43i5u7wbekgba
     dev: false
 
-  /grommet/2.30.0_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-sC5DIYZXGpkgvjYnDIsxK2KuDS8rDM7LwZmOeuad9wwPTJwg+K43wSy2DiBobj9e/Wn01IKEN3dwTQQDjE2jgg==}
-    engines: {node: '>= 14'}
+  /grommet/2.32.1_ynlbwjpw7oqthgrnao7bjjcd2y:
+    resolution: {integrity: sha512-PejleJIrYcUnVLEVcRoyuuU/Hheh+8JMiBd8IMv3ybMf28GrVKu2yeghmMkHllULxIy2Eb4PZcxCh6AKnQNwIg==}
+    engines: {node: '>= 16'}
     peerDependencies:
       react: ^16.6.1 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.1 || ^17.0.0 || ^18.0.0
@@ -10260,7 +10260,7 @@ packages:
     dependencies:
       grommet-icons: 4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y
       hoist-non-react-statics: 3.3.2
-      markdown-to-jsx: 7.1.8_react@18.2.0
+      markdown-to-jsx: 7.2.0_react@18.2.0
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -12377,8 +12377,8 @@ packages:
       object-visit: 1.0.1
     dev: false
 
-  /markdown-to-jsx/7.1.8_react@18.2.0:
-    resolution: {integrity: sha512-rRSa1aFmFnpDRFAhv5vIkWM4nPaoB9vnzIjuIKa1wGupfn2hdCNeaQHKpu4/muoc8n8J7yowjTP2oncA4/Rbgg==}
+  /markdown-to-jsx/7.2.0_react@18.2.0:
+    resolution: {integrity: sha512-3l4/Bigjm4bEqjCR6Xr+d4DtM1X6vvtGsMGSjJYyep8RjjIvcWtrXBS8Wbfe1/P+atKNMccpsraESIaWVplzVg==}
     engines: {node: '>= 10'}
     peerDependencies:
       react: '>= 0.14.0'
