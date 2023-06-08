@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-react: 7.32.2
   framer-motion: 7.10.3
-  grommet: 2.32.1
+  grommet: 2.32.2
   grommet-icons: 4.10.0
   husky: 8.0.3
   ini: 1.3.8
@@ -62,7 +62,7 @@ dependencies:
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
   aws-amplify: 4.3.46_react-native@0.70.6
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
-  grommet: 2.32.1_ynlbwjpw7oqthgrnao7bjjcd2y
+  grommet: 2.32.2_ynlbwjpw7oqthgrnao7bjjcd2y
   grommet-icons: 4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y
   luxon: 3.3.0
   polished: 4.2.2
@@ -10066,8 +10066,8 @@ packages:
       styled-components: 5.3.11_7i5myeigehqah43i5u7wbekgba
     dev: false
 
-  /grommet/2.32.1_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-PejleJIrYcUnVLEVcRoyuuU/Hheh+8JMiBd8IMv3ybMf28GrVKu2yeghmMkHllULxIy2Eb4PZcxCh6AKnQNwIg==}
+  /grommet/2.32.2_ynlbwjpw7oqthgrnao7bjjcd2y:
+    resolution: {integrity: sha512-ulmzBva/mnQPkWYBXF/2vTbOuzXkmzsum8MWM9YmEOwKsbrICbqgFEAW8Z1qXn1NzLEAUpgH/oTQoR0/TaZbcg==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: ^16.6.1 || ^17.0.0 || ^18.0.0
