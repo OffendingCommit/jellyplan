@@ -31,7 +31,7 @@ specifiers:
   eslint-plugin-react: 7.33.2
   framer-motion: 7.10.3
   grommet: 2.34.1
-  grommet-icons: 4.10.0
+  grommet-icons: 4.11.0
   husky: 8.0.3
   ini: 1.3.8
   inquirer: 6.5.2
@@ -63,7 +63,7 @@ dependencies:
   aws-amplify: 4.3.46_react-native@0.70.6
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
   grommet: 2.34.1_ynlbwjpw7oqthgrnao7bjjcd2y
-  grommet-icons: 4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y
+  grommet-icons: 4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y
   luxon: 3.3.0
   polished: 4.2.2
   prop-types: 15.8.1
@@ -10492,26 +10492,12 @@ packages:
     engines: {node: '>= 10.x'}
     dev: false
 
-  /grommet-icons/4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-f3Re6jFRh93n2Cn2hyrJUANG7wOsv3wlEuyW/A1kIYzamDWnNfoZLgDQZXbAmMUMb1NdN7OU/0JrINxTCUOAEA==}
+  /grommet-icons/4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y:
+    resolution: {integrity: sha512-ArXf2XyXmpk5JsQ8NudzNz3mbWv+TeZkPiyog2s9yoNAWTlIr3vzNjr97uon/Xm4Uiq2kiHkvO4i2fG1u6EaDg==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
       styled-components: '>= 5.x'
-    dependencies:
-      grommet-styles: 0.2.0_ynlbwjpw7oqthgrnao7bjjcd2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      styled-components: 5.3.11_7i5myeigehqah43i5u7wbekgba
-    dev: false
-
-  /grommet-styles/0.2.0_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-0OMSYuGeyifYKpg4Gv2HzL8rUdd0ddnJ5LbCBKgDuloC71XIwr9g/Fxa6rs737MbPV7OZ4pEm4wvrjH4epzf1A==}
-    engines: {node: '>= 8'}
-    peerDependencies:
-      react: '>= 16.4.1'
-      react-dom: '>= 16.4.1'
-      styled-components: '>= 4.X'
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -10526,7 +10512,7 @@ packages:
       react-dom: ^16.6.1 || ^17.0.0 || ^18.0.0
       styled-components: ^5.1.0
     dependencies:
-      grommet-icons: 4.10.0_ynlbwjpw7oqthgrnao7bjjcd2y
+      grommet-icons: 4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y
       hoist-non-react-statics: 3.3.2
       markdown-to-jsx: 7.2.0_react@18.2.0
       prop-types: 15.8.1
