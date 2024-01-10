@@ -42,7 +42,7 @@ specifiers:
   prop-types: 15.8.1
   prop-types-exact: 1.2.0
   react: 18.2.0
-  react-calendar: 3.9.0
+  react-calendar: 4.8.0
   react-dom: 18.2.0
   react-scripts: 5.0.1
   react-text-transition: 3.1.0
@@ -69,7 +69,7 @@ dependencies:
   prop-types: 15.8.1
   prop-types-exact: 1.2.0
   react: 18.2.0
-  react-calendar: 3.9.0_biqbaboplfbrettd7655fr4n2y
+  react-calendar: 4.8.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   react-scripts: 5.0.1_gby3ta2pptjyi64hqe4go2mi6y
   react-text-transition: 3.1.0_biqbaboplfbrettd7655fr4n2y
@@ -6151,6 +6151,16 @@ packages:
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
+  /@types/lodash.memoize/4.1.9:
+    resolution: {integrity: sha512-glY1nQuoqX4Ft8Uk+KfJudOD7DQbbEDF6k9XpGncaohW3RW4eSWBlx6AA0fZCrh40tZcQNH4jS/Oc59J6Eq+aw==}
+    dependencies:
+      '@types/lodash': 4.14.202
+    dev: false
+
+  /@types/lodash/4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: false
+
   /@types/mime/3.0.1:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
     dev: false
@@ -6545,8 +6555,8 @@ packages:
       '@xtuc/long': 4.2.2
     dev: false
 
-  /@wojtekmaj/date-utils/1.0.3:
-    resolution: {integrity: sha512-1VPkkTBk07gMR1fjpBtse4G+oJqpmE+0gUFB0dg3VIL7qJmUVaBoD/vlzMm/jNeOPfvlmerl1lpnsZyBUFIRuw==}
+  /@wojtekmaj/date-utils/1.5.1:
+    resolution: {integrity: sha512-+i7+JmNiE/3c9FKxzWFi2IjRJ+KzZl1QPu6QNrsgaa2MuBgXvUy4gA1TVzf/JMdIIloB76xSKikTWuyYAIVLww==}
     dev: false
 
   /@xtuc/ieee754/1.2.0:
@@ -10337,9 +10347,10 @@ packages:
       call-bind: 1.0.5
       get-intrinsic: 1.2.2
 
-  /get-user-locale/1.5.1:
-    resolution: {integrity: sha512-WiNpoFRcHn1qxP9VabQljzGwkAQDrcpqUtaP0rNBEkFxJdh4f3tik6MfZsMYZc+UgQJdGCxWEjL9wnCUlRQXag==}
+  /get-user-locale/2.3.1:
+    resolution: {integrity: sha512-VEvcsqKYx7zhZYC1CjecrDC5ziPSpl1gSm0qFFJhHSGDrSC+x4+p1KojWC/83QX//j476gFhkVXP/kNUc9q+bQ==}
     dependencies:
+      '@types/lodash.memoize': 4.1.9
       lodash.memoize: 4.1.2
     dev: false
 
@@ -12700,10 +12711,6 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /merge-class-names/1.4.2:
-    resolution: {integrity: sha512-bOl98VzwCGi25Gcn3xKxnR5p/WrhWFQB59MS/aGENcmUc6iSm96yrFDF0XSNurX9qN4LbJm0R9kfvsQ17i8zCw==}
-    dev: false
-
   /merge-descriptors/1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
     dev: false
@@ -14894,18 +14901,23 @@ packages:
       whatwg-fetch: 3.6.2
     dev: false
 
-  /react-calendar/3.9.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-g6RJCEaPovHTiV2bMhBUfm0a1YoMj4bOUpL8hQSLmR1Glhc7lgRLtZBd4mcC4jkoGsb+hv9uA/QH4pZcm5l9lQ==}
+  /react-calendar/4.8.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-qFgwo+p58sgv1QYMI1oGNaop90eJVKuHTZ3ZgBfrrpUb+9cAexxsKat0sAszgsizPMVo7vOXedV7Lqa0GQGMvA==}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
-      '@wojtekmaj/date-utils': 1.0.3
-      get-user-locale: 1.5.1
-      merge-class-names: 1.4.2
+      '@wojtekmaj/date-utils': 1.5.1
+      clsx: 2.0.0
+      get-user-locale: 2.3.1
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      warning: 4.0.3
     dev: false
 
   /react-dev-utils/12.0.1_5ylecvfl6nwwu7hcq2fetda77i:
@@ -17236,6 +17248,12 @@ packages:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
     dependencies:
       makeerror: 1.0.12
+    dev: false
+
+  /warning/4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /watchpack/2.4.0:
