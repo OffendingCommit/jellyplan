@@ -5,8 +5,8 @@
   "dependencies": {
     "@aws-amplify/datastore": "3.14.7",
     "@babel/preset-react": "7.23.3",
-    "@emotion/react": "11.11.1",
-    "@emotion/styled": "11.11.0",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.5",
     "@fontsource/roboto": "4.5.8",
     "@mui/material": "5.14.18",
     "@testing-library/jest-dom": "5.17.0",
