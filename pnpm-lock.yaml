@@ -30,7 +30,7 @@ specifiers:
   eslint-plugin-prettier: 5.1.3
   eslint-plugin-react: 7.34.1
   framer-motion: 7.10.3
-  grommet: 2.34.1
+  grommet: 2.37.0
   grommet-icons: 4.11.0
   husky: 8.0.3
   ini: 1.3.8
@@ -62,7 +62,7 @@ dependencies:
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
   aws-amplify: 4.3.46_react-native@0.70.6
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
-  grommet: 2.34.1_ynlbwjpw7oqthgrnao7bjjcd2y
+  grommet: 2.37.0_ynlbwjpw7oqthgrnao7bjjcd2y
   grommet-icons: 4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y
   luxon: 3.4.4
   polished: 4.2.2
@@ -10637,8 +10637,8 @@ packages:
       styled-components: 5.3.11_7i5myeigehqah43i5u7wbekgba
     dev: false
 
-  /grommet/2.34.1_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-zZXwURaGoCgprsPug2kDXp5raTBbyajHFpSXby92jfjHlr1DFa8Wa9NR4SuaLDP+LIaKWD/dMtLYw3GSFfs5RQ==}
+  /grommet/2.37.0_ynlbwjpw7oqthgrnao7bjjcd2y:
+    resolution: {integrity: sha512-+1LTBLqMi4TQ55SLJJr2AX46kWEWnrx6l4LO102hymw0+5tkdfyCYZ7tH9gdYyFMxkBGle4pg5PFqc82gdzLew==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: ^16.6.1 || ^17.0.0 || ^18.0.0
@@ -13117,7 +13117,7 @@ packages:
   /metro-runtime/0.72.3:
     resolution: {integrity: sha512-3MhvDKfxMg2u7dmTdpFOfdR71NgNNo4tzAyJumDVQKwnHYHN44f2QFZQqpPBEmqhWlojNeOxsqFsjYgeyMx6VA==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.24.5
       react-refresh: 0.4.3
     dev: false
 
