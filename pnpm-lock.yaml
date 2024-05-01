@@ -12,7 +12,7 @@ specifiers:
   '@emotion/react': 11.11.4
   '@emotion/styled': 11.11.5
   '@fontsource/roboto': 4.5.8
-  '@mui/material': 5.15.15
+  '@mui/material': 5.15.16
   '@semantic-release/changelog': 6.0.3
   '@semantic-release/commit-analyzer': 9.0.2
   '@semantic-release/git': 10.0.1
@@ -56,7 +56,7 @@ dependencies:
   '@emotion/react': 11.11.4_react@18.3.1
   '@emotion/styled': 11.11.5_axmxivx5epzazzua2upayhlhme
   '@fontsource/roboto': 4.5.8
-  '@mui/material': 5.15.15_l4nqkajrntrot4jhggjwfy4ghq
+  '@mui/material': 5.15.16_l4nqkajrntrot4jhggjwfy4ghq
   '@testing-library/jest-dom': 5.17.0
   '@testing-library/react': 13.4.0_nnrd3gsncyragczmpvfhocinkq
   '@testing-library/user-event': 13.5.0_aaq3sbffpfe3jnxzm2zngsddei
@@ -4412,7 +4412,7 @@ packages:
       '@emotion/memoize': 0.8.1
       '@emotion/unitless': 0.8.1
       '@emotion/utils': 1.2.1
-      csstype: 3.1.2
+      csstype: 3.1.3
     dev: false
 
   /@emotion/sheet/1.2.2:
@@ -4981,12 +4981,12 @@ packages:
       react-dom: 18.3.1_react@18.3.1
     dev: false
 
-  /@mui/core-downloads-tracker/5.15.15:
-    resolution: {integrity: sha512-aXnw29OWQ6I5A47iuWEI6qSSUfH6G/aCsW9KmW3LiFqr7uXZBK4Ks+z8G+qeIub8k0T5CMqlT2q0L+ZJTMrqpg==}
+  /@mui/core-downloads-tracker/5.15.16:
+    resolution: {integrity: sha512-PTIbMJs5C/vYMfyJNW8ArOezh4eyHkg2pTeA7bBxh2kLP1Uzs0Nm+krXWbWGJPwTWjM8EhnDrr4aCF26+2oleg==}
     dev: false
 
-  /@mui/material/5.15.15_l4nqkajrntrot4jhggjwfy4ghq:
-    resolution: {integrity: sha512-3zvWayJ+E1kzoIsvwyEvkTUKVKt1AjchFFns+JtluHCuvxgKcLSRJTADw37k0doaRtVAsyh8bz9Afqzv+KYrIA==}
+  /@mui/material/5.15.16_l4nqkajrntrot4jhggjwfy4ghq:
+    resolution: {integrity: sha512-ery2hFReewko9gpDBqOr2VmXwQG9ifXofPhGzIx09/b9JqCQC/06kZXZDGGrOTpIddK9HlIf4yrS+G70jPAzUQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@emotion/react': ^11.5.0
@@ -5006,7 +5006,7 @@ packages:
       '@emotion/react': 11.11.4_react@18.3.1
       '@emotion/styled': 11.11.5_axmxivx5epzazzua2upayhlhme
       '@mui/base': 5.0.0-beta.40_nnrd3gsncyragczmpvfhocinkq
-      '@mui/core-downloads-tracker': 5.15.15
+      '@mui/core-downloads-tracker': 5.15.16
       '@mui/system': 5.15.15_ysaiiolctyha4izoa6aahguoxq
       '@mui/types': 7.2.14
       '@mui/utils': 5.15.14_react@18.3.1
@@ -6193,7 +6193,7 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
-      csstype: 3.1.2
+      csstype: 3.1.3
     dev: false
 
   /@types/resolve/1.17.1:
@@ -8535,10 +8535,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       cssom: 0.3.8
-    dev: false
-
-  /csstype/3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
     dev: false
 
   /csstype/3.1.3:
