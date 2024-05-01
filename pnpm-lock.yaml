@@ -31,7 +31,7 @@ specifiers:
   eslint-plugin-react: 7.34.1
   framer-motion: 7.10.3
   grommet: 2.37.0
-  grommet-icons: 4.11.0
+  grommet-icons: 4.12.1
   husky: 8.0.3
   ini: 1.3.8
   inquirer: 6.5.2
@@ -63,7 +63,7 @@ dependencies:
   aws-amplify: 4.3.46_react-native@0.70.6
   framer-motion: 7.10.3_biqbaboplfbrettd7655fr4n2y
   grommet: 2.37.0_ynlbwjpw7oqthgrnao7bjjcd2y
-  grommet-icons: 4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y
+  grommet-icons: 4.12.1_ynlbwjpw7oqthgrnao7bjjcd2y
   luxon: 3.4.4
   polished: 4.2.2
   prop-types: 15.8.1
@@ -10625,8 +10625,8 @@ packages:
     engines: {node: '>= 10.x'}
     dev: false
 
-  /grommet-icons/4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y:
-    resolution: {integrity: sha512-ArXf2XyXmpk5JsQ8NudzNz3mbWv+TeZkPiyog2s9yoNAWTlIr3vzNjr97uon/Xm4Uiq2kiHkvO4i2fG1u6EaDg==}
+  /grommet-icons/4.12.1_ynlbwjpw7oqthgrnao7bjjcd2y:
+    resolution: {integrity: sha512-LhOP6BkDAGiSNcUOfsGGRo+AKD6zWOXeNeusY1WYvKplAR6mKCAQfH7Nig2Buc/v5zadKSko2NDtCQqwJaME0Q==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
@@ -10645,7 +10645,7 @@ packages:
       react-dom: ^16.6.1 || ^17.0.0 || ^18.0.0
       styled-components: ^5.1.0
     dependencies:
-      grommet-icons: 4.11.0_ynlbwjpw7oqthgrnao7bjjcd2y
+      grommet-icons: 4.12.1_ynlbwjpw7oqthgrnao7bjjcd2y
       hoist-non-react-statics: 3.3.2
       markdown-to-jsx: 7.2.0_react@18.2.0
       prop-types: 15.8.1
