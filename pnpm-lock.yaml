@@ -32,7 +32,7 @@ specifiers:
   framer-motion: 7.10.3
   grommet: 2.37.0
   grommet-icons: 4.12.1
-  husky: 8.0.3
+  husky: 9.0.11
   ini: 1.3.8
   inquirer: 6.5.2
   lint-staged: 15.2.2
@@ -95,7 +95,7 @@ devDependencies:
   eslint-plugin-n: 17.4.0_eslint@9.1.1
   eslint-plugin-prettier: 5.1.3_kc6tn5c7oppjx34b2yltdk6en4
   eslint-plugin-react: 7.34.1_eslint@9.1.1
-  husky: 8.0.3
+  husky: 9.0.11
   ini: 1.3.8
   inquirer: 6.5.2
   lint-staged: 15.2.2
@@ -11030,9 +11030,9 @@ packages:
     engines: {node: '>=16.17.0'}
     dev: true
 
-  /husky/8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
+  /husky/9.0.11:
+    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
+    engines: {node: '>=18'}
     hasBin: true
     dev: true
 
