@@ -11,7 +11,7 @@ specifiers:
   '@commitlint/config-conventional': 19.2.2
   '@emotion/react': 11.11.4
   '@emotion/styled': 11.11.5
-  '@fontsource/roboto': 4.5.8
+  '@fontsource/roboto': 5.0.13
   '@mui/material': 5.15.16
   '@semantic-release/changelog': 6.0.3
   '@semantic-release/commit-analyzer': 9.0.2
@@ -55,7 +55,7 @@ dependencies:
   '@babel/preset-react': 7.24.1_@babel+core@7.24.5
   '@emotion/react': 11.11.4_react@18.3.1
   '@emotion/styled': 11.11.5_axmxivx5epzazzua2upayhlhme
-  '@fontsource/roboto': 4.5.8
+  '@fontsource/roboto': 5.0.13
   '@mui/material': 5.15.16_l4nqkajrntrot4jhggjwfy4ghq
   '@testing-library/jest-dom': 5.17.0
   '@testing-library/react': 13.4.0_nnrd3gsncyragczmpvfhocinkq
@@ -4528,8 +4528,8 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
-  /@fontsource/roboto/4.5.8:
-    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
+  /@fontsource/roboto/5.0.13:
+    resolution: {integrity: sha512-j61DHjsdUCKMXSdNLTOxcG701FWnF0jcqNNQi2iPCDxU8seN/sMxeh62dC++UiagCWq9ghTypX+Pcy7kX+QOeQ==}
     dev: false
 
   /@hapi/hoek/9.3.0:
