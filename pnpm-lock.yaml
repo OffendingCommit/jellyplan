@@ -11,7 +11,7 @@ specifiers:
   '@commitlint/config-conventional': 19.2.2
   '@emotion/react': 11.11.4
   '@emotion/styled': 11.11.5
-  '@fontsource/roboto': 4.5.8
+  '@fontsource/roboto': 5.0.14
   '@mui/material': 5.16.6
   '@semantic-release/changelog': 6.0.3
   '@semantic-release/commit-analyzer': 9.0.2
@@ -55,7 +55,7 @@ dependencies:
   '@babel/preset-react': 7.24.1_@babel+core@7.24.5
   '@emotion/react': 11.11.4_react@18.3.1
   '@emotion/styled': 11.11.5_axmxivx5epzazzua2upayhlhme
-  '@fontsource/roboto': 4.5.8
+  '@fontsource/roboto': 5.0.14
   '@mui/material': 5.16.6_l4nqkajrntrot4jhggjwfy4ghq
   '@testing-library/jest-dom': 5.17.0
   '@testing-library/react': 13.4.0_nnrd3gsncyragczmpvfhocinkq
@@ -73,7 +73,7 @@ dependencies:
   react-dom: 18.3.1_react@18.3.1
   react-scripts: 5.0.1_rfel5kala4rskwlsuguynamtwq
   react-text-transition: 3.1.0_nnrd3gsncyragczmpvfhocinkq
-  styled-components: 5.3.11_d5wf7nncojqtedt3jtizosubvq
+  styled-components: 5.3.11_jnohxuhqlrxf6dohk7bpi4vgrq
   web-vitals: 2.1.4
 
 devDependencies:
@@ -4500,8 +4500,8 @@ packages:
     resolution: {integrity: sha512-5WoDz3Y19Bg2BnErkZTp0en+c/i9PvgFS7MBe1+m60HjFr0hrphlAGp4yzI7pxpt4xShln4ZyYp4neJm8hmOkQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  /@fontsource/roboto/4.5.8:
-    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
+  /@fontsource/roboto/5.0.14:
+    resolution: {integrity: sha512-zHAxlTTm9RuRn9/StwclFJChf3z9+fBrOxC3fw71htjHP1BgXNISwRjdJtAKAmMe5S2BzgpnjkQR93P9EZYI/Q==}
     dev: false
 
   /@hapi/hoek/9.3.0:
@@ -7237,7 +7237,7 @@ packages:
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.11_d5wf7nncojqtedt3jtizosubvq
+      styled-components: 5.3.11_jnohxuhqlrxf6dohk7bpi4vgrq
     dev: false
 
   /babel-plugin-syntax-jsx/6.18.0:
@@ -10612,7 +10612,7 @@ packages:
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
-      styled-components: 5.3.11_d5wf7nncojqtedt3jtizosubvq
+      styled-components: 5.3.11_jnohxuhqlrxf6dohk7bpi4vgrq
     dev: false
 
   /grommet/2.37.0_dnjx7irwkcgzjrivfe23bb65te:
@@ -10629,7 +10629,7 @@ packages:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
-      styled-components: 5.3.11_d5wf7nncojqtedt3jtizosubvq
+      styled-components: 5.3.11_jnohxuhqlrxf6dohk7bpi4vgrq
     dev: false
 
   /gzip-size/6.0.0:
@@ -15471,7 +15471,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       react: 18.3.1
-      react-is: 18.2.0
+      react-is: 18.3.1
     dev: false
 
   /react-text-transition/3.1.0_nnrd3gsncyragczmpvfhocinkq:
@@ -16827,7 +16827,7 @@ packages:
       webpack: 5.75.0
     dev: false
 
-  /styled-components/5.3.11_d5wf7nncojqtedt3jtizosubvq:
+  /styled-components/5.3.11_jnohxuhqlrxf6dohk7bpi4vgrq:
     resolution: {integrity: sha512-uuzIIfnVkagcVHv9nE0VPlHPSCmXIUGKfJ42LNjxCCTDTL5sgnJ8Z7GZBq0EnLYGln77tPpEpExt2+qa+cZqSw==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -16845,7 +16845,7 @@ packages:
       hoist-non-react-statics: 3.3.2
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
-      react-is: 18.2.0
+      react-is: 18.3.1
       shallowequal: 1.1.0
       supports-color: 5.5.0
     dev: false
